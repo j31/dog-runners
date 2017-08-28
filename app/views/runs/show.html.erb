@@ -1,2 +1,19 @@
 <h1>Runs#show</h1>
 <p>Find me in app/views/runs/show.html.erb</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col col-xs-12">
+      <h1>Your run stats:</h1>
+      <p>Status: <%= @run.status  %></p>
+      <p>Runner: <%= @user.first_name %></p>
+      <p>Appointment: <%= @run.appointment  %></p>
+      <p>Duration: <%= @run.duration  %></p>
+      <p>Price: <%= @run.price  %></p>
+      <p>Note: <%= @run.note  %></p>
+    </div>
+  </div>
+</div>
+
+
