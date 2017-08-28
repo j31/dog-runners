@@ -10,7 +10,14 @@ gem 'rails', '5.1.3'
 gem 'redis'
 
 gem 'pundit'
+
+# GEOCODING GEMS
 gem 'geocoder'
+gem 'coffee-rails'
+gem 'gmaps4rails'
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
