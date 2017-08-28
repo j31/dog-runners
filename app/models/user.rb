@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   enum role: { owner: 0, runner: 1, admin: 2 }
 
+
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:email, :first_name, :last_name)
@@ -31,4 +32,10 @@ class User < ApplicationRecord
 
     return user
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
+  has_attachment :photo
+
 end

@@ -5,6 +5,7 @@ class CreateParks < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :description
       t.string :photo
+      t.string :address
       t.float :latitude
       t.float :longitude
 
