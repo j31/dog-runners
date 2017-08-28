@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170828100554) do
   create_table "runs", force: :cascade do |t|
     t.bigint "dog_id"
     t.bigint "user_id"
-    t.integer "status"
+    t.integer "status", default: 0
     t.datetime "appointment"
     t.integer "duration"
     t.decimal "price"
