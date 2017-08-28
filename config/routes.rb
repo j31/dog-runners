@@ -15,6 +15,5 @@ Rails.application.routes.draw do
   get 'become_runner', to: 'pages#become_runner'
 
   devise_for :users,
-    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
-
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
 end
