@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   mount Attachinary::Engine => "/attachinary"
   devise_for :users
   root to: 'pages#home'
@@ -13,5 +14,8 @@ Rails.application.routes.draw do
 
   get 'help', to: 'pages#help'
   get 'become_runner', to: 'pages#become_runner'
+
+  devise_for :users,
+    controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
 end
