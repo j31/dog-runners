@@ -1,2 +1,13 @@
 <h1>Runs#new</h1>
 <p>Find me in app/views/runs/new.html.erb</p>
+
+<%= simple_form_for @run do |f| %>
+<%= f.input :duration, collection: Run.durations %>
+<%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
+<% end %>
+
+
+
+
+
+
