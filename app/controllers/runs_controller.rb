@@ -2,14 +2,16 @@ class RunsController < ApplicationController
 
   def new
     @run = Run.new
-    @dog = Dog.find(params[:dog_id])
   end
 
   def create
     @dog = Dog.find(params[:dog_id])
     @run = Booking.new(run_params)
-
+    @run.dog_id = params[:dog_id]
   end
+
+
+
 
   def show
     @run = Run.find(params[:id])
