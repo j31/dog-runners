@@ -17,6 +17,9 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 
+# image upload
+gem 'cloudinary'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
