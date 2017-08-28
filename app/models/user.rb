@@ -10,5 +10,9 @@ class User < ApplicationRecord
 
   enum role: { owner: 0, runner: 1, admin: 2 }
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   has_attachment :photo
+
 end

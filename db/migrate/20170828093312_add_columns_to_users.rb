@@ -10,6 +10,7 @@ class AddColumnsToUsers < ActiveRecord::Migration[5.1]
     add_column :users, :state, :string
     add_column :users, :zip, :string
     add_column :users, :country, :string
+    add_column :users, :address, :string
     add_column :users, :latitude, :float
     add_column :users, :longitude, :float
   end

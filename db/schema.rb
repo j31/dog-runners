@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20170828132444) do
     t.string "city"
     t.string "description"
     t.string "photo"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", null: false
@@ -104,6 +105,7 @@ ActiveRecord::Schema.define(version: 20170828132444) do
     t.string "state"
     t.string "zip"
     t.string "country"
+    t.string "address"
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
