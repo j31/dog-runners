@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :dogs do
+    resources :runs, only: [:create]
+  end
+
+  resources :runs, except: [:create]
+  resources :pages, only: [:help, :become_runner]
+  resources :profiles, except: [:new, :create]
+
+  get 'help', to: 'pages#help'
+  get 'become_runner', to: 'pages#become_runner'
+
 end
