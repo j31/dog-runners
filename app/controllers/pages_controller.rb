@@ -3,4 +3,11 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def help
+  end
+
+  def become_runner
+  end
+
 end
