@@ -2,10 +2,11 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    before_action :logged_out?
-
-
   end
+
+  def secret
+  end
+
 
   def help
   end
@@ -15,7 +16,4 @@ class PagesController < ApplicationController
 
 private
 
-  def logged_out?
-    current_user = nil
-  end
 end

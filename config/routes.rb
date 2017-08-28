@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   mount Attachinary::Engine => "/attachinary"
+
+  authenticated :user do
+    root 'pages#secret', as: :authenticated_root
+  end
   root to: 'pages#home'
 
   resources :dogs do
