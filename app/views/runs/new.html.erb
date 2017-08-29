@@ -1,12 +1,23 @@
-<h1>Runs#new</h1>
-<p>Find me in app/views/runs/new.html.erb</p>
-
-<%= simple_form_for @run do |f| %>
-<%= f.input :duration, label: false, collection: Run::DURATIONS %>
-<%= f.input :note, as: :text, label: false, placeholder: "Inform our runner of any special requierments." %>
-<%= f.input :dog_id, collection: @dogs %>
-<%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
-<% end %>
 
 
+<div class="container width-100">
+  <div class="row">
+    <%= simple_form_for @run do |f| %>
+    <div class="formOne">
+      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
+        <%= f.input :dog_id, label: false, collection: @dogs %>
+      </div>
+      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
+        <%= f.input :duration, label: false, collection: Run.durations %>
+      </div>
+      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
+        <%= f.input :note, as: :text, label: false %>
+      </div>
+      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
+        <%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
 
