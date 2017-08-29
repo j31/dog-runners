@@ -13,3 +13,10 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+body {
+  color: $dark-gray;
+  h1, h2 {
+    color: $dog-runner-color;
+  }
+}
