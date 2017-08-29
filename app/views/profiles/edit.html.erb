@@ -2,8 +2,24 @@
   <div class="row">
     <div class=".col col-xs-12">
 
+       <%= simple_form_for(@user, url: profile_path(@profile), method: :patch, html: { class: "form-group"}) do |f| %>
 
-<p>hi</p>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+
+
+        <%= f.input :photo, as: :attachinary %>
+        <%= f.input :description %>
+
+        <%= f.input :street %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :country, as: :string %>
+        <%= f.input :zip %>
+
+
+        <%= f.button :submit %>
+      <% end %>
 
     </div>
   </div>
