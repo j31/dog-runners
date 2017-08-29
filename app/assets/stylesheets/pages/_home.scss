@@ -1,0 +1,86 @@
+
+.banner h1 {
+  font-family: $headers-font;
+  font-weight: 200;
+  font-size: 25px;
+  color: white;
+}
+
+
+.homeContentWrapper .dog-runner-box {
+  height: 200px;
+}
+
+.homeContentWrapper .howItWorks .number{
+  border: 1px solid #2ba6cb;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-weight: lighter;
+  font-size: 14px;
+
+}
+
+.homeContentWrapper .howItWorks .icon {
+  font-size: 25px;
+  color: #2ba6cb;
+
+}
+
+.homeContentWrapper .howItWorks .text {
+  font-family: $headers-font;
+  font-weight: lighter;
+  font-size: 13px;
+
+}
+.homeContentWrapper {
+  h3 {
+    font-family: $headers-font;
+    font-weight: lighter;
+    font-size: 20px;
+    border-bottom: 1px solid #2ba6cb;
+    margin-bottom: 14px;
+  }
+
+  .benefits li {
+    list-style: none;
+    font-size: 11px;
+    margin: 6px;
+    font-weight: 200;
+    font-family: $headers-font;
+  }
+
+  .whyUs li {
+    list-style: none;
+    font-size: 11px;
+    margin: 6px;
+    font-weight: 200;
+    font-family: $headers-font;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
