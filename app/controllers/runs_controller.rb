@@ -4,21 +4,17 @@ class RunsController < ApplicationController
   def new
     @run = Run.new
     @dogs = current_user.dogs
+
   end
 
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
-    if @run.save
-      redirect_to @run
+    @run.save
+    if redirect_to @run
     else
       render :new
     end
-
-      # if @run.user_id == 1
-      #   @run.save
-      #   render :new
-      # end
   end
 
 
