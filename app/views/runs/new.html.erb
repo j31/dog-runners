@@ -1,9 +1,10 @@
 <h1>Runs#new</h1>
 <p>Find me in app/views/runs/new.html.erb</p>
 
-<%= simple_form_for [@dog, @run], method: :confirm, do |f| %>
-<%= f.input :duration, label: false, collection: Run.durations %>
+<%= simple_form_for @run do |f| %>
+<%= f.input :duration, label: false, collection: Run::DURATIONS %>
 <%= f.input :note, as: :text, label: false, placeholder: "Inform our runner of any special requierments." %>
+<%= f.input :dog_id, collection: @dogs %>
 <%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
 <% end %>
 

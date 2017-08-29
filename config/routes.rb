@@ -7,11 +7,12 @@ Rails.application.routes.draw do
   end
   root to: 'pages#home'
 
-  resources :dogs do
-    resources :runs, only: [:create]
-  end
+  resources :dogs
+  # do
+  #   resources :runs, only: [:create]
+  # end
 
-  resources :runs, except: [:create]
+  resources :runs  #, except: [:create]
   resources :pages, only: [:help, :become_runner]
   resources :profiles, except: [:new, :create]
 
