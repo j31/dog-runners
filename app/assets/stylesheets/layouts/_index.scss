@@ -4,6 +4,12 @@
 // @import "profile";
 // @import "map";
 
+// Temporary bc color was too light to see
+.form-control {
+  color: black !important;
+}
+
+
 .height-100 {
   height: 100vh;
 }
