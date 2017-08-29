@@ -1,15 +1,28 @@
 class RunsController < ApplicationController
 
+
   def new
     @run = Run.new
-    @dog = Dog.find(params[:dog_id])
+    @dogs = current_user.dogs
   end
 
   def create
-    @dog = Dog.find(params[:dog_id])
-    @run = Booking.new(run_params)
+    @run = Run.new(run_params)
+    @run.user_id = 1
+    if @run.save
+      redirect_to @run
+    else
+      render :new
+    end
 
+      # if @run.user_id == 1
+      #   @run.save
+      #   render :new
+      # end
   end
+
+
+
 
   def show
     @run = Run.find(params[:id])
@@ -34,6 +47,6 @@ class RunsController < ApplicationController
 private
 
   def run_params
-    params.require(:run).permit(:dog_id, :user_id, :status, :appointment, :duration, :price, :note, :park_id)
+    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id)
   end
 end
