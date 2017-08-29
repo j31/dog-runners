@@ -3,3 +3,33 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+
+.height-100 {
+  height: 100vh;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.bg-position-center {
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  h1 {
+    font-size: 50px;
+  }
+}
