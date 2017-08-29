@@ -1,14 +1,26 @@
 class ProfilesController < ApplicationController
 
-   before_action :set_profile, only: [:show, :update]
+   before_action :set_profile, only: [:show, :edit, :update]
 
   def show
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def update
+
     if @profile.update(user_params)
       flash[:notice] = "Your profile was updated!"
-      redirect_to profile_path(@profile)
+
+      @user = User.find(params[:id])
+      if !@user.dogs = []
+        redirect_to profile_path(@profile)
+      else
+        redirect_to new_dog_path
+      end
+
     else
       render :new, alert: "Error creating user."
     end
@@ -33,32 +45,5 @@ private
                                  :zip,
                                  :country,
                                  :address)
-  end
-
-
-
-
-
-
-
-  def new
-  end
-
-  def create
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def index
-  end
-
-  def destroy
   end
 end
