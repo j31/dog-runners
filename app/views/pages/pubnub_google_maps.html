@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Google Maps Example</title>
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>PubNub Google Maps Example</h1>
+      <div id="map-canvas" style="width:600px;height:400px"></div>
+    </div>
+
+    <script>
+
+
+
+    window.lat = 52.5070;
+    window.lng = 13.3892;
+
+    var map;
+    var mark;
+    var lineCoords = [];
+
+    var initialize = function() {
+      map  = new google.maps.Map(document.getElementById('map-canvas'), {center:{lat:lat,lng:lng},zoom:12});
+      mark = new google.maps.Marker({position:{lat:lat, lng:lng}, map:map});
+      lineCoords.push(new google.maps.LatLng(window.lat, window.lng));
+    };
+
+    window.initialize = initialize;
+
+    var redraw = function(payload) {
+      lat = payload.message.lat;
+      lng = payload.message.lng;
+
+      map.setCenter({lat:lat, lng:lng, alt:0});
+      mark.setPosition({lat:lat, lng:lng, alt:0});
+      lineCoords.push(new google.maps.LatLng(lat, lng));
+
+      var lineCoordinatesPath = new google.maps.Polyline({
+        path: lineCoords,
+        geodesic: true,
+        strokeColor: '#2E10FF'
+      });
+
+      lineCoordinatesPath.setMap(map);
+    };
+
+    var pnChannel = "map-channel";
+
+    var pubnub = new PubNub({
+      publishKey: 'pub-c-e06bf109-5b61-40ba-83db-61a4ad5bc81c',
+      subscribeKey: 'sub-c-03556c4e-8ccc-11e7-a576-2a15881e5abd'
+    });
+
+    pubnub.subscribe({channels: [pnChannel]});
+    pubnub.addListener({message:redraw});
+
+
+      function dog_up() {
+        pubnub.publish({channel:pnChannel, message:{lat:window.lat + 0.001, lng:window.lng + 0.00}});
+      };
+
+    var callCount = 1;
+
+    var repeater = setInterval(function () {
+      if (callCount < 5) {
+        dog_up();
+        callCount += 1;
+      } else {
+        clearInterval(repeater);
+      }
+    }, 1000);
+
+
+    function dog_down() {
+        pubnub.publish({channel:pnChannel, message:{lat:window.lat - 0.001, lng:window.lng + 0.00}});
+    };
+
+    var callCount = 1;
+
+    var repeater = setInterval(function () {
+      if (callCount < 5) {
+        dog_up();
+        callCount += 1;
+      } else {
+        clearInterval(repeater);
+      }
+    }, 1000);
+
+
+
+
+
+
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDINZk0nILit3qt2Y8kasaCTcx8cecNRxQ&callback=initialize"></script>
+  </body>
+</html>
