@@ -14,14 +14,8 @@ class ProfilesController < ApplicationController
 
     if @profile.update(user_params)
       flash[:notice] = "Your profile was updated!"
-
       @user = User.find(params[:id])
-      if !@user.dogs = []
-        redirect_to profile_path(@profile)
-      else
-        redirect_to new_dog_path
-      end
-
+      redirect_to profile_path(@profile)
     else
       render :new, alert: "Error creating user."
     end
