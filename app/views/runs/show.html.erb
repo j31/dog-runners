@@ -1,19 +1,33 @@
-<h1>Runs#show</h1>
-<p>Find me in app/views/runs/show.html.erb</p>
 
 
 <div class="container">
   <div class="row">
     <div class="col col-xs-12">
-      <h1>Your run stats:</h1>
-      <p>Status: <%= @run.status  %></p>
-      <p>Runner: <%= @user.first_name %></p>
-      <p>Appointment: <%= @run.appointment  %></p>
-      <p>Duration: <%= @run.duration  %></p>
-      <p>Price: <%= @run.price  %></p>
-      <p>Note: <%= @run.note  %></p>
+      <div class="dog-runner-box">
+        <p>Your dogs run:</p>
+      </div>
+      <div class="dog-runner-box">
+        <p>Status: <%= @run.status  %></p>
+      </div>
+    <!-- start LocaToWeb embed code -->
+      <div style='background-color: #F4F4F4; border: 0px; padding:12px;'>
+      <a id='ltw_home_url' href='https://locatoweb.com' color: black; >LocaToWeb - Real time GPS tracking</a>
+      <iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height: 50vh;border-top:1px solid #F22C44;'></iframe></div>
+      <script>var ltwtrackurl='single/0526113237';</script>
+      <script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>
+      <!-- end LocaToWeb embed code -->
+      <div class="dog-runner-box">
+        <p>Runner: <%= @user.first_name %></p>
+      </div>
+
+      </div>
     </div>
   </div>
-</div>
+
+
+<!--       <p>Duration: <%= @run.duration  %></p>
+      <p>Price: <%= @run.price  %></p>
+      <p>Note: <%= @run.note  %></p>
+ -->
 
 

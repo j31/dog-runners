@@ -1,2 +1,23 @@
-<h1>Dogs#new</h1>
-<p>Find me in app/views/dogs/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class=".col col-xs-12">
+
+       <%= simple_form_for @dog do |f| %>
+
+        <%= f.input :name %>
+        <%= f.input :description %>
+
+
+        <%= f.input :photo, as: :attachinary %>
+        <%= f.input :note %>
+
+        <%= f.input :breed %>
+        <%= f.input :age %>
+        <%= f.input :weight %>
+
+        <%= f.button :submit %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
