@@ -4,30 +4,56 @@
   <div class="row">
     <div class="col col-xs-12">
       <div class="dog-runner-box">
-        <p>Your dogs run:</p>
+        <p><span><%= image_tag "dog_avatar.png" %></span><%= @user.dogs.first.name %>'s run:</p>
       </div>
+
       <div class="dog-runner-box">
-        <p>Status: <%= @run.status  %></p>
+
+        <% if @run.status == "pending"%>
+        <p><span><%= image_tag "sitting.png" %></span> We're searching for your runner...</p>
+        <% elsif @run.status == "confirmed"%>
+        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> just accepted your run request.. </p>
+        <% elsif @run.status == "coming"%>
+        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> is on the way...</p>
+        <% elsif @run.status == "arrived"%>
+        <p><span><%= image_tag "pickup2.png" %></span> <%= @user.first_name %> has arrived...</p>
+        <% elsif @run.status == "started"%>
+        <p><span><%= image_tag "run.png" %></span> the run has started...</p>
+        <% elsif @run.status == "ended"%>
+        <p><span><%= image_tag "home.png" %></span> the run is finished...</p>
+        <% else @run.status == "cancelled"%>
+        <p><span><%= image_tag "sad-dog2.png" %></span> We're sorry, your run was cancelled...</p>
+        <% end %>
+
       </div>
+
+
+      <% if @run.status == "arrived" || @run.status == "started" || @run.status == "ended" %>
     <!-- start LocaToWeb embed code -->
       <div style='background-color: #F4F4F4; border: 0px; padding:12px;'>
-      <a id='ltw_home_url' href='https://locatoweb.com' color: black; >LocaToWeb - Real time GPS tracking</a>
-      <iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height: 50vh;border-top:1px solid #F22C44;'></iframe></div>
+      <a id='ltw_home_url' href='https://locatoweb.com'; >LocaToWeb - Real time GPS tracking</a>
+      <iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height: 50vh;border: 0px; padding: 0px;'></iframe></div>
       <script>var ltwtrackurl='single/0526113237';</script>
       <script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>
       <!-- end LocaToWeb embed code -->
+      <% end %>
+
       <div class="dog-runner-box">
-        <p>Runner: <%= @user.first_name %></p>
+        <p><span><%= image_tag "runner.png" %></span> <%= @user.first_name %></p>
       </div>
 
       </div>
     </div>
   </div>
 
+<%= content_for :javascript do %>
+  <script>
+    $(function(){
+      console.log('hello');
+      $('.basic').hide();
+    });
+  </script>
+<% end %>
 
-<!--       <p>Duration: <%= @run.duration  %></p>
-      <p>Price: <%= @run.price  %></p>
-      <p>Note: <%= @run.note  %></p>
- -->
 
 
