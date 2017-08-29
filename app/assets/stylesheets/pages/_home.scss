@@ -1,11 +1,14 @@
 
 .banner {
+  margin-bottom: 13px;
+
   h1 {
     font-family: $headers-font;
     font-weight: 200;
     font-size: 30px;
     color: white;
   }
+
   p {
     font-family: $headers-font;
     font-weight: lighter;
@@ -14,7 +17,9 @@
   }
 }
 
-
+.homeContentWrapper {
+  height: 750px;
+}
 .homeContentWrapper .dog-runner-box {
   height: 200px;
 }
