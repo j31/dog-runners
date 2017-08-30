@@ -9,10 +9,11 @@ class RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
-    @run.confirmed = true
+
     if @run.save
       redirect_to confirm_path(@run)
     else
+      puts @run.errors.full_messages
       render :new
     end
   end
@@ -25,7 +26,7 @@ class RunsController < ApplicationController
   def confirm_update
     @run = Run.find(params[:id])
     @run.status = 1
-    if @run.update(run_params)
+    if @run.save
       flash[:notice] = "Your booking request was recieved!"
       redirect_to @run
     else
@@ -57,6 +58,6 @@ class RunsController < ApplicationController
 private
 
   def run_params
-    params.require(:run).permit(:confirmed, :dog_id, :status, :appointment, :duration, :price, :note, :park_id)
+    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id)
   end
 end
