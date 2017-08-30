@@ -1,37 +1,44 @@
 
-
-
 <div class="banner styled-bg-container bg-position-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
+
+
   <div class="banner-content">
-    <h1>Fit dogs are happy dogs</h1>
-    <br>
-    <p>Dog Runners wants to keep your dog happy</p>
-    <br>
-    <br>
-    <%= link_to "Get started!", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
+    <div class="container">
+      <h1><i class="fa fa-heart"></i><br>Dog<br>Runners</i></h1>
+      <p>Fit dogs are happy dogs</p>
+      <br><br>
+
+      <span><%= link_to "Learn More", "#howItWorks", class: "btn btn-default btn-md" %>
+        &nbsp;&nbsp;
+        <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
+      </span>
+    </div>
   </div>
 </div>
+
 
 <div class="homeContentWrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="dog-runner-box howItWorks">
-          <div class="col-xs-12"><h3 class="text-center">How it works</h3></div>
+
+        <a name="howItWorks"></a>
+        <div class="dog-runner-box home_box">
+          <div class="col-xs-12"><h3 class="text-center">How it Works</h3></div>
           <div class="col-xs-4 text-center">
             <p class="number text-center">1</p>
             <i class="fa fa-paw icon" aria-hidden="true"></i>
-            <p class="text">Request DogRunner</p>
+            <p class="text">Request a Runner</p>
           </div>
           <div class="col-xs-4 text-center">
             <p class="number">2</p>
             <i class="fa fa-check icon" aria-hidden="true"></i>
-            <p class="text">Confirm booking</p>
+            <p class="text">Confirm Booking</p>
           </div>
           <div class="col-xs-4 text-center">
             <p class="number">3</p>
             <i class="fa fa-map-marker icon" aria-hidden="true"></i>
-            <p class="text">Track your dog</p>
+            <p class="text">Track your Dog</p>
           </div>
         </div>
       </div>
@@ -40,31 +47,34 @@
     <div class="row">
       <div class="col-xs-12">
         <div class="dog-runner-box benefits">
-          <div class="text-center"><h3>Benefits of running</h3></div>
-            <div class="benefitsContent">
-              <li>Improved behavior and confidence</li>
-              <li>Fewer joint and health problems</li>
-              <li>Better sleep and mood</li>
-              <li>Your dog will love it!</li>
-            </div>
+          <div class="text-center"><h3>Benefits of Running</h3></div>
+          <div class="benefitsContent">
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
+          </div>
         </div>
       </div>
     </div>
+
+
+  <a name="whyDogRunners"></a>
     <div class="row">
       <div class="col-xs-12">
-        <div class="dog-runner-box whyUs">
-          <div class="text-center"><h3>Why DogRunners?</h3></div>
-            <div class="whyUsContent">
-              <li>We only hire dog lovers</li>
-              <li>We're focused on your dog's fitness</li>
-              <li>Over 50.000km of happy runs</li>
-              <li>Real-time tracking and great reports</li>
-            </div>
+        <div class="dog-runner-box benefits">
+          <div class="text-center"><h3>Why Dog Runners?</h3></div>
+          <div class="benefitsContent">
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
+            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 
 
