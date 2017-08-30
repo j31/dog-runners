@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   def become_runner
   end
 
+  def gps
+  end
+
 private
 
 end
