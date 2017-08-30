@@ -13,6 +13,9 @@ Run.destroy_all
 puts "Destroyed old data.  Now I'll make some users..."
 
 #create 9 users
+not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456")
+puts "not_assigned is done."
+
 peter = User.create(email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
 peter.photo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/PeterYarrowByPhilKonstantin.jpg/220px-PeterYarrowByPhilKonstantin.jpg"
 puts "Peter's done."
@@ -35,7 +38,6 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 20,
-  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -44,7 +46,6 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "ended",
   duration: 10,
-  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -53,7 +54,6 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 30,
-  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 

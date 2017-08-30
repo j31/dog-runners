@@ -1,14 +1,21 @@
 
 .banner {
   h1 {
+    z-index: 1;
     font-family: $headers-font;
+
     font-weight: bold;
     font-size: 50px;
+
+
+
+
     color: white;
     margin: 10px 50px;
   }
 
   p {
+    z-index: 1;
     font-family: $headers-font;
     font-weight: medium;
     color: white;
@@ -18,16 +25,20 @@
 }
 
 .homeContentWrapper {
+  z-index: -1;
   height: 830px;
   background-color: $dog-runner-color;
+  opacity: 0.7;
   padding-top: 20px;
   background-color: rgba(43,166,203,0.7);
 }
 .homeContentWrapper .dog-runner-box {
+  z-index: 1;
   height: 240px;
 }
 
 .homeContentWrapper .howItWorks .number{
+  z-index: 1;
   border: 1px solid #2ba6cb;
   border-radius: 50%;
   width: 20px;
@@ -38,14 +49,23 @@
   margin-bottom: 17px;}
 
   .homeContentWrapper .howItWorks .icon {
+
     font-size: 30px;
+
+
+
     color: #2ba6cb;
     margin-bottom: 13px;
 
   }
 
   .homeContentWrapper .howItWorks .text {
+
     font-family: $body-font;
+
+
+
+
     font-weight: medium;
     font-size: 13px;
     opacity: 0.8;
@@ -53,8 +73,13 @@
   }
   .homeContentWrapper {
     h3 {
+      z-index: 1;
       font-family: $headers-font;
+
       font-weight: bold;
+
+      font-weight: medium;
+
       font-size: 20px;
       border-bottom: 1px solid #2ba6cb;
       margin-bottom: 14px;
@@ -63,7 +88,9 @@
     }
 
     .benefits li {
+      z-index: 1;
       list-style: none;
+
       font-size: 13px;
       margin: 5px;
       font-weight: medium;
@@ -72,6 +99,7 @@
     }
 
     .whyUs li {
+      z-index: 1;
       list-style: none;
       font-size: 13px;
       margin: 5px;
