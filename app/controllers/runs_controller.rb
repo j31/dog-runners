@@ -24,9 +24,13 @@ class RunsController < ApplicationController
   end
 
   def index
-    @runs = Run.all
-    # later it should be
-    # @runs = Run.where(user.id == current_user.id)
+    # if you have a dog and he has had a run before
+    if current_user.dogs != [] && Run.all.select { |r| r.dog_id == current_user.dogs.first.id } != []
+    # select all the runs of your dog
+     @runs = Run.all.select { |r| r.dog_id == current_user.dogs.first.id }
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
