@@ -8,7 +8,6 @@ class CreateRuns < ActiveRecord::Migration[5.1]
       t.integer :duration
       t.decimal :price
       t.string :note
-      t.boolean :confirmed, required: true
       t.references :park, foreign_key: true
 
       t.timestamps
