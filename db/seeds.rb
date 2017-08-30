@@ -13,6 +13,6 @@ Run.destroy_all
 puts "Destroyed old data.  Now I'll make some users..."
 
 #create 9 users
-peter = User.create(email: "peter@wagon.com", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast", address: a_address.sample)
+peter = User.create(email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
 peter.photo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/PeterYarrowByPhilKonstantin.jpg/220px-PeterYarrowByPhilKonstantin.jpg"
 puts "Peter's done."
