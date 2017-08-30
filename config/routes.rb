@@ -14,11 +14,12 @@
   # end
 
   resources :runs  #, except: [:create]
-  resources :pages, only: [:help, :become_runner]
+  resources :pages, only: [:help, :become_runner, :gps]
   resources :profiles, except: [:new, :create]
 
   get 'help', to: 'pages#help'
   get 'become_runner', to: 'pages#become_runner'
+  get 'gps', to: 'pages#gps'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks', registrations: 'registrations' }
