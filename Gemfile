@@ -16,6 +16,8 @@ gem 'pundit'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
+# translate
+gem 'rails-i18n', '5.0.3'
 
 
 gem 'omniauth-facebook'

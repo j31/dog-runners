@@ -7,7 +7,10 @@
        <div class="card">
             <%= image_tag("https://gearjunkie.com/legacy/images/5214.jpg") %>
             <div class="card-description">
-              <h2><%= run.duration  %> run on <%= run.appointment  %></h2>
+              <h2><%= run.duration  %> run
+              <% if run.appointment != nil %>
+                on <%= l(run.appointment, format: :long) %></h2>
+              <% end %>
               <h3><%= @user.first_name %> | <%= run.note %></h3>
             </div>
             <%= link_to run_path(run.id), class: "card-link" do %>
