@@ -1,0 +1,86 @@
+// * {
+//   border: thin red solid;
+// }
+
+.card {
+  height: 270px;
+  background-position: center;
+  position: relative;
+  padding: 10px;
+  border: 1px solid $dog-runner-color;
+  margin: 15px auto;
+  border-radius: 5px;
+  width: 330px;
+  align-items: center;
+  img {
+    width: 100%;
+    opacity: 0.8;
+    border-radius: 5px;
+  }
+  &:hover {
+    color: $dog-runner-color;
+    border: 1px solid $dog-runner-color;
+
+    img {
+      opacity: 1;
+    }
+    h2 {
+      font-weight: normal;
+    }
+  }
+  transition: 200ms ease;
+}
+
+  #left-scroll {
+    margin: 15px 15px;
+  }
+
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 40px;
+  border-radius: 50%;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 15px;
+  font-weight: lighter;
+  padding: 0px;
+  margin: 3px;
+}
+.card-description h3 {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+  padding: 0px;
+  margin: 3px;
+}
+.card-description p {
+  font-size: 12px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.05;
+  transition: 200ms ease;
+}
