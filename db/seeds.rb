@@ -35,6 +35,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 20,
+  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -43,6 +44,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "ended",
   duration: 10,
+  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -51,6 +53,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 30,
+  confirmed: true,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
