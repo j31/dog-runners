@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col col-xs-12">
       <div class="dog-runner-box">
-        <p><%= @dog.name %>'s run
-          <% if @run.appointment != nil %>
-            on <%= l(@run.appointment, format: :long) %>
-          <% end %>
-        </p>
+        <% if @run.status == "pending" %>
+          <p><span><%= image_tag "sitting.png" %></span><%= @dog.name %> and ??</p>
+        <% else %>
+          <p><span><%= image_tag "run.png" %></span><%= @dog.name %> and <%= @user.first_name %></p>
+        <% end %>
       </div>
 
       <div class="dog-runner-box">
@@ -41,11 +41,11 @@
         </div>
       <% end %>
 
-      <% unless @run.status == "pending" %>
+
         <div class="dog-runner-box">
-          <p>Runner: <%= @user.first_name %><span><%= image_tag "runner.png" %></span></p>
+          <%= link_to "check out the run history", runs_path, method: :get, class: "btn btn-primary btn-md" %>
         </div>
-      <% end %>
+
       </div>
     </div>
   </div>
