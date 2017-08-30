@@ -299,6 +299,7 @@ DEPENDENCIES
   devise
   faker
   figaro
+  font-awesome-rails
   font-awesome-sass
   geocoder
   gmaps4rails
