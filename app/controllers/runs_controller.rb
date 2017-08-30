@@ -21,6 +21,7 @@ class RunsController < ApplicationController
   def show
     @run = Run.find(params[:id])
     @user = User.find(@run.user_id)
+    @dog = Dog.find(@run.dog_id)
   end
 
   def index

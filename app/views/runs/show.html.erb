@@ -1,10 +1,12 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col col-xs-12">
       <div class="dog-runner-box">
-        <p>Dog's Name Here</p>
+        <p><%= @dog.name %>'s run
+          <% if @run.appointment != nil %>
+            on <%= l(@run.appointment, format: :long) %>
+          <% end %>
+        </p>
       </div>
 
       <div class="dog-runner-box">
