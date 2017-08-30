@@ -12,6 +12,11 @@ gem 'faker'
 
 gem 'pundit'
 
+# rails admin
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
+
+
 
 gem 'omniauth-facebook'
 
