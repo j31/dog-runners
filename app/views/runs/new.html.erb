@@ -1,23 +1,25 @@
-
-
-<div class="container width-100">
+<br>
+<div class="container">
   <div class="row">
-    <%= simple_form_for @run do |f| %>
-    <div class="formOne">
-      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
-        <%= f.input :dog_id, label: false, collection: @dogs %>
-      </div>
-      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
-        <%= f.input :duration, label: false, collection: Run.durations %>
-      </div>
-      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
-        <%= f.input :note, as: :text, label: false %>
-      </div>
-      <div class="col-xs-12 light-grey-bottom-border profile-field-info">
-        <%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
+    <div class=".col col-xs-12">
+
+        <%= simple_form_for @run do |f| %>
+
+          <% if @dogs.size > 1 %>
+           <%= f.label 'Which dog would you like to run?' %>
+           <%= f.input :dog_id, label: false, collection: @dogs %>
+          <% else %>
+            <% @run.dog_id = @dogs.first %>
+          <% end %>
+
+          <%= f.label 'How many minutes?' %>
+          <%= f.input :duration, label: false, collection: [10, 20, 30] %>
+
+          <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
+
+      <% end %>
+
+        </div>
       </div>
     </div>
-    <% end %>
-  </div>
-</div>
-
+    <br>

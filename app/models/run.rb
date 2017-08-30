@@ -5,8 +5,8 @@ class Run < ApplicationRecord
 
   has_one :review
 
-  enum status: { pending: 0, confirmed: 1, coming: 2, arrived: 3, started: 4, ended: 5, cancelled: 6 }
-  enum duration: { '10 min': 10, '20 min': 20, '30 min': 30, '45 min': 45, '60 min': 60 }
+  enum status: { pre_pending: 0, pending: 1, confirmed: 2, coming: 3, arrived: 4, started: 5, ended: 6, cancelled: 7 }
 
-  DURATIONS = [10, 20, 30, 45, 60]
+  validates :dog_id, presence: true
+  validates :confirmed, presence: true
 end
