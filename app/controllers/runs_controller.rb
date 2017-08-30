@@ -4,17 +4,32 @@ class RunsController < ApplicationController
   def new
     @run = Run.new
     @dogs = current_user.dogs
-
   end
 
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
-
+    @run.confirmed = true
     if @run.save
-      redirect_to @run
+      redirect_to confirm_path(@run)
     else
       render :new
+    end
+  end
+
+  def confirm_edit
+    @run = Run.find(params[:id])
+    @dog = @run.dog
+  end
+
+  def confirm_update
+    @run = Run.find(params[:id])
+    @run.status = 1
+    if @run.update(run_params)
+      flash[:notice] = "Your booking request was recieved!"
+      redirect_to @run
+    else
+      render :confirm_edit, alert: "Error creating booking."
     end
   end
 
@@ -38,18 +53,10 @@ class RunsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 
 private
 
   def run_params
-    params.require(:run).permit(:dog_id, :status, :appointment, :durations, :price, :note, :park_id)
+    params.require(:run).permit(:confirmed, :dog_id, :status, :appointment, :duration, :price, :note, :park_id)
   end
 end

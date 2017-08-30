@@ -1,0 +1,39 @@
+<br>
+<div class="container">
+  <div class="row">
+    <div class=".col col-xs-12">
+
+      <h2>Please confirm your booking:</h2>
+      <br>
+
+        <div class="dog-runner-box">
+          <p><%= @run.dog.name %></p>
+        </div>
+
+        <div class="dog-runner-box">
+          <p><%= @run.appointment %></p>
+          <p><%= @run.duration %></p>
+        </div>
+
+        <div class="dog-runner-box">
+          <p><%= @run.price %></p>
+          <p><%= @run.note %></p>
+        </div>
+
+
+        <div class="dog-runner-box">
+          <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
+
+            <%= f.input :confirmed %>
+
+            <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
+          <% end %>
+        </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
