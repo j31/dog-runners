@@ -1,7 +1,5 @@
 
 .banner {
-  margin-bottom: 13px;
-
   h1 {
     font-family: $headers-font;
     font-weight: 200;
@@ -18,10 +16,12 @@
 }
 
 .homeContentWrapper {
-  height: 750px;
+  height: 830px;
+  background-color: $dog-runner-color;
+  padding-top: 20px;
 }
 .homeContentWrapper .dog-runner-box {
-  height: 200px;
+  height: 240px;
 }
 
 .homeContentWrapper .howItWorks .number{
@@ -31,47 +31,48 @@
   height: 20px;
   font-weight: lighter;
   font-size: 14px;
+  margin: 0 auto;
+  margin-bottom: 17px;}
 
-}
+  .homeContentWrapper .howItWorks .icon {
+    font-size: 25px;
+    color: #2ba6cb;
 
-.homeContentWrapper .howItWorks .icon {
-  font-size: 25px;
-  color: #2ba6cb;
+  }
 
-}
-
-.homeContentWrapper .howItWorks .text {
-  font-family: $headers-font;
-  font-weight: lighter;
-  font-size: 13px;
-
-}
-.homeContentWrapper {
-  h3 {
+  .homeContentWrapper .howItWorks .text {
     font-family: $headers-font;
     font-weight: lighter;
-    font-size: 20px;
-    border-bottom: 1px solid #2ba6cb;
-    margin-bottom: 14px;
-  }
+    font-size: 13px;
 
-  .benefits li {
-    list-style: none;
-    font-size: 11px;
-    margin: 6px;
-    font-weight: 200;
-    font-family: $headers-font;
   }
+  .homeContentWrapper {
+    h3 {
+      font-family: $headers-font;
+      font-weight: lighter;
+      font-size: 20px;
+      border-bottom: 1px solid #2ba6cb;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+    }
 
-  .whyUs li {
-    list-style: none;
-    font-size: 11px;
-    margin: 6px;
-    font-weight: 200;
-    font-family: $headers-font;
+    .benefits li {
+      list-style: none;
+      font-size: 11px;
+      margin: 18px;
+      font-weight: 200;
+      font-family: $headers-font;
+    }
+
+    .whyUs li {
+      list-style: none;
+      font-size: 11px;
+      margin: 6px;
+      font-weight: 200;
+      font-family: $headers-font;
+    }
+
   }
-
-}
 
 
 
