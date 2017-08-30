@@ -17,9 +17,6 @@ class RunsController < ApplicationController
     end
   end
 
-
-
-
   def show
     @run = Run.find(params[:id])
     @user = User.find(@run.user_id)
