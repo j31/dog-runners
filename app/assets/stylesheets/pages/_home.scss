@@ -2,14 +2,14 @@
 .banner {
   h1 {
     font-family: $headers-font;
-    font-weight: 200;
+    font-weight: bolder;
     font-size: 30px;
     color: white;
   }
 
   p {
     font-family: $headers-font;
-    font-weight: lighter;
+    font-weight: medium;
     color: white;
     font-size: 15px;
   }
@@ -42,14 +42,14 @@
 
   .homeContentWrapper .howItWorks .text {
     font-family: $headers-font;
-    font-weight: lighter;
+    font-weight: medium;
     font-size: 13px;
 
   }
   .homeContentWrapper {
     h3 {
       font-family: $headers-font;
-      font-weight: lighter;
+      font-weight: medium;
       font-size: 20px;
       border-bottom: 1px solid #2ba6cb;
       margin-bottom: 14px;
@@ -59,16 +59,16 @@
     .benefits li {
       list-style: none;
       font-size: 11px;
-      margin: 18px;
-      font-weight: 200;
+      margin: 12px;
+      font-weight: medium;
       font-family: $headers-font;
     }
 
     .whyUs li {
       list-style: none;
       font-size: 11px;
-      margin: 6px;
-      font-weight: 200;
+      margin: 12px;
+      font-weight: medium;
       font-family: $headers-font;
     }
 
