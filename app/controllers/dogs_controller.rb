@@ -16,7 +16,6 @@ class DogsController < ApplicationController
     end
   end
 
-
   private
 
   def set_dog

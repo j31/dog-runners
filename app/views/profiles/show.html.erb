@@ -13,12 +13,11 @@
 
       <div class="dog-runner-box">
         <p>Your Dog(s)</p>
-        <% if !@user.dogs = [] %>
-          <%= @user.dogs.first %>
-          <%= link_to "Add Another Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
-        <% else %>
-          <%= link_to "Add Your Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
-        <% end %>
+          <% @user.dogs.each do |dog| %>
+            <%= dog.name %><br>
+          <% end %>
+          <br>
+          <%= link_to "Add A Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
       </div>
 
 
