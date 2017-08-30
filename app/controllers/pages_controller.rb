@@ -5,6 +5,13 @@ class PagesController < ApplicationController
   end
 
   def secret
+    @runs = Run.all
+    @all_my_runs = []
+    @runs.each do |run|
+      if run.dog.user == current_user
+        @all_my_runs << run
+      end
+    end
   end
 
 
@@ -17,3 +24,5 @@ class PagesController < ApplicationController
 private
 
 end
+
+
