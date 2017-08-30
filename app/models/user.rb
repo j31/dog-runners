@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, omniauth_providers: [:facebook]
 
-  has_many :dogs, dependent: :destroy
+  has_many :dogs
   has_many :runs, dependent: :destroy
   has_many :reviews, through: :runs, dependent: :destroy
 
