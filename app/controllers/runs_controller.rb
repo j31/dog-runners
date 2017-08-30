@@ -28,6 +28,10 @@ class RunsController < ApplicationController
     if current_user.dogs != [] && Run.all.select { |r| r.dog_id == current_user.dogs.first.id } != []
     # select all the runs of your dog
      @runs = Run.all.select { |r| r.dog_id == current_user.dogs.first.id }
+     # get the runner (for displaying him on the index page)
+     @user = User.find(@runs.first.user_id)
+     # get the dog for displaying him too
+     @dog = Dog.find(@runs.first.dog_id)
     else
       redirect_to root_path
     end
