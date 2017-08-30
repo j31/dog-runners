@@ -3,13 +3,8 @@
   h1 {
     z-index: 1;
     font-family: $headers-font;
-
     font-weight: bold;
     font-size: 50px;
-
-
-
-
     color: white;
     margin: 10px 50px;
   }
@@ -28,7 +23,6 @@
   z-index: -1;
   height: 830px;
   background-color: $dog-runner-color;
-  opacity: 0.7;
   padding-top: 20px;
   background-color: rgba(43,166,203,0.7);
 }
