@@ -12,7 +12,7 @@
 .styled-bg-container {
   background-color: rgba(0,0,0,0.2);
   width: 100vw;
-  height: 95vh;
+  height: 85vh;
   margin-top: -70px;
 }
 
@@ -33,15 +33,4 @@
   background-size: cover;
 }
 
-.banner-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
-  h1 {
-    font-size: 50px;
-  }
-}
+

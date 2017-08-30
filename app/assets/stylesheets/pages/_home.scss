@@ -6,7 +6,7 @@
     font-weight: bold;
     font-size: 50px;
     color: white;
-    margin: 10px 50px;
+    margin: 0px;
   }
 
   p {
@@ -15,9 +15,23 @@
     font-weight: medium;
     color: white;
     font-size: 25px;
-    margin: 10px 50px;
+    margin: 0px;
   }
 }
+
+.banner-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  height: 100%;
+  flex-direction: column;
+  h1 {
+    font-size: 50px;
+  }
+}
+
 
 .homeContentWrapper {
   z-index: -1;
@@ -26,12 +40,13 @@
   padding-top: 20px;
   background-color: rgba(43,166,203,0.7);
 }
+
 .homeContentWrapper .dog-runner-box {
   z-index: 1;
   height: 240px;
 }
 
-.homeContentWrapper .howItWorks .number{
+.home_box .number{
   z-index: 1;
   border: 1px solid #2ba6cb;
   border-radius: 50%;
@@ -40,40 +55,38 @@
   font-weight: lighter;
   font-size: 14px;
   margin: 0 auto;
-  margin-bottom: 17px;}
+  margin-bottom: 17px;
+}
 
-  .homeContentWrapper .howItWorks .icon {
-
+.home_box .icon {
     font-size: 30px;
-
-
-
     color: #2ba6cb;
     margin-bottom: 13px;
+}
 
-  }
-
-  .homeContentWrapper .howItWorks .text {
-
-    font-family: $body-font;
-
-
-
-
+.home_box h3 {
+    font-family: $headers-font;
     font-weight: medium;
     font-size: 13px;
     opacity: 0.8;
-
   }
+
+.home_box p {
+    font-family: $body-font;
+    font-weight: medium;
+    font-size: 13px;
+    opacity: 0.8;
+  }
+
+
+
+
   .homeContentWrapper {
     h3 {
       z-index: 1;
       font-family: $headers-font;
-
       font-weight: bold;
-
       font-weight: medium;
-
       font-size: 20px;
       border-bottom: 1px solid #2ba6cb;
       margin-bottom: 14px;
@@ -85,17 +98,7 @@
       z-index: 1;
       list-style: none;
 
-      font-size: 13px;
-      margin: 5px;
-      font-weight: medium;
-      font-family: $body-font;
-      opacity: 0.8;
-    }
-
-    .whyUs li {
-      z-index: 1;
-      list-style: none;
-      font-size: 13px;
+      font-size: 16px;
       margin: 5px;
       font-weight: medium;
       font-family: $body-font;
@@ -104,12 +107,6 @@
   }
 
 .benefitsContent {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-start;
-}
-
-.whyUsContent {
   display: flex;
   flex-flow: column;
   align-items: flex-start;

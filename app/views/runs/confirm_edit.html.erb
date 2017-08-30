@@ -7,12 +7,13 @@
       <br>
 
         <div class="dog-runner-box">
-          <p><%= @run.dog.name %></p>
+          <h3><%= @run.dog.name %> is going for a run.</3>
         </div>
 
         <div class="dog-runner-box">
-          <p><%= @run.appointment %></p>
-          <p><%= @run.duration %></p>
+          <p>Date & Time: <%= @run.appointment %></p>
+          <p>Pick-up point: <%= @run.dog.user.address %></p>
+          <p>Duration run: <%= @run.duration %></p>
         </div>
 
         <div class="dog-runner-box">
