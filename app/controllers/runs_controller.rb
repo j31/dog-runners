@@ -10,8 +10,9 @@ class RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
-    @run.save
-    if redirect_to @run
+
+    if @run.save
+      redirect_to @run
     else
       render :new
     end
