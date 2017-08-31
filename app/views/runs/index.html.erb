@@ -3,20 +3,17 @@
     <div class="col col-xs-12">
 
 
-      <h1>Run History</h1>
+      <h1>Run History!</h1>
 
-      <% if @runs %>
-      <% @runs.each do |run| %>
-      <% end %>
-<!-- put runs here
-link them here link_to run_path(run.id) -->
+        <% @runs.each do |run| %>
+          <p><%= link_to "Make Changes", run_path(run) %></p>
+          <%= cl_image_tag run.park.photo.path, height: 180, width: 280, crop: :fill %>
+          <p><%= run.appointment %></p>
+          <p><%= run.duration %></p>
+          <p><%= run.status %></p>
+        <% end %>
 
-      <% else %>
-      <p>You don't have any runs yet.</p>
-      <%= button_to 'Book a Run', new_run_path, method: :get, class: "btn btn-primary btn-md" %>
-      <% end %>
     </div>
   </div>
 </div>
-
 
