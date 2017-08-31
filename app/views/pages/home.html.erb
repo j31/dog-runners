@@ -1,12 +1,14 @@
 
 <div class="home_banner styled-bg-container bg-position-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
   <div class="banner_content">
-    <div class="container">
+    <div class="container" id="banner-text">
       <h1><i class="fa fa-heart"></i><br>Dog<br>Runners</i></h1>
       <p>Fit dogs are happy dogs</p>
       <br><br>
       <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
       <br><br>
+    </div>
+    <div class="container text-center" id="banner-scroll">
       <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
       How it works <br><i class="fa fa-angle-double-down fa-3x"></i>
       <% end %>
