@@ -54,30 +54,57 @@ puts "Done with Parks."
 puts "Now I'll make some users..."
 
 
-#create 9 users
+#the not assigned runner
 not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456")
 puts "not_assigned is done."
 
+# 4 regular runners
 peter = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
-peter.photo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/PeterYarrowByPhilKonstantin.jpg/220px-PeterYarrowByPhilKonstantin.jpg"
+peter.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzdzqVCwWFUTdzOY7I8G67Pesaa1VDnYtNF0Ao1JKDaWKL1fILg"
 puts "Peter's done."
 
+laura = User.create(address: 'Oranienstraße 17, Berlin', street: 'Oranienstraße 17', city: "Berlin", email: "laura@wagon.com", role: "runner", first_name: "Laura", last_name: "Walde", password:"123456", password_confirmation: "123456", description: "Love to run and love dogs")
+laura.photo_url = "https://3.bp.blogspot.com/-gPijdlX8OIU/VznOg-yGhgI/AAAAAAAAISQ/Opo_cshCHAYzm3_mwpsEHX5IieDMIARyQCLcB/s400/IMG_20160513_191456.jpg"
+puts "Laura's done."
+
+michael = User.create(address: 'Kurfürstendamm 90, Berlin', street: 'Kurfürstendamm 90', city: "Berlin", email: "michael@wagon.com", role: "runner", first_name: "Michael", last_name: "Wiezcorek", password:"123456", password_confirmation: "123456", description: "passionate runner - even more fun with dogs")
+michael.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXSTNW3mJAZ2d1ml-2P9uZ8oilHgix9CkclIpXt3lBHXibrbxhQ"
+puts "Michael's done."
+
+alice = User.create(address: 'Simon Dach Straße 12, Berlin', street: 'Simon Dach Straße 12', city: "Berlin", email: "alice@wagon.com", role: "runner", first_name: "Alice", last_name: "Ducray", password:"123456", password_confirmation: "123456", description: "a home without a dog is just a house")
+alice.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3cBPW0B5WJ1sp_B976AmON5DMWJjW-o1kIVm_vYTP9dd0kjQg"
+puts "Alice's done."
+
+# one owner
 stewie = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "stewie@wagon.com", role: "owner", first_name: "Stewie", last_name: "Smith", password:"123456", password_confirmation: "123456", description: "Dog visionaire")
 stewie.photo_url = "http://www.rockstart.com/wp-content/uploads/2012/06/bas-300x300.jpg"
 puts "Stewie's all set."
+puts "Now some dogs for Stewie."
 
-new_dog = Dog.new(user: stewie,
-  name: "Miley",
-  description: "sweet little thing",
-  weight: 10,
-  age: 2,
-  breed: "Beagle")
-new_dog.save!
-new_dog.photo_url = "http://cdn2-www.dogtime.com/assets/uploads/gallery/beagle-puppies/beagle-puppy-4.jpg"
+#2 dogs
+new_dog1 = Dog.new(user: stewie,
+  name: "Snoopy",
+  description: "sweetest dog on earth",
+  weight: 22,
+  age: 8,
+  breed: "Golden Retriever")
+new_dog1.save!
+new_dog1.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBDLkh4nnGjtDAckN5AeXteua_mlB2JieNMpYoU0gdpXTmqiZkA"
 
+new_dog2 = Dog.new(user: stewie,
+  name: "Cesar",
+  description: "a bit lazy but super cool",
+  weight: 8,
+  age: 5,
+  breed: "Pug")
+new_dog2.save!
+new_dog2.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd7tCiMpp4y9ucm8KUj4b9905-eYFZamMnEjjc8P7v_bLCuv1T"
+
+puts "Here are the dogs. Last but not least some runs for Snoopy"
+# 3 runs for snoopy with different runners
 Run.create!(user: peter,
   note: "great run",
-  dog_id: new_dog.id,
+  dog_id: new_dog1.id,
   park_id: 1,
   status: "pending",
   duration: 20,
@@ -85,9 +112,9 @@ Run.create!(user: peter,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
-Run.create!(user: peter,
+Run.create!(user: laura,
   note: "awesome run",
-  dog_id: new_dog.id,
+  dog_id: new_dog1.id,
   status: "ended",
   duration: 10,
   park_id: 2,
@@ -95,9 +122,9 @@ Run.create!(user: peter,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
-Run.create!(user: peter,
+Run.create!(user: alice,
   note: "best run",
-  dog_id: new_dog.id,
+  dog_id: new_dog1.id,
   status: "pending",
   duration: 30,
   park_id: 3,
@@ -105,3 +132,4 @@ Run.create!(user: peter,
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
+puts "Everything done"

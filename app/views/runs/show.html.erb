@@ -4,14 +4,14 @@
       <div class="dog-runner-box box-big white-border-bottom">
         <% if @run.status == "pending" %>
           <h3 class="text-left">
-            <span><%= image_tag "dog_avatar.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+            <span><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px; width: 140px;"}%></span>
             &nbsp; <%= @dog.name %>
           </h3 class="text-left">
         <% else %>
           <h3 class="text-left">
-          <span><%= image_tag "dog_avatar.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+          <span><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
           &nbsp; <%= @dog.name %> and <%= @user.first_name %>
-          <span><%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+          <span><%= image_tag "peter.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
           </h3 class="text-left">
         <% end %>
       </div>
