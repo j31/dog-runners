@@ -1,13 +1,13 @@
 
 .home_banner {
   .banner_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: left;
-  height: 100%;
-  flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 100%;
+    flex-direction: column;
   }
   h1 {
     font-family: $headers-font;
@@ -22,6 +22,21 @@
     color: white;
     font-size: 25px;
     margin: 0px;
+  }
+  #banner-text {
+    flex: 0 0 87%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  a.btn.btn-primary.btn-md {
+    width: 115px;
+  }
+  #banner-scroll a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
   }
 }
 
@@ -51,38 +66,57 @@
     margin-bottom: 17px;
   }
   .icon {
-      font-size: 30px;
-      color: #2ba6cb;
-      margin-bottom: 13px;
+    font-size: 30px;
+    color: #2ba6cb;
+    margin-bottom: 13px;
   }
   h3 {
-      font-family: $headers-font;
-      font-weight: bold;
-      font-size: 20px;
-      border-bottom: 1px solid #2ba6cb;
-      margin-bottom: 14px;
-      padding-bottom: 12px;
-      opacity: 0.8;
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 20px;
+    border-bottom: 1px solid #2ba6cb;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    opacity: 0.8;
+  }
+  .benefits li {
+    z-index: 1;
+    list-style: none;
+
+    font-size: 14px;
+    margin: 5px;
+    font-weight: lighter;
   }
   p {
-      font-family: $body-font;
-      font-weight: medium;
-      font-size: 16px;
-      opacity: 0.8;
+    font-family: $body-font;
+    font-weight: medium;
+    font-size: 16px;
+    opacity: 0.8;
   }
   ul {
-      font-family: $body-font;
-      font-weight: medium;
-      opacity: 0.8;
-      list-style: none;
-      font-size: 16px;
-      color: black;
-      margin: 5px;
-      padding: 0px;
-      line-height: 30px;
+    font-family: $body-font;
+    font-weight: medium;
+    opacity: 0.8;
+    list-style: none;
+    font-size: 16px;
+    color: black;
+    margin: 5px;
+    padding: 0px;
+    line-height: 30px;
   }
   a {
     margin-top: 40px;
   }
+  .benefits li {
+    z-index: 1;
+    list-style: none;
+    font-size: 14px;
+    margin: 5px;
+    font-weight: lighter;
+  }
+}
+
+.scroll-link-home {
+
 }
 
