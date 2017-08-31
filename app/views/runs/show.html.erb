@@ -19,19 +19,19 @@
       <div class="dog-runner-box">
 
         <% if @run.status == "pending"%>
-        <p><span><%= image_tag "sitting.png" %></span>We're searching for your runner...</p>
+        <p><span><%= image_tag "sitting.png" %></span> We're searching for your runner...</p>
         <% elsif @run.status == "confirmed"%>
-        <p><span><%= image_tag "standing.png" %></span><%= @user.first_name %> just accepted your run request...</p>
+        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> just accepted your run request...</p>
         <% elsif @run.status == "coming"%>
-        <p><span><%= image_tag "standing.png" %></span><%= @user.first_name %> is on the way...</p>
+        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> is on the way...</p>
         <% elsif @run.status == "arrived"%>
-        <p><span><%= image_tag "pickup2.png" %></span><%= @user.first_name %> has arrived...</p>
+        <p><span><%= image_tag "pickup2.png" %></span> <%= @user.first_name %> has arrived...</p>
         <% elsif @run.status == "started"%>
-        <p><span><%= image_tag "run.png" %></span>the run has started...</p>
+        <p><span><%= image_tag "run.png" %></span> the run has started...</p>
         <% elsif @run.status == "ended"%>
-        <p><span><%= image_tag "home.png" %></span>the run is finished...</p>
+        <p><span><%= image_tag "home.png" %></span> the run is finished...</p>
         <% else @run.status == "cancelled"%>
-        <p><span><%= image_tag "sad-dog2.png" %></span>We're sorry, your run was cancelled...</p>
+        <p><span><%= image_tag "sad-dog2.png" %></span> We're sorry, your run was cancelled...</p>
         <% end %>
 
       </div>
