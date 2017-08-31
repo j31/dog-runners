@@ -13,8 +13,15 @@
 
         <div class="dog-runner-box">
         <h3>When &amp; Where</h3>
-          <p><%= @run.appointment.to_formatted_s(:short)   %></p>
-          <p>We'll meet you at: <%= @run.address %></p>
+
+
+          <p>Date: <%= @run.appointment.to_date %>
+          </p>
+          <p>Pick-up window: <%= @run.appointment.to_formatted_s(:time) %> -
+          <%= (@run.appointment.time + 3600).to_formatted_s(:time) %>
+          </p>
+
+          <p>Location: <%= @run.address %></p>
 
         </div>
 
