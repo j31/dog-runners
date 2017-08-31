@@ -1,14 +1,11 @@
 
-<div class="banner styled-bg-container bg-position-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
-
-
-  <div class="banner-content">
+<div class="home_banner styled-bg-container bg-position-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
+  <div class="banner_content">
     <div class="container">
       <h1><i class="fa fa-heart"></i><br>Dog<br>Runners</i></h1>
       <p>Fit dogs are happy dogs</p>
       <br><br>
-
-      <span><%= link_to "Learn More", "#howItWorks", class: "btn btn-default btn-md" %>
+      <span><%= link_to "Learn More", "#HowItWorks", class: "btn btn-default btn-md" %>
         &nbsp;&nbsp;
         <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
       </span>
@@ -17,14 +14,14 @@
 </div>
 
 
-<div class="homeContentWrapper">
+<div class="home_box_wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
 
-        <a name="howItWorks"></a>
-        <div class="dog-runner-box home_box">
-          <div class="col-xs-12"><h3 class="text-center">How it Works</h3></div>
+        <a name="HowItWorks"></a>
+        <div class="home_box">
+          <h3 class="text-center">How it Works</h3>
           <div class="col-xs-4 text-center">
             <p class="number text-center">1</p>
             <i class="fa fa-paw icon" aria-hidden="true"></i>
@@ -40,41 +37,51 @@
             <i class="fa fa-map-marker icon" aria-hidden="true"></i>
             <p class="text">Track your Dog</p>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="dog-runner-box benefits">
-          <div class="text-center"><h3>Benefits of Running</h3></div>
-          <div class="benefitsContent">
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
+          <div class="text-center">
+
+            <span><%= link_to "Learn More", "#Benefits", class: "btn btn-default btn-md" %>&nbsp;&nbsp;
+              <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %></span>
+            </div>
+          </div>
+
+          <a name="Benefits"></a>
+          <div class="home_box">
+            <div class="text-center"><h3>Benefits of Running</h3></div>
+            <div class="benefitsContent">
+              <ul>
+                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
+                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
+                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
+                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <span><%= link_to "Learn More", "#WhyDogRunners", class: "btn btn-default btn-md" %>&nbsp;&nbsp;
+                <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %></span>
+              </div>
+            </div>
+
+            <a name="WhyDogRunners"></a>
+            <div class="home_box">
+              <div class="text-center"><h3>Why Dog Runners?</h3></div>
+              <div class="benefitsContent">
+                <ul>
+                  <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
+                  <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
+                  <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
+                  <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
+                </ul>
+              </div>
+              <div class="text-center">
+                <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
     </div>
-
-
-  <a name="whyDogRunners"></a>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="dog-runner-box benefits">
-          <div class="text-center"><h3>Why Dog Runners?</h3></div>
-          <div class="benefitsContent">
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
-            <li><i class="fa fa-paw icon" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
