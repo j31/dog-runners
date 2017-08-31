@@ -58,6 +58,6 @@ class RunsController < ApplicationController
 private
 
   def run_params
-    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id)
+    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id, :address, :longitude, :latitude)
   end
 end
