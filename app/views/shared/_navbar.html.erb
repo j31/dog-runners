@@ -1,14 +1,18 @@
 <div class="mobile-header">
 
+
+<div class="navbar-wagon-brand"> <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%= image_tag "icon-blue-dog.png", class: "opacity-80" %>
+    <% end %></div>
+
 <%= render 'shared/flashes' %>
 
   <div class="menu-toggle">
-    <div class="line"></div>
-    <div class="line"></div>
+    <div class="menu-line"></div>
+    <div class="menu-line"></div>
   </div>
 
 </div>
-
 
 
 <div class="mobile-nav">
@@ -24,17 +28,6 @@
     <% end %>
   </ul>
 </div>
-
-
-
-
-  <!-- Logo
-
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "icon-blue-dog.png", class: "opacity-80" %>
-  <% end %>
-
-  -->
 
 
 
