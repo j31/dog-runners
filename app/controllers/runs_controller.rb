@@ -9,6 +9,8 @@ class RunsController < ApplicationController
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
+    @run.appointment = Time.now
+    @run.price = @run.duration/2 + 10
 
     if @run.save
       redirect_to confirm_path(@run)
