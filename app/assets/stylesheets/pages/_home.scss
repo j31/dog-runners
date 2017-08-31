@@ -43,16 +43,17 @@
 .home_box_wrapper {
   height: 100%;
   background-color: $dog-runner-bg-color;
-  background-color: rgba(43,166,203,0.7);
+
   display: block;
 }
 
 .home_box {
   background: #f9f9f9;
   padding: 30px;
-  margin: 10px 0;
   border-radius: 4px;
   height: 70vh;
+  width: 370px;
+  margin: 85px auto 0 auto;
 
   .number {
     border: 1px solid #2ba6cb;
@@ -66,7 +67,7 @@
     margin-bottom: 17px;
   }
   .icon {
-    font-size: 30px;
+    font-size: 45px;
     color: #2ba6cb;
     margin-bottom: 13px;
   }
@@ -75,7 +76,7 @@
     font-weight: bold;
     font-size: 20px;
     border-bottom: 1px solid #2ba6cb;
-    margin-bottom: 14px;
+    margin-bottom: 30px;
     padding-bottom: 12px;
     opacity: 0.8;
   }
@@ -98,7 +99,7 @@
     font-weight: medium;
     opacity: 0.8;
     list-style: none;
-    font-size: 16px;
+    font-size: 14px;
     color: black;
     margin: 5px;
     padding: 0px;
@@ -114,5 +115,11 @@
     margin: 5px;
     font-weight: lighter;
   }
+}
+
+.scroll-link a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.7;
 }
 

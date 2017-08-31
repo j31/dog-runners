@@ -16,6 +16,14 @@
   }
 }
 
+.home_box_wrapper {
+  .box-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .box-small {
   padding: 10px 0;
 }
