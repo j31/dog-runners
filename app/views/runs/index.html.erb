@@ -1,25 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col col-xs-12">
-      <h1>See <%= @dog.name %>'s runs</h1>
+
+
+      <h1>Run History</h1>
+
+      <% if @runs %>
       <% @runs.each do |run| %>
-
-       <div class="card">
-            <%= image_tag("https://gearjunkie.com/legacy/images/5214.jpg") %>
-            <div class="card-description">
-              <h2><%= run.duration  %> run
-              <% if run.appointment != nil %>
-                on <%= l(run.appointment, format: :long) %></h2>
-              <% end %>
-              <h3><%= @user.first_name %> | <%= run.note %></h3>
-            </div>
-            <%= link_to run_path(run.id), class: "card-link" do %>
-            <% end %>
-        </div>
-
       <% end %>
+<!-- put runs here
+link them here link_to run_path(run.id) -->
 
+      <% else %>
+      <p>You don't have any runs yet.</p>
+      <%= button_to 'Book a Run', new_run_path, method: :get, class: "btn btn-primary btn-md" %>
+      <% end %>
     </div>
   </div>
 </div>
+
 

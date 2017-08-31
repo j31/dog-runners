@@ -4,11 +4,15 @@ class RunsController < ApplicationController
   def new
     @run = Run.new
     @dogs = current_user.dogs
+    @run.address = current_user.address
   end
 
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
+    @run.appointment = Time.now
+
+    @run.price = @run.duration/2 + 10
 
     if @run.save
       redirect_to confirm_path(@run)
@@ -58,6 +62,6 @@ class RunsController < ApplicationController
 private
 
   def run_params
-    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id)
+    params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id, :address, :longitude, :latitude)
   end
 end

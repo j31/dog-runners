@@ -7,24 +7,37 @@
       <br>
 
         <div class="dog-runner-box">
-          <h3><%= @run.dog.name %> is going for a run.</3>
-        </div>
-
-        <div class="dog-runner-box">
-          <p>Date & Time: <%= @run.appointment %></p>
-          <p>Pick-up point: <%= @run.dog.user.address %></p>
+          <h3><%= @run.dog.name %> is going for a run.</h3>
           <p>Duration run: <%= @run.duration %></p>
         </div>
 
         <div class="dog-runner-box">
-          <p><%= @run.price %></p>
-          <p><%= @run.note %></p>
+        <h3>When &amp; Where</h3>
+
+
+          <p>Date: <%= @run.appointment.to_date %>
+          </p>
+          <p>Pick-up window: <%= @run.appointment.to_formatted_s(:time) %> -
+          <%= (@run.appointment.time + 3600).to_formatted_s(:time) %>
+          </p>
+
+          <p>Location: <%= @run.address %></p>
+
+        </div>
+
+        <div class="dog-runner-box">
+        <h3>Pricing &amp; Terms</h3>
+          <p>Run:  <%= number_to_currency(@run.duration/2) %></p>
+          <p>Home pick-up:  <%= number_to_currency(10) %></p>
+          <p>Total: <%= number_to_currency(@run.price) %></p>
+          <p><a href="#">See terms in detail</a></p>
         </div>
 
 
         <div class="dog-runner-box">
           <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
 
+            <%= link_to "Make Changes", :back, class: "btn btn-default btn-width-to-fit"  %>
             <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
           <% end %>
         </div>

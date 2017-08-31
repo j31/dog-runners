@@ -17,6 +17,9 @@
           <%= f.label 'How many minutes?' %>
           <%= f.input :duration, label: false, collection: [10, 20, 30] %>
 
+          <%= f.label 'Pick-up Location' %>
+          <%= f.input :address, label: false %>
+
           <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
 
       <% end %>
