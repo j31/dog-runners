@@ -1,21 +1,27 @@
-<div class="container">
+<div class="container form-container text-center" id="new-dog">
   <div class="row">
     <div class=".col col-xs-12">
 
-       <%= simple_form_for @dog do |f| %>
+      <h2>Add your dog!</h2>
 
-        <%= f.input :name %>
-        <%= f.input :description %>
-
-
-        <%= f.input :photo, as: :attachinary %>
-        <%= f.input :note %>
-
-        <%= f.input :breed %>
-        <%= f.input :age %>
-        <%= f.input :weight %>
-
+      <%= simple_form_for @dog do |f| %>
+      <div class="form-inputs">
+        <div class="form-text-inputs">
+          <%= f.input :name, label:false, placeholder: "Your dog's name"%>
+          <%= f.input :breed, label:false, placeholder: "Your dog's breed" %>
+          <%= f.input :description, label:false, placeholder: "Tell us about your dog" %>
+          <br>
+          <%= f.input :note, label:false, placeholder: "Note:" %>
+          <%= f.input :age, label:false, placeholder: "Age" %>
+          <%= f.input :weight, label:false, placeholder: "Weight" %>
+          <br><br>
+          <%= f.input :photo, as: :attachinary, label: "Add a photo:" %>
+          <br>
+        </div>
+      </div>
+      <div class="form-actions">
         <%= f.button :submit %>
+      </div>
       <% end %>
 
     </div>
