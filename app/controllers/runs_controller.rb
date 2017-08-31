@@ -45,17 +45,23 @@ class RunsController < ApplicationController
   end
 
   def index
-    # if you have a dog and he has had a run before
-    if current_user.dogs != [] && Run.all.select { |r| r.dog_id == current_user.dogs.first.id } != []
-    # select all the runs of your dog
-     @runs = Run.all.select { |r| r.dog_id == current_user.dogs.first.id }
-     # get the runner (for displaying him on the index page)
-     @user = User.find(@runs.first.user_id)
-     # get the dog for displaying him too
-     @dog = Dog.find(@runs.first.dog_id)
-    else
-      redirect_to root_path
-    end
+    # # if you have a dog and he has had a run before
+    # if current_user.dogs != [] && Run.all.select { |r| r.dog_id == current_user.dogs.first.id } != []
+    # # select all the runs of your dog
+    #  @runs = Run.all.select { |r| r.dog_id == current_user.dogs.first.id }
+    #  # get the runner (for displaying him on the index page)
+    #  @user = User.find(@runs.first.user_id)
+    #  # get the dog for displaying him too
+    #  @dog = Dog.find(@runs.first.dog_id)
+
+    # @parks = Park.all?
+    # @dogs = current_user.dogs
+    # @dogs = current_user.dogs
+    # @runs = Run.find(@dogs)
+    # @parks = Park.find(@runs)
+
+    @runs = Run.where(user_id: current_user.id)
+
   end
 
 

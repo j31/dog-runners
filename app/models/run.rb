@@ -1,7 +1,7 @@
 class Run < ApplicationRecord
   belongs_to :dog
   belongs_to :user
-  # belongs_to :park
+  belongs_to :park
 
   has_one :review
 

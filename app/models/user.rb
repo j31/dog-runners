@@ -6,10 +6,13 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: [:facebook]
 
   has_many :dogs, dependent: :destroy
+  has_many :runs, through: :dogs
+
   has_many :runs, dependent: :destroy
   has_many :reviews, through: :runs, dependent: :destroy
 
   enum role: { owner: 0, runner: 1, admin: 2 }
+
 
 
   def self.find_for_facebook_oauth(auth)
