@@ -5,6 +5,11 @@ class PagesController < ApplicationController
   end
 
   def secret
+    @hash = Gmaps4rails.build_markers(current_user) do |user, marker|
+      marker.lat current_user.latitude
+      marker.lng current_user.longitude
+    end
+
     @runs = Run.all
     @all_my_runs = []
     @runs.each do |run|
@@ -12,6 +17,10 @@ class PagesController < ApplicationController
         @all_my_runs << run
       end
     end
+
+
+
+
   end
 
 

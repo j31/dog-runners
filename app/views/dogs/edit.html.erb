@@ -1,2 +1,38 @@
-<h1>Dogs#edit</h1>
-<p>Find me in app/views/dogs/edit.html.erb</p>
+<div class="container">
+  <%= simple_form_for @dog do |f| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+    <h1>Update <%= @dog.name %></h1>
+      <%= f.input :name %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+      <%= f.input :description %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+      <%= f.input :photo, as: :attachinary %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-3 col-lg-1 col-lg-offset-4">
+      <%= f.input :breed %>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-lg-3">
+      <%= f.input :weight %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-2 col-sm-offset-3 col-lg-1 col-lg-offset-4">
+      <%= f.input :age %>
+    </div>
+    <div class="col-xs-12 col-sm-2 col-lg-1">
+      <%= f.input :note %>
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+      <br>
+      <%= f.button :submit, class: "btn btn-primary btn-width-to-fit" %>
+    </div>
+    <% end %>
+  </div>
+</div>

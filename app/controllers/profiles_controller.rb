@@ -11,6 +11,8 @@ class ProfilesController < ApplicationController
   end
 
   def update
+    @profile.address = "#{@profile.street}, #{@profile.city}"
+    @profile.save
     if @profile.update(user_params)
       flash[:notice] = "Your profile was updated!"
       @user = User.find(params[:id])
