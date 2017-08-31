@@ -16,11 +16,11 @@ puts "Destroyed old data.  Now I'll make some users..."
 not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456")
 puts "not_assigned is done."
 
-peter = User.create(email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
+peter = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
 peter.photo_url = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/PeterYarrowByPhilKonstantin.jpg/220px-PeterYarrowByPhilKonstantin.jpg"
 puts "Peter's done."
 
-stewie = User.create(email: "stewie@wagon.com", role: "owner", first_name: "Stewie", last_name: "Smith", password:"123456", password_confirmation: "123456", description: "Dog visionaire")
+stewie = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "stewie@wagon.com", role: "owner", first_name: "Stewie", last_name: "Smith", password:"123456", password_confirmation: "123456", description: "Dog visionaire")
 stewie.photo_url = "http://www.rockstart.com/wp-content/uploads/2012/06/bas-300x300.jpg"
 puts "Stewie's all set."
 
@@ -38,6 +38,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 20,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -46,6 +47,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "ended",
   duration: 10,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
@@ -54,6 +56,7 @@ Run.create!(user: peter,
   dog_id: new_dog.id,
   status: "pending",
   duration: 30,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
   price: rand(5..25),
   appointment: Date.new(2017, 8, rand(26..30)))
 
