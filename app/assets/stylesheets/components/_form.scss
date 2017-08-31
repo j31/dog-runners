@@ -1,3 +1,6 @@
+#new-dog {
+  height: 825px;
+}
 .form-container {
   height: 90vh;
   width: 100vw;
@@ -55,10 +58,38 @@
   }
   .form-actions {
     .btn.btn-default {
-    background-color: $dog-runner-color;
-    color: white;
-    border: 2px solid white;
-    width: 225px;
+      background-color: $dog-runner-color;
+      color: white;
+      border: 2px solid white;
+      width: 225px;
+    }
+  }
+  .attachinary {
+    label {
+      font-weight: lighter;
+    }
+    input {
+      padding-left: 88px;
+      border: none !important;
+    }
+  }
+  .attachinary_container {
+    ul {
+      padding-left:0px;
+      li {
+        position:relative;
+        display: inline-block;
+        a {
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          text-align: center;
+          color: white;
+          background-color: rgba(0,0,0,0.85);
+        }
+      }
     }
   }
 }
+
+
