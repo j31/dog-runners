@@ -16,6 +16,18 @@ class DogsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @dog.update(dog_params)
+      flash[:notice] = "Your dog was updated!"
+      redirect_to profile_path(@dog.user)
+    else
+      render :new, alert: "Error creating user."
+    end
+  end
+
   private
 
   def set_dog
