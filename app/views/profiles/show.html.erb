@@ -1,46 +1,35 @@
 <div class="container">
-  <div class="row">
-    <div class=".col col-xs-12">
 
-      <h1>Profile</h1>
+  <h1>Profile</h1>
 
-
-      <div class="dog-runner-box">
-        <p>Your Details</p>
-        <%= link_to "Add Your Details", edit_profile_path, method: :get, class: "btn btn-primary btn-lg" %>
-      </div>
+  <div class="dog-runner-box">
+    <%= link_to "Edit Your Address", edit_profile_path, method: :get, class: "btn btn-primary btn-lg" %>
+  </div>
 
 
-      <div class="dog-runner-box">
-
-
-        <p>Your Dog(s)</p>
-          <% @user.dogs.each do |dog| %>
-
-        <div class="card">
-        <%= cl_image_tag dog.photo.path, height: 200, width: 340, crop: :fill %>
-        <div class="card-description">
-          <h1><%= dog.name %></h1>
-          <p><%= dog.note %></p>
-        </div>
-        <%= link_to edit_dog_path(dog), class: "card-link" do %>
-            <% end %>
-      </div>
-
-
-          <% end %>
-          <br>
-          <%= link_to "Add A Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
-      </div>
-
-
-      <div class="dog-runner-box">
-        <p>Your Email & Password</p>
-        <%= link_to "Edit Email", edit_user_registration_path, method: :get, class: "btn btn-primary btn-lg" %>
-      </div>
+  <div class="dog-runner-box">
+    <div class="row">
+      <% if @user.dogs %>
+        <% @user.dogs.each do |dog| %>
+          <div class="col-xs-6">
+            <div class="card">
+              <% if dog.photo %><%= cl_image_tag dog.photo.path, height: 180, width: 280, crop: :fill %><% end %>
+              <div class="card-description"><h1><%= dog.name %></h1></div>
+              <%= link_to edit_dog_path(dog), class: "card-link" do %><% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
 
     </div>
+    <br><%= link_to "Add A Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
   </div>
+
+
+  <div class="dog-runner-box">
+    <%= link_to "Edit Email & Password", edit_user_registration_path, method: :get, class: "btn btn-primary btn-lg" %>
+  </div>
+
 </div>
 
 
