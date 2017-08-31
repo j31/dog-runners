@@ -1,7 +1,37 @@
+.box-container {
+  background-color: $dog-runner-bg-color;
+  height: 100vh;
+}
+
 .dog-runner-box {
-  background: #f9f9f9;
-  padding: 30px;
-  margin: 10px 0;
-  border-radius: 4px;
+  width: 350px;
+  padding: 30px 0;
+  margin: 10px auto;
+  border-radius: 2px;
   text-align: center;
+  color: white;
+  .btn {
+    border: 2px solid white;
+    width: 70%;
+  }
+}
+
+.box-small {
+  padding: 10px 0;
+}
+
+.box-big {
+  height: 245px;
+}
+
+.white-border {
+  border: 3px solid white;
+}
+
+.white-border-bottom {
+  border-bottom: 1px solid white;
+}
+
+.img-border img {
+  border: 3px solid white;
 }

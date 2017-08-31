@@ -4,7 +4,7 @@
 .form-container {
   height: 90vh;
   width: 100vw;
-  background-color: $dog-runner-color;
+  background-color: $dog-runner-bg-color;
   padding-top: 20px;
   text-align: center;
   h2 {
@@ -58,7 +58,7 @@
   }
   .form-actions {
     .btn.btn-default {
-      background-color: $dog-runner-color;
+      background-color: $dog-runner-bg-color;
       color: white;
       border: 2px solid white;
       width: 225px;

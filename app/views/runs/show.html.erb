@@ -1,18 +1,18 @@
-<div class="container">
+<div class="container box-container">
   <div class="row">
     <div class="col col-xs-12">
-      <div class="dog-runner-box">
+      <div class="dog-runner-box box-big white-border-bottom">
         <% if @run.status == "pending" %>
-          <p>
-          <span><%= image_tag "dog_avatar.jpg", {class: "img-circle", id: "logo", style: "height: 50px;"}%></span>
-          <%= @dog.name %>
-          </p>
+          <h3 class="text-left">
+            <span><%= image_tag "dog_avatar.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+            &nbsp; <%= @dog.name %>
+          </h3 class="text-left">
         <% else %>
-          <p>
-          <span><%= image_tag "dog_avatar.jpg", {class: "img-circle", id: "logo", style: "height: 50px;"}%></span>
-          <%= @dog.name %> and <%= @user.first_name %>
-          <span><%= image_tag "runner_avatar.png", {class: "img-circle", id: "logo", style: "height: 50px;"}%></span>
-          </p>
+          <h3 class="text-left">
+          <span><%= image_tag "dog_avatar.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+          &nbsp; <%= @dog.name %> and <%= @user.first_name %>
+          <span><%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+          </h3 class="text-left">
         <% end %>
       </div>
 
@@ -39,18 +39,18 @@
 
       <% if @run.status == "arrived" || @run.status == "started" || @run.status == "ended" %>
       <!-- start LocaToWeb embed code -->
-        <div class="dog-runner-box">
-          <%= link_to "map of the run!", gps_path, method: :get, class: "btn btn-primary btn-md" %>
+        <div class="dog-runner-box box-small">
+          <%= link_to "Map of the run", gps_path, method: :get, class: "btn btn-primary btn-md" %>
         </div>
       <% else %>
-         <div class="dog-runner-box">
-           <p class="btn btn-primary btn-md">map of the run!</p>
+         <div class="dog-runner-box box-small">
+           <p class="btn btn-primary btn-md">Map of the run</p>
         </div>
       <% end %>
 
 
-        <div class="dog-runner-box">
-          <%= link_to "check out the run history", runs_path, method: :get, class: "btn btn-primary btn-md" %>
+        <div class="dog-runner-box box-small">
+          <%= link_to "Run history", runs_path, method: :get, class: "btn btn-primary btn-md" %>
         </div>
 
       </div>
