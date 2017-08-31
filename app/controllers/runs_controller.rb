@@ -10,6 +10,7 @@ class RunsController < ApplicationController
     @run = Run.new(run_params)
     @run.user_id = 1
     @run.appointment = Time.now
+    @run.address = @run.dog.user.address
     @run.price = @run.duration/2 + 10
 
     if @run.save
