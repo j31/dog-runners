@@ -5,10 +5,10 @@ var menu = "close";
 $(".mobile-header .menu-toggle").click(function() {
 
     if (menu === "close") {
-        $(".mobile-nav").css("transform", "translate(0, 0)");
+        $(".mobile-nav").css("transform", "translate(100%, 0)");
        menu = "open";
     } else {
-        $(".mobile-nav").css("transform", "translate(-100%, 0)");
+        $(".mobile-nav").css("transform", "translate(200%, 0)");
         menu = "close";
     }
 });
