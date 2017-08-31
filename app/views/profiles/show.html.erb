@@ -12,9 +12,22 @@
 
 
       <div class="dog-runner-box">
+
+
         <p>Your Dog(s)</p>
           <% @user.dogs.each do |dog| %>
-            <%= dog.name %><br>
+
+        <div class="card">
+        <%= cl_image_tag dog.photo.path, height: 200, width: 340, crop: :fill %>
+        <div class="card-description">
+          <h1><%= dog.name %></h1>
+          <p><%= dog.note %></p>
+        </div>
+        <%= link_to edit_dog_path(dog), class: "card-link" do %>
+            <% end %>
+      </div>
+
+
           <% end %>
           <br>
           <%= link_to "Add A Dog", new_dog_path, method: :get, class: "btn btn-primary btn-lg" %>
