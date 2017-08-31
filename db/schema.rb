@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 20170831091808) do
     t.integer "duration"
     t.decimal "price"
     t.string "note"
-    t.boolean "confirmed"
     t.bigint "park_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
