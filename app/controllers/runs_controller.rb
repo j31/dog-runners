@@ -1,5 +1,5 @@
 class RunsController < ApplicationController
-
+require 'message_sender'
 
   def new
     @run = Run.new
@@ -12,8 +12,8 @@ class RunsController < ApplicationController
     @run.appointment = Time.now
     @run.address = @run.dog.user.address
     @run.price = @run.duration/2 + 10
-
     if @run.save
+      send_initial_notification(@run)
       redirect_to confirm_path(@run)
     else
       puts @run.errors.full_messages
@@ -57,10 +57,34 @@ class RunsController < ApplicationController
     end
   end
 
+  def send_initial_notification(run)
+    message = "Hey #{run.dog.user.first_name} need someone to run #{run.dog.name}"
+    notify(message)
+  end
 
 private
+
+
+  def notify(message)
+    MessageSender.send_message(
+      @run.id, "placeholder for phone number", message)
+  end
+
+  def redirect_with_error
+    message = "An error has occurred updating the order status"
+    redirect_to orders_url, flash: { error: message }
+  end
+
+  def load_run
+    @run = Run.find(params[:id])
+  end
+
+  def record_not_found
+    render 'shared/404', status: 404, layout: false
+  end
 
   def run_params
     params.require(:run).permit(:dog_id, :status, :appointment, :duration, :price, :note, :park_id, :address, :longitude, :latitude)
   end
+
 end

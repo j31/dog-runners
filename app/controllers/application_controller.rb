@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
-
+  # twillo
+  protect_from_forgery with: :exception
 
   private
 

@@ -18,6 +18,7 @@ gem 'rails_admin', '>= 1.0.0.rc'
 
 # translate
 gem 'rails-i18n', '5.0.3'
+gem 'twilio-ruby'
 
 
 gem 'omniauth-facebook'
