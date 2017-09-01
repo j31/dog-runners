@@ -9,10 +9,7 @@ class PagesController < ApplicationController
       marker.lat current_user.latitude
       marker.lng current_user.longitude
     end
-
-    puts @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
-
-
+    @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
     @runs = Run.all
     @all_my_runs = []
     @runs.each do |run|
@@ -20,10 +17,6 @@ class PagesController < ApplicationController
         @all_my_runs << run
       end
     end
-
-
-
-
   end
 
 
@@ -34,6 +27,7 @@ class PagesController < ApplicationController
   end
 
   def gps
+    @run = Run.find(params[:run_id])
   end
 
 private

@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
 Dog.destroy_all
@@ -49,10 +42,7 @@ p = Park.new(
 
 puts "Done with Parks."
 
-
-
 puts "Now I'll make some users..."
-
 
 #the not assigned runner
 not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456")
@@ -110,6 +100,8 @@ Run.create!(user: peter,
   duration: 20,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 20,
+  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
+<script>var ltwtrackurl='single/1257113437';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: laura,
@@ -120,6 +112,8 @@ Run.create!(user: laura,
   park_id: 2,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 10,
+  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
+<script>var ltwtrackurl='single/1258113438';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: alice,
@@ -130,6 +124,8 @@ Run.create!(user: alice,
   park_id: 3,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 15,
+  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
+<script>var ltwtrackurl='single/1258113439';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 puts "Everything done"

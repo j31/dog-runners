@@ -40,7 +40,7 @@
       <% if @run.status == "arrived" || @run.status == "started" || @run.status == "ended" %>
       <!-- start LocaToWeb embed code -->
         <div class="dog-runner-box box-small">
-          <%= link_to "Map of the run", gps_path, method: :get, class: "btn btn-primary btn-md" %>
+          <%= link_to "Map of the run", run_gps_path, method: :get, class: "btn btn-primary btn-md" %>
         </div>
       <% else %>
          <div class="dog-runner-box box-small">
