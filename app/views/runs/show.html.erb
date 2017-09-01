@@ -33,7 +33,7 @@
 
          <span id="runner-avatar">
           <% if @user.photo %>
-          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px;") %>
+          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px; width: 140px;") %>
           <% else %>
 
           <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
