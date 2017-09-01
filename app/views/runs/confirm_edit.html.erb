@@ -37,18 +37,15 @@
         <div class="dog-runner-box white-border form-actions">
 
 
-  
+
 
           <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
 
             <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
           <% end %>
           <br>
-          <%= link_to "Make Changes", :back, input_html: { id: "showOldValues" } %>
+          <%= link_to "Make Changes", edit_run_path(@run), input_html: { id: "showOldValues" } %>
         </div>
-
-
-
 
         </div>
       </div>

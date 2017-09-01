@@ -7,6 +7,21 @@ require 'message_sender'
     @run.address = current_user.address
   end
 
+  def edit
+    @run = Run.find(params[:id])
+    @dogs = current_user.dogs
+  end
+
+  def update
+    @run = Run.find(params[:id])
+    if @run.update(run_params)
+      redirect_to confirm_path(@run)
+    else
+      puts @run.errors.full_messages
+      render :edit
+    end
+  end
+
   def create
     @run = Run.new(run_params)
     @run.user_id = 1
