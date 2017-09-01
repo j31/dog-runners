@@ -7,70 +7,109 @@
         <% if @run.status == "pending" %>
 
         <div class="text-left">
-          <%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+
+          <% if @dog.photo %>
+          <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px;") %>
+          <% else %>
+          <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+          <% end %>
           <br>
           <h3><%= @dog.name %></h3>
         </div>
 
-
         <% else %>
 
-         <div id="run-avatar">
-          <span id="dog-avatar"><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
-          <span id="runner-avatar"><%= image_tag "peter.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
-          </span>
-        </div>
-          <br>
+        <div id="run-avatar">
 
-          <h3><%= @dog.name %> & <%= @user.first_name %></h3>
+          <span id="dog-avatar">
 
-        <% end %>
+           <% if @dog.photo %>
+           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px;") %>
+           <% else %>
+           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+           <% end %>
+
+         </span>
+
+         <span id="runner-avatar">
+          <% if @user.photo %>
+          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px; width: 140px;") %>
+          <% else %>
+
+          <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+          <% end %>
+        </span>
+      </div>
+      <br>
+
+      <h3><%= @dog.name %> & <%= @user.first_name %></h3>
 
 
       </div>
 
-      <div class="dog-runner-box">
 
-        <% if @run.status == "pending"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "sitting.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're searching for your runner...</div>
-        <% elsif @run.status == "confirmed"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> just accepted your run request...</div>
-        <% elsif @run.status == "coming"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> is on the way...</div>
-        <% elsif @run.status == "arrived"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "pickup2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> has arrived...</div>
-        <% elsif @run.status == "started"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "run.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run has started...</div>
-        <% elsif @run.status == "ended"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "home.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run is finished...</div>
-        <% else @run.status == "cancelled"%>
-        <div class="run-status"><span id="status-smybol"><%= image_tag "sad-dog2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're sorry, your run was cancelled...</div>
-        <% end %>
-
-      </div>
-      <br>
-      <br>
-      <br>
-
-      <% if @run.status == "arrived" || @run.status == "started" || @run.status == "ended" %>
-      <!-- start LocaToWeb embed code -->
-        <div class="dog-runner-box box-small">
-          <%= link_to "Map of the run", run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" %>
-        </div>
-      <% else %>
-         <div class="dog-runner-box box-small">
-           <p class="btn btn-primary btn-md">Map of the run</p>
-        </div>
       <% end %>
 
 
-        <div class="dog-runner-box box-small">
-          <%= link_to "Run history", runs_path, method: :get, class: "btn btn-primary btn-md" %>
-        </div>
 
-      </div>
     </div>
+
+    <div class="dog-runner-box">
+
+      <% if @run.status == "pending"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "sitting.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're searching for your runner...</div>
+      <% elsif @run.status == "confirmed"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> just accepted your run request...</div>
+      <% elsif @run.status == "coming"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> is on the way...</div>
+      <% elsif @run.status == "arrived"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "pickup2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> has arrived...</div>
+      <% elsif @run.status == "started"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "run.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run just started...</div>
+      <% elsif @run.status == "ended"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "home.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run is finished...</div>
+      <% else @run.status == "cancelled"%>
+      <div class="run-status"><span id="status-smybol"><%= image_tag "sad-dog2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're sorry, your run was cancelled...</div>
+      <% end %>
+
+    </div>
+      <br>
+      <br>
+      <br>
+
+    <% if @run.status == "arrived" || @run.status == "started" || @run.status == "ended" %>
+    <!-- start LocaToWeb embed code -->
+    <div class="dog-runner-box box-small">
+      <%= link_to "Map of the run", run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" %>
+    </div>
+
+
+
+    <% end %>
+
+
+    <div class="dog-runner-box box-small">
+      <%= link_to "Run history", runs_path, method: :get, class: "btn btn-primary btn-md" %>
+    </div>
+
   </div>
+</div>
+</div>
+
+
+
+<!-- refresh page every few seconds....(to change running status with admin) -->
+<%= content_for :after_js do %>
+<script>
+  $(function(){
+    setTimeout(function(){
+     window.location.reload(1);
+   }, 5000);
+  });
+</script>
+<% end %>
+
+
 
 
 

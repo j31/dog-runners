@@ -27,9 +27,9 @@
 
         <div class="dog-runner-box">
         <h3>Pricing &amp; Terms</h3>
-          <p>Run:  <%= number_to_currency(@run.duration/2) %></p>
-          <p>Home pick-up:  <%= number_to_currency(10) %></p>
-          <p>Total: <%= number_to_currency(@run.price) %></p>
+          <p>Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %></p>
+          <p>Home pick-up:  <%= number_to_currency(10, :unit=>'€') %></p>
+          <p>Total: <%= number_to_currency(@run.price, :unit=>'€') %></p>
           <p><a href="#">See terms in detail</a></p>
         </div>
 
