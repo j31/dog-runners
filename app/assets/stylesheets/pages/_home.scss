@@ -48,7 +48,7 @@
   padding: 30px;
   border-radius: 4px;
   height: 70vh;
-  width: 370px;
+  width: 355px;
   margin: 85px auto 0 auto;
 
   .number {
@@ -76,18 +76,10 @@
     padding-bottom: 12px;
     opacity: 0.8;
   }
-  .benefits li {
-    z-index: 1;
-    list-style: none;
-
-    font-size: 14px;
-    margin: 5px;
-    font-weight: lighter;
-  }
   p {
     font-family: $body-font;
     font-weight: medium;
-    font-size: 16px;
+    font-size: 15px;
     opacity: 0.8;
   }
   ul {

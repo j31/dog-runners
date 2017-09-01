@@ -1,26 +1,30 @@
-<div class="container">
+<div class="container form-container text-center" id="new-dog">
   <div class="row">
     <div class=".col col-xs-12">
 
-       <%= simple_form_for(@user, url: profile_path(@profile), method: :patch, html: { class: "form-group"}) do |f| %>
+    <h2>Edit your profile</h2>
 
-        <%= f.input :first_name %>
-        <%= f.input :last_name %>
+     <%= simple_form_for(@user, url: profile_path(@profile), method: :patch, html: { class: "form-group"}) do |f| %>
+     <div class="form-inputs">
+      <div class="form-text-inputs">
+      <%= f.input :first_name, label: false, placeholder: "First Name" %>
+        <%= f.input :last_name, label: false, placeholder: "Last Name" %>
 
+        <%= f.input :description, label: false, placeholder: "Description" %>
 
-        <%= f.input :photo, as: :attachinary %>
-        <%= f.input :description %>
-
-        <%= f.input :street %>
-        <%= f.input :city %>
-        <%= f.input :state %>
-        <%= f.input :country, as: :string %>
-        <%= f.input :zip %>
-
-
-        <%= f.button :submit %>
-      <% end %>
-
+        <%= f.input :street, label: false, placeholder: "Street" %>
+        <%= f.input :city, label: false, placeholder: "City" %>
+        <%= f.input :state, label: false, placeholder: "State" %>
+        <%= f.input :country, as: :string, label: false, placeholder: "Country" %>
+        <%= f.input :zip, label: false, placeholder: "Zip Code" %>
+        <%= f.input :photo, as: :attachinary, label: "Add a photo" %>
+      </div>
     </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+    <% end %>
+
   </div>
+</div>
 </div>
