@@ -50,9 +50,9 @@ not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", pass
 puts "not_assigned is done."
 
 # RUNNER ID 2
-peter = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "peter@wagon.com", role: "runner", first_name: "Peter", last_name: "Griffin", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
-peter.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzdzqVCwWFUTdzOY7I8G67Pesaa1VDnYtNF0Ao1JKDaWKL1fILg"
-puts "Peter's done."
+john = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "john@wagon.com", role: "runner", first_name: "John", last_name: "Fish", password:"666666", password_confirmation: "666666", description: "Dog enthusiast")
+john.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzdzqVCwWFUTdzOY7I8G67Pesaa1VDnYtNF0Ao1JKDaWKL1fILg"
+puts "John's done."
 
 # RUNNER ID 3
 laura = User.create(address: 'Oranienstraße 17, Berlin', street: 'Oranienstraße 17', city: "Berlin", email: "laura@wagon.com", role: "runner", first_name: "Laura", last_name: "Walde", password:"123456", password_confirmation: "123456", description: "Love to run and love dogs")
@@ -96,7 +96,7 @@ new_dog2.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd7t
 
 puts "Here are the dogs. Last but not least some runs for Snoopy"
 # 3 runs for snoopy with different runners
-Run.create!(user: peter,
+Run.create!(user: john,
   note: "great run",
   dog_id: new_dog1.id,
   park_id: 1,
