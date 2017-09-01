@@ -1,19 +1,38 @@
-<div class="container box-container">
+
+<div class="container form-container">
+
   <div class="row">
-    <div class="col col-xs-12">
-
-
-      <h1>Run History!</h1>
-
-        <% @runs.each do |run| %>
-          <p><%= link_to "Make Changes", run_path(run) %></p>
-          <%= cl_image_tag run.park.photo.path, height: 180, width: 280, crop: :fill %>
-          <p><%= run.appointment %></p>
-          <p><%= run.duration %></p>
-          <p><%= run.status %></p>
-        <% end %>
-
+    <div class="col col-xs-12 text-center">
+      <h2>Run History</h2>
+      <p>This page has not been styled yet!</p>
+      <br>
     </div>
   </div>
+
+  <% @runs.each do |run| %>
+
+    <div class="row">
+      <div class="col col-xs-2">
+        <% if run.park_id %>
+          <%= cl_image_tag run.dog.photo.path, height: 50, width: 50 %>
+        <% end %>
+      </div>
+      <div class="col col-xs-4">
+        <p><%= run.appointment %></p>
+      </div>
+      <div class="col col-xs-2">
+        <p><%= run.duration %></p>
+      </div>
+      <div class="col col-xs-2">
+        <p><%= run.status %></p>
+      </div>
+      <div class="col col-xs-2">
+        <p><%= link_to "Go to Run", run_path(run) %></p>
+      </div>
+    </div>
+  <% end %>
+
+
 </div>
+
 
