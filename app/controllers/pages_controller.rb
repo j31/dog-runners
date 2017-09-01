@@ -10,7 +10,7 @@ class PagesController < ApplicationController
       marker.lng current_user.longitude
     end
 
-    puts @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("run_dog.png"), width:36, height:36 })
+    puts @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog.png"), width:50, height:50 })
 
 
     @runs = Run.all
