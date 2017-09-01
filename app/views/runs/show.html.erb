@@ -2,36 +2,49 @@
   <div class="row">
     <div class="col col-xs-12">
       <div class="dog-runner-box box-big white-border-bottom">
+
+
         <% if @run.status == "pending" %>
-          <h3 class="text-left">
-            <span><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px; width: 140px;"}%></span>
-            &nbsp; <%= @dog.name %>
-          </h3 class="text-left">
+
+        <div class="text-left">
+          <%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+          <br>
+          <h3><%= @dog.name %></h3>
+        </div>
+
+
         <% else %>
-          <h3 class="text-left">
-          <span><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
-          &nbsp; <%= @dog.name %> and <%= @user.first_name %>
-          <span><%= image_tag "peter.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
-          </h3 class="text-left">
+
+         <div id="run-avatar">
+          <span id="dog-avatar"><%= image_tag "Snoopy.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%></span>
+          <span id="runner-avatar"><%= image_tag "peter.jpg", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+          </span>
+        </div>
+          <br>
+
+          <h3><%= @dog.name %> & <%= @user.first_name %></h3>
+
         <% end %>
+
+
       </div>
 
       <div class="dog-runner-box">
 
         <% if @run.status == "pending"%>
-        <p><span><%= image_tag "sitting.png" %></span> We're searching for your runner...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "sitting.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're searching for your runner...</div>
         <% elsif @run.status == "confirmed"%>
-        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> just accepted your run request...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> just accepted your run request...</div>
         <% elsif @run.status == "coming"%>
-        <p><span><%= image_tag "standing.png" %></span> <%= @user.first_name %> is on the way...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "standing.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> is on the way...</div>
         <% elsif @run.status == "arrived"%>
-        <p><span><%= image_tag "pickup2.png" %></span> <%= @user.first_name %> has arrived...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "pickup2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp <%= @user.first_name %> has arrived...</div>
         <% elsif @run.status == "started"%>
-        <p><span><%= image_tag "run.png" %></span> the run has started...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "run.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run has started...</div>
         <% elsif @run.status == "ended"%>
-        <p><span><%= image_tag "home.png" %></span> the run is finished...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "home.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp the run is finished...</div>
         <% else @run.status == "cancelled"%>
-        <p><span><%= image_tag "sad-dog2.png" %></span> We're sorry, your run was cancelled...</p>
+        <div class="run-status"><span id="status-smybol"><%= image_tag "sad-dog2.png" %></span>&nbsp&nbsp&nbsp&nbsp&nbsp We're sorry, your run was cancelled...</div>
         <% end %>
 
       </div>
@@ -57,16 +70,6 @@
     </div>
   </div>
 
-<!-- refresh page every few seconds....(to change running status with admin) -->
-  <%= content_for :after_js do %>
-  <script>
-    $(function(){
-      setTimeout(function(){
-   window.location.reload(1);
-}, 5000);
-    });
-  </script>
-  <% end %>
 
 
 
