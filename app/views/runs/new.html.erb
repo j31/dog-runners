@@ -1,27 +1,33 @@
 <div class="container form-container text-center" id="new-dog">
   <div class="row">
     <div class="col-xs-12">
-
       <%= simple_form_for @run do |f| %>
-      <div class="form-inputs">
-        <% if @dogs.size > 1 %>
-        <%= f.label 'Which dog would you like to run?' %>
-        <%= f.input :dog_id, label: false, collection: @dogs %>
-        <% else %>
-        <h2>Booking a run for <%= @dogs.first.name %></h2>
-        <br>
-        <%= f.input :dog_id, as: :hidden, input_html: { value: @dogs.first.id } %>
-        <% end %>
-        <div class="form-text-inputs">
-          <%= f.input :duration, label: false, prompt: "How many minutes?", collection: [10, 20, 30] %>
-          <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
+        <div class="form-inputs">
+          <% if @dogs.size > 1 %>
+            <div class="form-text-inputs">
+              <%= f.input :dog_id, label: false, prompt: "Which dog would you like to run?", collection: @dogs, input_html: { id: "storeValueDog" } %>
+            </div>
+          <% elsif @dogs.size == 1 %>
+            <h2>Booking a run for <%= @dogs.first.name %></h2>
+            <br>
+            <%= f.input :dog_id, as: :hidden, input_html: { value: @dogs.first.id } %>
+          <% elsif @dogs.size == 0 %>
+            <div class="form-text-inputs">
+              <%= f.input :dog_id, label: false, prompt: "Please upload your dog to DogRunners", collection: @dogs, input_html: { id: "storeValueDog" } %>
+            </div>
+          <% end %>
+          <div class="form-text-inputs">
+            <%= f.input :duration, label: false, prompt: "How many minutes?", collection: [10, 20, 30], input_html: { id: "storeValueDuration" } %>
+            <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
+          </div>
         </div>
-      </div>
-      <div class="form-actions">
-        <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
-      </div>
+        <div class="form-actions">
+          <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit", input_html: { id: "storeOldValues"} %>
+        </div>
       <% end %>
-
     </div>
   </div>
 </div>
+
+
+
