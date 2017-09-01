@@ -1,19 +1,19 @@
-<br>
-<div class="container">
+
+<div class="container form-container">
   <div class="row">
     <div class=".col col-xs-12">
 
-      <h2>Please confirm your booking:</h2>
+      <h2>Almost done...</h2>
+      <p>Please review and confirm your booking.</p>
       <br>
 
-        <div class="dog-runner-box">
+        <div class="dog-runner-box white-border">
           <h3><%= @run.dog.name %> is going for a run.</h3>
           <p>Duration run: <%= @run.duration %></p>
         </div>
 
-        <div class="dog-runner-box">
+        <div class="dog-runner-box white-border">
         <h3>When &amp; Where</h3>
-
 
           <p>Date: <%= @run.appointment.to_date %>
           </p>
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="dog-runner-box">
+        <div class="dog-runner-box white-border">
         <h3>Pricing &amp; Terms</h3>
           <p>Run:  <%= number_to_currency(@run.duration/2) %></p>
           <p>Home pick-up:  <%= number_to_currency(10) %></p>
@@ -34,12 +34,13 @@
         </div>
 
 
-        <div class="dog-runner-box">
-          <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
+        <div class="dog-runner-box white-border form-actions">
 
-            <%= link_to "Make Changes", :back, class: "btn btn-default btn-width-to-fit"  %>
+          <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
             <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
           <% end %>
+          <br>
+          <%= link_to "Make Changes", :back %>
         </div>
 
 
