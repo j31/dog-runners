@@ -51,7 +51,7 @@ puts "not_assigned is done."
 
 # RUNNER ID 2
 john = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "john@wagon.com", role: "runner", first_name: "John", last_name: "Fish", password:"666666", password_confirmation: "666666", description: "Dog enthusiast")
-john.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZzdzqVCwWFUTdzOY7I8G67Pesaa1VDnYtNF0Ao1JKDaWKL1fILg"
+john.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/john_orig.jpg"
 puts "John's done."
 
 # RUNNER ID 3
