@@ -7,12 +7,12 @@
       <p>Please review and confirm your booking.</p>
       <br>
 
-        <div class="dog-runner-box white-border">
+        <div class="dog-runner-box white-border-bottom">
           <h3><%= @run.dog.name %> is going for a run.</h3>
           <p>Duration run: <%= @run.duration %></p>
         </div>
 
-        <div class="dog-runner-box white-border">
+        <div class="dog-runner-box white-border-bottom">
         <h3>When &amp; Where</h3>
 
           <p>Date: <%= @run.appointment.to_date %>
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="dog-runner-box white-border">
+        <div class="dog-runner-box">
         <h3>Pricing &amp; Terms</h3>
           <p>Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %></p>
           <p>Home pick-up:  <%= number_to_currency(10, :unit=>'€') %></p>
