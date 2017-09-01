@@ -106,10 +106,10 @@ Run.create!(user: peter,
   note: "great run",
   dog_id: new_dog1.id,
   park_id: 1,
-  status: "pending",
+  status: "ended",
   duration: 20,
   address: "Rudi-Dutschke-Straße 26, Berlin",
-  price: rand(5..25),
+  price: 20,
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: laura,
@@ -119,17 +119,17 @@ Run.create!(user: laura,
   duration: 10,
   park_id: 2,
   address: "Rudi-Dutschke-Straße 26, Berlin",
-  price: rand(5..25),
+  price: 10,
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: alice,
   note: "best run",
   dog_id: new_dog1.id,
-  status: "pending",
+  status: "ended",
   duration: 30,
   park_id: 3,
   address: "Rudi-Dutschke-Straße 26, Berlin",
-  price: rand(5..25),
+  price: 15,
   appointment: Date.new(2017, 8, rand(26..30)))
 
 puts "Everything done"
