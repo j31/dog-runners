@@ -14,6 +14,7 @@
           <% elsif @dogs.size == 0 %>
             <div class="form-text-inputs">
               <%= f.input :dog_id, label: false, prompt: "You forgot to upload your dog!", collection: @dogs, input_html: { id: "storeValueDog" } %>
+              <%= link_to 'upload dog', new_dog_path %>
             </div>
           <% end %>
           <% if @dogs.size > 0 %>
