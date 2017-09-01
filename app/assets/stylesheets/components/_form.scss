@@ -18,7 +18,7 @@
     color: $dog-runner-font-color;
     text-decoration: none;
     font-size: 12px;
-    opacity: 0.5;
+    opacity: 0.7;
   }
   .form-inputs {
     padding: 30px 0 10px 0;
@@ -44,19 +44,19 @@
       }
       input::-webkit-input-placeholder {
         color: $dog-runner-font-color !important;
-        opacity: 0.5;
+        opacity: 0.7;
       }
       input::-moz-placeholder {
         color: $dog-runner-font-color !important;
-        opacity: 0.5;
+        opacity: 0.7;
       }
       input:-moz-placeholder {
         color: $dog-runner-font-color !important;
-        opacity: 0.5;
+        opacity: 0.7;
       }
       input:-ms-input-placeholder {
         color: $dog-runner-font-color !important;
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
   }
@@ -64,7 +64,7 @@
     .btn.btn-default {
       background-color: $dog-runner-bg-color;
       color: $dog-runner-font-color;
-      border: 2px solid white;
+      border: 2px solid $dog-runner-font-color;
       width: 225px;
       padding-bottom: 10px;
     }
