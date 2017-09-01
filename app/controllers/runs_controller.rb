@@ -60,8 +60,13 @@ require 'message_sender'
     # @runs = Run.find(@dogs)
     # @parks = Park.find(@runs)
 
-    @runs = Run.where(user_id: current_user.id)
-
+    # @runs = Run.where(dog.user_id: current_user.id)
+    @runs = []
+    current_user.dogs.each do |dog|
+      dog.runs.each do |run|
+        @runs << run
+      end
+    end
   end
 
   def send_initial_notification(run)
