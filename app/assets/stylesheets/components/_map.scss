@@ -1,0 +1,61 @@
+.map-container {
+  .btn a{
+    width: 70%;
+    border: 0;
+  }
+}
+
+.dog-runner-map-box {
+  bottom: 95px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  .btn {
+    width: 70%;
+    padding: 12px;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    background-color: #75b862;
+    border: none;
+  }
+}
+
+.map-run-box {
+  text-align: center;
+  color: white;
+  bottom: 0px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  height: 85px;
+  background: rgba(109, 109, 109, 0.90);
+  padding: 5px 0;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  .map-run-box-ex-btn {
+    flex: 0 0 60px;
+    border-left: 1px solid rgba(250,250,250,0.5);
+    a {
+      text-decoration: none;
+      color: white;
+      padding: 20px 0;
+    }
+    #close-link-container {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .map-run-box-content {
+    flex: 1 0 auto;
+    #map-box-content-container {
+      height: 100%;
+      width: 100%;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
