@@ -55,10 +55,9 @@
         <div class="dog-runner-box box-small">
           <%= link_to "Map of the run", run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" %>
         </div>
-      <% else %>
-         <div class="dog-runner-box box-small">
-           <p class="btn btn-primary btn-md">Map of the run</p>
-        </div>
+
+
+
       <% end %>
 
 
@@ -69,6 +68,21 @@
       </div>
     </div>
   </div>
+
+
+
+<!-- refresh page every few seconds....(to change running status with admin) -->
+<%= content_for :after_js do %>
+<script>
+  $(function(){
+    setTimeout(function(){
+     window.location.reload(1);
+   }, 5000);
+  });
+</script>
+<% end %>
+
+
 
 
 
