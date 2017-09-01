@@ -100,8 +100,7 @@ Run.create!(user: peter,
   duration: 20,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 20,
-  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
-<script>var ltwtrackurl='single/1257113437';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1249113435';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: laura,
@@ -112,8 +111,7 @@ Run.create!(user: laura,
   park_id: 2,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 10,
-  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
-<script>var ltwtrackurl='single/1258113438';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1257113437';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 Run.create!(user: alice,
@@ -124,8 +122,7 @@ Run.create!(user: alice,
   park_id: 3,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 15,
-  note: "<!-- start LocaToWeb embed code --><div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div>
-<script>var ltwtrackurl='single/1258113439';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script><!-- end LocaToWeb embed code -->",
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1258113438';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
   appointment: Date.new(2017, 8, rand(26..30)))
 
 puts "Everything done"
