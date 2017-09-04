@@ -10,11 +10,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="dog-runner-box white-border-bottom">
+        <div class="dog-runner-box box-small white-border-bottom">
           <h3><%= @run.dog.name %> is going for a run.</h3>
           <p>Duration run: <%= @run.duration %></p>
         </div>
-        <div class="dog-runner-box white-border-bottom">
+        <div class="dog-runner-box box-small white-border-bottom">
         <h3>When &amp; Where</h3>
           <p>Date: <%= @run.appointment.to_date %>
           </p>
@@ -23,7 +23,7 @@
           </p>
           <p>Location: <%= @run.address %></p>
         </div>
-        <div class="dog-runner-box">
+        <div class="dog-runner-box box-small">
         <h3>Pricing &amp; Terms</h3>
           <p>Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %></p>
           <p>Home pick-up:  <%= number_to_currency(10, :unit=>'€') %></p>
@@ -32,9 +32,9 @@
         </div>
       </div>
       <div class="modal-footer">
-        <div class="dog-runner-box form-actions">
+        <div class="dog-runner-box box-small form-actions">
           <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
-            <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
+            <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit btn-sm" %>
           <% end %>
           <br>
           <%= link_to "Make Changes", edit_run_path(@run) %>
