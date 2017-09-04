@@ -71,4 +71,30 @@ float: center
   float: left;
 }
 
+.progress {
+  height: 80px;
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #93c693;
+  border: 1px solid #93c693;
 
+}
+
+.progress-bar {
+
+}
+
+.tab-passed {
+  background-color: #a9e5a9;
+  color: #646464;
+}
+
+.tab-active {
+  color: black;
+  background-color: #87b587;
+}
+
+.tab-future {
+  color: #646464;
+  background-color: white;
+
+}
