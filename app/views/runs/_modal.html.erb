@@ -1,17 +1,19 @@
 
-<div class="container form-container">
-  <div class="row">
-    <div class=".col col-xs-12">
 
-      <h2>Almost done...</h2>
-      <p>Please review and confirm your booking.</p>
-      <br>
-
+<div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please review and confirm your booking</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
         <div class="dog-runner-box white-border-bottom">
           <h3><%= @run.dog.name %> is going for a run.</h3>
           <p>Duration run: <%= @run.duration %></p>
         </div>
-
         <div class="dog-runner-box white-border-bottom">
         <h3>When &amp; Where</h3>
           <p>Date: <%= @run.appointment.to_date %>
@@ -21,7 +23,6 @@
           </p>
           <p>Location: <%= @run.address %></p>
         </div>
-
         <div class="dog-runner-box">
         <h3>Pricing &amp; Terms</h3>
           <p>Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %></p>
@@ -29,17 +30,30 @@
           <p>Total: <%= number_to_currency(@run.price, :unit=>'€') %></p>
           <p><a href="#">See terms in detail</a></p>
         </div>
-
-
+      </div>
+      <div class="modal-footer">
         <div class="dog-runner-box form-actions">
           <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
             <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit" %>
           <% end %>
           <br>
-          <%= link_to "Make Changes", edit_run_path(@run), input_html: { id: "showOldValues" } %>
-        </div>
-
+          <%= link_to "Make Changes", edit_run_path(@run) %>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 

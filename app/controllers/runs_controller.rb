@@ -29,8 +29,9 @@ require 'message_sender'
 
     @run.price = @run.duration/2 + 10
     if @run.save
-      send_initial_notification(@run)
-      redirect_to confirm_path(@run)
+      respond_to do |format|
+        format.js
+      end
     else
       puts @run.errors.full_messages
       render :new
@@ -46,6 +47,7 @@ require 'message_sender'
     @run = Run.find(params[:id])
     @run.status = 1
     if @run.save
+      send_initial_notification(@run)
       flash[:notice] = "Your booking request was recieved!"
       redirect_to @run
     else
