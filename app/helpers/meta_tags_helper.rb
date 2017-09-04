@@ -9,6 +9,5 @@ module MetaTagsHelper
 
   def meta_image
     meta_image = (content_for?(:meta_image) ? content_for(:meta_image) : DEFAULT_META["meta_image"])
-
   end
 end
