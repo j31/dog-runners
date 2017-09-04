@@ -9,6 +9,12 @@ class PagesController < ApplicationController
       marker.lat current_user.latitude
       marker.lng current_user.longitude
     end
+    @runs = []
+    current_user.dogs.each do |dog|
+      dog.runs.each do |run|
+        @runs << run
+      end
+    end
     @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
     @runs = Run.all
     @all_my_runs = []

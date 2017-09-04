@@ -2,4 +2,7 @@
   border: 1px solid $dog-runner-font-color;
   background-color: rgba(0,0,0,0);
   color: $dog-runner-font-color;
+  &:hover {
+  background-color: rgba(0,0,0,0);
+  }
 }
