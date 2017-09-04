@@ -111,8 +111,15 @@
         <div class="col-xs-12 run-status"><%= @user.first_name %> accepted your run request...</div><br>
 
         <div class="dog-runner-box box-small text-center" style="width: 60%;">
-          <%= link_to "message #{@user.first_name}", runs_path, method: :get, class: "btn btn-primary btn-md" %>
+          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-md" do %>
+          <i class="fa fa-inbox"></i>
+            message <%= @user.first_name %>
+          <% end %>
         </div>
+
+
+
+
       </div>
 
       <% elsif @run.status == "started"%>
@@ -136,7 +143,18 @@
       <div class="col-xs-12 run-status text-center">the run just started...</div><br>
 
        <div class="dog-runner-box box-small" style="width: 60%;">
-          <%= link_to "Map of the run", run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" %>
+          <%= link_to run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" do %>
+          <i class="fa fa-map-marker"></i>
+          Map of the run
+          <% end %>
+        </div>
+
+
+        <div class="dog-runner-box box-small text-center" style="width: 60%;">
+          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-md" do %>
+          <i class="fa fa-inbox"></i>
+            message <%= @user.first_name %>
+          <% end %>
         </div>
 
        </div>
@@ -165,9 +183,11 @@
       <div class="col-xs-12 run-status">the run is finished...</div><br>
 
        <div class="dog-runner-box box-small" style="width: 60%;">
-          <%= link_to "see run stats", runs_path, method: :get, class: "btn btn-primary btn-md" %>
+          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-md" do %>
+          <i class="fa fa-line-chart"></i>
+          see run stats
+          <% end %>
         </div>
-
  </div>
       <% end %>
 
