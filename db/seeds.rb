@@ -50,7 +50,7 @@ not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", pass
 puts "not_assigned is done."
 
 # RUNNER ID 2
-john = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "john@wagon.com", role: "runner", first_name: "John", last_name: "Fish", password:"666666", password_confirmation: "666666", description: "Dog enthusiast")
+johannes = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "johannes@dogrunners.com", role: "runner", first_name: "Johannes", last_name: "Vaisfeld", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
 john.photo_url = "https://105315715-167216060926751446.preview.editmysite.com/uploads/1/0/5/3/105315715/john-orig_orig.jpg"
 puts "John's done."
 
@@ -70,29 +70,29 @@ alice.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3cBPW0
 puts "Alice's done."
 
 # OWNER ID 6
-stewie = User.create(address: 'Rudi-Dutschke-Straße 26, Berlin', street: 'Rudi-Dutschke-Straße 26', city: "Berlin", email: "stewie@wagon.com", role: "owner", first_name: "Stewie", last_name: "Smith", password:"123456", password_confirmation: "123456", description: "Dog visionaire")
-stewie.photo_url = "http://www.rockstart.com/wp-content/uploads/2012/06/bas-300x300.jpg"
-puts "Stewie's all set."
-puts "Now some dogs for Stewie."
+john = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "jdfish@gmail.com", role: "owner", first_name: "John", last_name: "Fish", password:"111111", password_confirmation: "111111", description: "Dog Lover!")
+john.photo_url = "https://105315715-167216060926751446.preview.editmysite.com/uploads/1/0/5/3/105315715/john-orig_orig.jpg"
+puts "John's done."
+puts "Now some dogs for John."
 
 #2 dogs
-new_dog1 = Dog.new(user: stewie,
-  name: "Snoopy",
-  description: "sweetest dog on earth",
-  weight: 22,
+new_dog1 = Dog.new(user: john,
+  name: "Victor",
+  description: "Sweetest dog on earth",
+  weight: 12,
   age: 8,
   breed: "Golden Retriever")
 new_dog1.save!
 new_dog1.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBDLkh4nnGjtDAckN5AeXteua_mlB2JieNMpYoU0gdpXTmqiZkA"
 
-new_dog2 = Dog.new(user: stewie,
-  name: "Cesar",
-  description: "a bit lazy but super cool",
+new_dog2 = Dog.new(user: john,
+  name: "Nala",
+  description: "Super-cool dog.  Loves to run!",
   weight: 8,
   age: 5,
-  breed: "Pug")
+  breed: "Greyhound + Terrier")
 new_dog2.save!
-new_dog2.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd7tCiMpp4y9ucm8KUj4b9905-eYFZamMnEjjc8P7v_bLCuv1T"
+new_dog2.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/nala_orig.jpg"
 
 puts "Here are the dogs. Last but not least some runs for Snoopy"
 # 3 runs for snoopy with different runners
