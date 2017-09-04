@@ -51,7 +51,7 @@ puts "not_assigned is done."
 
 # RUNNER ID 2
 johannes = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "johannes@dogrunners.com", role: "runner", first_name: "Johannes", last_name: "Vaisfeld", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
-john.photo_url = "https://105315715-167216060926751446.preview.editmysite.com/uploads/1/0/5/3/105315715/john-orig_orig.jpg"
+johannes.photo_url = "https://3.bp.blogspot.com/-gPijdlX8OIU/VznOg-yGhgI/AAAAAAAAISQ/Opo_cshCHAYzm3_mwpsEHX5IieDMIARyQCLcB/s400/IMG_20160513_191456.jpg"
 puts "John's done."
 
 # RUNNER ID 3
@@ -70,9 +70,9 @@ alice.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3cBPW0
 puts "Alice's done."
 
 # OWNER ID 6
-john = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "jdfish@gmail.com", role: "owner", first_name: "John", last_name: "Fish", password:"111111", password_confirmation: "111111", description: "Dog Lover!")
+john = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "john@dr.com", role: "owner", first_name: "John", last_name: "Fish", password:"111111", password_confirmation: "111111", description: "Dog Lover!")
 john.photo_url = "https://105315715-167216060926751446.preview.editmysite.com/uploads/1/0/5/3/105315715/john-orig_orig.jpg"
-puts "John's done."
+puts "Johns done."
 puts "Now some dogs for John."
 
 #2 dogs
