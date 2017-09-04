@@ -19,6 +19,9 @@ class ApplicationController < ActionController::Base
   # twillo
   protect_from_forgery with: :exception
 
+  def default_url_options
+    { host: ENV["HOST"] || "localhost:3000" }
+  end
 
   private
 
