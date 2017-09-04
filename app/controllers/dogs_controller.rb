@@ -10,7 +10,7 @@ class DogsController < ApplicationController
     @dog = Dog.new(dog_params)
     @dog.user = current_user
     if @dog.save
-      redirect_to profile_path(current_user)
+      redirect_to root_path
     else
       render :new
     end
@@ -22,7 +22,7 @@ class DogsController < ApplicationController
   def update
     if @dog.update(dog_params)
       flash[:notice] = "Your dog was updated!"
-      redirect_to profile_path(@dog.user)
+      redirect_to root_path
     else
       render :new, alert: "Error creating user."
     end
