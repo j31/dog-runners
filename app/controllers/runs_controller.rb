@@ -1,5 +1,6 @@
 class RunsController < ApplicationController
 require 'message_sender'
+respond_to :html, :js
 
   def new
     @run = Run.new
@@ -15,10 +16,13 @@ require 'message_sender'
   def update
     @run = Run.find(params[:id])
     if @run.update(run_params)
-      redirect_to confirm_path(@run)
+      respond_to do |format|
+        format.js
+      end
+
     else
       puts @run.errors.full_messages
-      render :edit
+      format.html { render 'edit' }
     end
   end
 

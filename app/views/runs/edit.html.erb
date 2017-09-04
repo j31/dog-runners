@@ -1,1 +1,6 @@
 <%= render "form" %>
+<div id="modal-container">
+  <% unless @run.new_record? %>
+    <%= render "modal" %>
+  <% end %>
+</div>
