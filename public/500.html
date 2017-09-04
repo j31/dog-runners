@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>500 Something Went Wrong</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
+    background-color: #98cc98;
+    color: rgb(100,100,100);
     text-align: center;
     font-family: arial, sans-serif;
     margin: 0;
@@ -19,7 +19,7 @@
   }
 
   .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
+/*    border: 1px solid #CCC;
     border-right-color: #999;
     border-left-color: #999;
     border-bottom-color: #BBB;
@@ -28,14 +28,29 @@
     border-top-right-radius: 9px;
     background-color: white;
     padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);*/
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
+    font-size: 200%;
+    color: rgb(100,100,100);
     line-height: 1.5em;
   }
+
+  .rails-default-error-page a {
+    color: $dog-runner-font-color;
+    text-decoration: none;
+    font-size: 15px;
+    opacity: 0.7;
+  }
+
+    .rails-default-error-page a:visited {
+    color: $dog-runner-font-color;
+    text-decoration: none;
+    font-size: 15px;
+    opacity: 0.7;
+  }
+
 
   .rails-default-error-page div.dialog > p {
     margin: 0 0 1em;
@@ -58,9 +73,11 @@
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <img src="images/oops_dog.jpg" width="200" height="200">
+      <h1>Doggone it!</h1>
+      <h3>Something went wrong.</h3>
+      <h3><a href="http://www.dogrunners.de">Return to the home page</a>.</h3>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
