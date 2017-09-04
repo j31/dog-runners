@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
   # twillo
   protect_from_forgery with: :exception
 
+
   private
 
   def skip_pundit?
