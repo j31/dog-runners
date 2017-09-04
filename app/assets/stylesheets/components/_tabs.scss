@@ -1,0 +1,48 @@
+.tab-menu-container {
+
+  padding: 0;
+  padding: 0px 15px;
+  background-color: white;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  h4 {
+    font-weight: lighter;
+    font-size: 17px;
+    color: $dark-gray;
+    margin: 8px 5px;
+  }
+  .active {
+    border-bottom: 3px solid $dog-runner-color;
+    h4 {
+      font-weight: normal;
+      font-size: 17px;
+      color: $dog-runner-color;
+    }
+  }
+}
+
+.tab {
+
+}
+
+.tab-content-container {
+
+}
+
+.tab-content {
+
+}
+
+a.tab {
+  text-decoration: none;
+}
+a.tab:hover {
+  text-decoration: none;
+}
+a.tab:focus {
+  text-decoration: none;
+}
+
