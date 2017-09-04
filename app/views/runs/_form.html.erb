@@ -1,7 +1,7 @@
 <div class="container form-container text-center" id="new-dog">
   <div class="row">
     <div class="col-xs-12">
-      <%= simple_form_for @run do |f| %>
+      <%= simple_form_for @run, remote: true do |f| %>
         <div class="form-inputs">
           <% if @dogs.size > 1 %>
             <div class="form-text-inputs">
