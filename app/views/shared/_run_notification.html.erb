@@ -1,0 +1,25 @@
+  <% if !@all_my_runs.blank? %>
+  <% if @all_my_runs.last.status == "coming" || @all_my_runs.last.status == "started" %>
+  <div class="map-run-box">
+    <div class="map-run-box-content">
+      <%= link_to run_path(@all_my_runs.last) do %>
+      <div id="map-box-content-container">
+        <p class="text-center">Status on <%= @all_my_runs.last.dog.name %>'s run:</p>
+        <% if @all_my_runs.last.status == "coming" %>
+        <p> <%= @all_my_runs.last.user.first_name %> is on the way to the pickup location</p>
+        <% elsif @all_my_runs.last.status == "started" %>
+        <p> <%= @all_my_runs.last.user.first_name %> has begun the run with <%= @all_my_runs.last.dog.name %></p>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="map-run-box-ex-btn">
+      <%= link_to "#" do %>
+      <div id="close-link-container">
+        <i class="fa fa-close" aria-hidden="true"></i>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  <% end %>

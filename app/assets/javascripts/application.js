@@ -12,10 +12,10 @@
 //= require_tree .
 
 
-// Smooth scrolling on lick to anchor links
-$('a').click(function(){
-    $('html, body').animate({
-        scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
-    }, 500);
-    return false;
-});
+// Smooth scrolling on link to anchor links
+// $('.smoothscroll-links').click(function(){
+//     $('html, body').animate({
+//         scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+//     }, 500);
+//     return false;
+// });
