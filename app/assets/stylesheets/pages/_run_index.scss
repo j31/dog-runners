@@ -1,3 +1,32 @@
+.run-history-menu {
+  display: flex;
+  height: 60px;
+  padding: 15px 0px 10px 0px;
+  justify-content: center;
+  .run-history-menu-item {
+    margin-right: 14px;
+  }
+  p, a {
+
+    border: 1px solid $dog-runner-font-color;
+    color: $dog-runner-font-color;
+    border-radius: 4px;
+    padding: 5px 14px;
+  }
+  a {
+    height: 32px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .active-runs p {
+    background-color: $dog-runner-font-color;
+    border: 1px solid $dog-runner-font-color;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
 #total-km {
   h2 {
     font-size: 85px;
