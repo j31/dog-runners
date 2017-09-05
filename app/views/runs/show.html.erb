@@ -1,7 +1,11 @@
-<div class="container box-container">
-  <div class="row">
-    <div class="col col-xs-12">
-      <div class="dog-runner-box box-big">
+
+<div class="page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="content-container">
+
+        <br>
 
 
         <% if @run.status == "pending" %>
@@ -149,18 +153,14 @@
          </div>
       <div class="col-xs-12 run-status text-center">the run just started...</div><br>
 
-       <div class="dog-runner-box box-small" style="width: 60%;">
-          <%= link_to run_gps_path(@run), method: :get, class: "btn btn-primary btn-md" do %>
-          <i class="fa fa-map-marker"></i>
-          Map of the run
-          <% end %>
-        </div>
-
-
-        <div class="dog-runner-box box-small text-center" style="width: 60%;">
-          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-md" do %>
+       <div class="col-xs-12 button-show-box">
+          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-show" do %>
           <i class="fa fa-inbox"></i>
             message <%= @user.first_name %>
+          <% end %>
+          <%= link_to run_gps_path(@run), method: :get, class: "btn btn-primary btn-show" do %>
+          <i class="fa fa-map-marker"></i>
+          Map of the run
           <% end %>
         </div>
 
