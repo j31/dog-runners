@@ -55,10 +55,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #FFFFFF;
+  background-color: #7d8189;
   color: #fff;
   padding: 10px;
-  z-index: 5;
+  z-index: 1000;
   position: sticky;
   width: 100%;
   top: 0;
@@ -116,7 +116,8 @@
 }
 
 .mobile-nav {
-  background-color: #FFFFFF !important;
+  background-color: #7d8189 !important;
+  z-index: 1000;
 }
 .mobile-nav li a{
   color: $dog-runner-color;
