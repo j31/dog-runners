@@ -2,6 +2,7 @@
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   mount Attachinary::Engine => "/attachinary"
+  mount ActionCable.server => "/cable"
 
   authenticated :user do
     root 'pages#secret', as: :authenticated_root
