@@ -51,8 +51,8 @@ puts "not_assigned is done."
 
 # RUNNER ID 2
 johannes = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "johannes@dogrunners.com", role: "runner", first_name: "Johannes", last_name: "Vaisfeld", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
-johannes.photo_url = "https://3.bp.blogspot.com/-gPijdlX8OIU/VznOg-yGhgI/AAAAAAAAISQ/Opo_cshCHAYzm3_mwpsEHX5IieDMIARyQCLcB/s400/IMG_20160513_191456.jpg"
-puts "John's done."
+johannes.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/johannes_orig.jpg"
+puts "Johannes's done."
 
 # RUNNER ID 3
 laura = User.create(address: 'Oranienstraße 17, Berlin', street: 'Oranienstraße 17', city: "Berlin", email: "laura@wagon.com", role: "runner", first_name: "Laura", last_name: "Walde", password:"123456", password_confirmation: "123456", description: "Love to run and love dogs")
