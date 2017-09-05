@@ -9,13 +9,14 @@
 .dog-choice {
   background: #b7b7b7;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 100%;
   opacity: .4;
   flex: 0 0 45%;
   text-align: center;
   &:hover {
     opacity: 1;
     cursor: pointer;
+    color: white;
   }
   &.active {
   background: $brand-primary;
@@ -24,6 +25,9 @@
   color: white;
   opacity: 1;
   }
+  p {
+    margin-top: 135px;
+  }
 }
 
 
@@ -31,7 +35,8 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .duration-choice {
@@ -44,6 +49,7 @@
   &:hover {
     opacity: 1;
     cursor: pointer;
+    color: white;
   }
   &.active {
   background: $brand-primary;
