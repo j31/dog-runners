@@ -1,0 +1,24 @@
+<h1><%= @runs.size %> runs, <%= @total %> min</h1>
+
+  <% @runs.each do |run| %>
+
+    <%= link_to run_path(run) do %>
+     <div class="row list-row">
+
+        <div class="col col-xs-2">
+          <%= cl_image_tag run.dog.photo.path, class: "img-circle", height: 40, width: 40 %>
+        </div>
+
+        <div class="col col-xs-3">
+          <p><%= run.dog.name %></p>
+        </div>
+        <div class="col col-xs-3">
+          <p><%= run.appointment.strftime("%d-%b") %></p>
+        </div>
+        <div class="col col-xs-3">
+          <p><%= run.duration %> min</p>
+        </div>
+      </div>
+    <% end %>
+
+  <% end %>

@@ -8,17 +8,18 @@
 .tabs {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   h4 {
-    font-weight: lighter;
-    font-size: 17px;
+    font-weight: bold;
+    font-size: 14px;
     color: $dark-gray;
-    margin: 8px 5px;
+    margin: 10px 5px 4px 5px;
   }
   .active {
     border-bottom: 3px solid $dog-runner-color;
     h4 {
-      font-weight: normal;
-      font-size: 17px;
+      font-weight: bold;
+      font-size: 14px;
       color: $dog-runner-color;
     }
   }

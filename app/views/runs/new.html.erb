@@ -10,7 +10,7 @@
           <div class="dog-choices">
             <% @dogs.each do |dog| %>
               <input class="hidden" type="radio" value="<%= dog.id %>" name="run[dog_id]" id="run_dog_id_<%= dog.id %>">
-              <label for="run_dog_id_<%= dog.id %>" class="dog-choice img-circle white-border" style="background-image: url('<%= cl_image_path dog.photo.path%>'); height: 150px; background-position: center center; background-repeat: no-repeat;"><p><%= dog.name %></p></label>
+              <label for="run_dog_id_<%= dog.id %>" class="dog-choice img-circle" style="background-image: url('<%= cl_image_path dog.photo.path%>'); width: 120px; height: 120px; background-position: center; background-repeat: no-repeat; background-size: cover;"><p><%= dog.name %></p></label>
 
             <% end %>
           </div>
@@ -42,7 +42,7 @@
 
       <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
 
-      <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
+      <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-contrast-bg" %>
 
     <% end %>
 
