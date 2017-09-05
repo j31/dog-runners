@@ -1,3 +1,4 @@
+
 <div class="page-wrapper">
   <div class="container">
     <div class="row">
@@ -8,18 +9,27 @@
         <div class="content-container">
 
 
+
+
         <% if @run.status == "pending" %>
 
-        <div class="text-left">
 
-          <% if @dog.photo %>
-          <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px;") %>
-          <% else %>
-          <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
-          <% end %>
-          <br>
-          <h3><%= @dog.name %></h3>
-        </div>
+        <div id="run-avatar">
+          <span id="dog-avatar">
+           <% if @dog.photo %>
+           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
+           <% else %>
+           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+           <% end %>
+         </span>
+         <span id="runner-avatar">
+          <%= image_tag "unassigned.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+        </span>
+      </div>
+      <br>
+      <h3><%= @dog.name %> & ???</h3>
+
+
 
         <% else %>
 
@@ -28,19 +38,19 @@
           <span id="dog-avatar">
 
            <% if @dog.photo %>
-           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px;") %>
+           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
            <% else %>
-           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
            <% end %>
 
          </span>
 
          <span id="runner-avatar">
           <% if @user.photo %>
-          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 140px; width: 140px;") %>
+          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px; width: 120px;") %>
           <% else %>
 
-          <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 140px;"}%>
+          <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
           <% end %>
         </span>
       </div>
