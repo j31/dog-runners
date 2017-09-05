@@ -16,4 +16,12 @@ $(document).ready(function() {
     $($(this).data('target')).removeClass('hidden');
   });
 
+    $(".run-history-menu-item").on("click", function(e){
+    $(".run-history-menu-item").removeClass('active-runs');
+    $(this).addClass('active-runs');
+    $(".run-stats").addClass('hidden');
+    console.log($(this).data('target'));
+    $($(this).data('target')).removeClass('hidden');
+  });
+
 });

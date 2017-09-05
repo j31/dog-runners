@@ -1,56 +1,77 @@
-
-<div id="total-km">
-  <br><br>
-  <h2><%= @total_km.round(1) %></h2>
-  <p>Total kilometers</p>
-  <br>
-</div>
-
-<div class="stats">
-  <div class="stat">
-    <h3><%= @runs.size %></h3>
-    <p>Total Runs</p>
+<% if current_user.dogs %>
+<div class="run-history-menu">
+  <% current_user.dogs.each_with_index do |dog, index| %>
+  <div class="run-history-menu-item" data-target="#<%= dog[:name] %>-stats">
+    <p><%= dog.name %></p>
   </div>
-  <div class="stat">
-    <h3><%= @total_run_minutes %></h3>
-    <p>Total Minutes</p>
+  <% end %>
+  <div class="run-history-menu-item active-runs" data-target="#All-stats">
+    <p>All</p>
   </div>
-  <div class="stat">
-    <h3><%= @avg_pace.round(2) %></h3>
-    <p>Avg. Pace</p>
-  </div>
-</div>
-
-<br>
-<br>
-
-<% @runs.each_with_index do |run, index| %>
-
-<%= link_to run_path(run) do %>
-<div class="run-history-box">
-
-  <div id="run-photo">
-    <% if index < 8 %>
-      <% run_img_path = "run#{index+1}.PNG" %>
-    <% else %>
-      <% run_img_path = "run#{1}.PNG" %>
-    <% end %>
-
-    <%= image_tag run_img_path, height: 80, width: 80 %>
-
-  </div>
-
-  <div id="run-desc">
-    <p><b><%= run.dog.name %></b></p>
-    <p><%= run.appointment.strftime("%d-%B-%y") %></p>
-    <p><%= run.duration %> minutes</p>
-  </div>
-
-  <div id="run-icon">
-    <%= image_tag Dog::MEDALS.sample(), class: "medal img-circle" %>
-  </div>
-
 </div>
 <% end %>
 
+<% @dog_runs.each_with_index do |dog, i| %>
+<% if i == (@dog_runs.size - 1) %>
+<% status = "" %>
+<% else %>
+<% status = " hidden" %>
+<% end %>
+<div class="run-stats<%= status %>" id="<%= dog[:name] %>-stats">
+
+  <div id="total-km">
+    <br><br>
+    <h2><%= dog[:total_km].round(1) %></h2>
+    <p>Total kilometers</p>
+    <br>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h3><%= dog[:total_runs] %></h3>
+      <p>Total Runs</p>
+    </div>
+    <div class="stat">
+      <h3><%= dog[:total_mins] %></h3>
+      <p>Total Minutes</p>
+    </div>
+    <div class="stat">
+      <h3><%= dog[:avg_pace].round(2) %></h3>
+      <p>Avg. Pace</p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <% dog[:runs].each_with_index do |run, index| %>
+
+  <%= link_to run_path(run) do %>
+  <div class="run-history-box">
+
+    <div id="run-photo">
+      <% if index < 8 %>
+      <% run_img_path = "run#{index+1}.PNG" %>
+      <% else %>
+      <% run_img_path = "run4.PNG" %>
+      <% end %>
+
+      <%= image_tag run_img_path, height: 80, width: 80 %>
+
+    </div>
+
+    <div id="run-desc">
+      <p><b><%= run.dog.name %></b></p>
+      <p><%= run.appointment.strftime("%d-%B-%y") %></p>
+      <p><%= run.duration %> minutes</p>
+    </div>
+
+    <div id="run-icon">
+      <%= image_tag Dog::MEDALS.sample(), class: "medal img-circle" %>
+    </div>
+
+  </div>
+  <% end %>
+  <% end %>
+</div>
 <% end %>
