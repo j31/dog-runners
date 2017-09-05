@@ -1,44 +1,48 @@
-
 <div class="page-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="content-container">
 
-  <div class="content-container">
 
-    <h2>Run History</h2>
-    <br>
+          <h2>Run History</h2>
+          <br>
 
-    <div class="row form-inputs form-text-inputs white-border-bottom row-padding">
-    <div class="col col-xs-4">
-        <bold>Dog</bold>
+          <div class="row">
+          <div class="col col-xs-4">
+              <bold>Dog</bold>
+            </div>
+            <div class="col col-xs-3">
+             <bold>Date</bold>
+           </div>
+           <div class="col col-xs-3">
+             <bold>Time</bold>
+           </div>
+         </div>
+
+         <% @runs.each do |run| %>
+
+         <div class="row row-padding">
+
+          <%= link_to run_path(run) do %>
+          <div class="col col-xs-4">
+            <%= cl_image_tag run.dog.photo.path, class: "img-circle", height: 40, width: 40 %>
+            <p><%= run.dog.name %></p>
+          </div>
+          <div class="col col-xs-3">
+            <p><%= run.appointment.strftime("%d-%b") %></p>
+          </div>
+          <div class="col col-xs-3">
+            <p><%= run.duration %> min</p>
+          </div>
+          <% end %>
+        </div>
+        <% end %>
+
+
       </div>
-      <div class="col col-xs-3">
-       <bold>Date</bold>
-     </div>
-     <div class="col col-xs-3">
-       <bold>Time</bold>
-     </div>
-   </div>
-
-   <% @runs.each do |run| %>
-
-   <div class="row white-border-bottom row-padding">
-
-    <%= link_to run_path(run) do %>
-    <div class="col col-xs-4">
-      <%= cl_image_tag run.dog.photo.path, class: "img-circle", height: 40, width: 40 %>
-      <p><%= run.dog.name %></p>
     </div>
-    <div class="col col-xs-3">
-      <p><%= run.appointment.strftime("%d-%b") %></p>
-    </div>
-    <div class="col col-xs-3">
-      <p><%= run.duration %> min</p>
-    </div>
-    <% end %>
   </div>
-  <% end %>
-
-</div>
-
 </div>
 
 
