@@ -10,4 +10,22 @@ class Run < ApplicationRecord
   validates :dog_id, presence: true
 
   DURATIONS = [15, 30, 45, 60]
+
+  after_save :broadcast_run
+
+  def broadcast_run
+    ActionCable.server.broadcast("run_#{self.id}", {
+      run_first_partial: ApplicationController.renderer.render(
+        partial: "runs/run_status_first",
+        locals: { run: self, user: self.user, dog: self.dog }
+      ),
+      run_second_partial: ApplicationController.renderer.render(
+        partial: "runs/run_status_second",
+        locals: { run: self, user: self.user }
+      ),
+      current_user_id: user.id
+    })
+  end
+
+
 end

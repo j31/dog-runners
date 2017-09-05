@@ -3,213 +3,33 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="content-container">
-
-        <br>
-
-
-        <% if @run.status == "pending" %>
-
-
-        <div id="run-avatar">
-          <span id="dog-avatar">
-           <% if @dog.photo %>
-           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
-           <% else %>
-           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
-           <% end %>
-         </span>
-         <span id="runner-avatar">
-          <%= image_tag "unassigned.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
-        </span>
+        <div id="container-one-run-<%= @run.id %>" class="content-container">
+          <%= render "run_status_first", run: @run, user: @user, dog: @dog %>
+        </div>
+        <div  id="container-two-run-<%= @run.id %>" class="content-container">
+          <%= render "run_status_second", run: @run, user: @user  %>
+        </div>
       </div>
-      <br>
-      <h3><%= @dog.name %> & ???</h3>
-
-
-
-        <% else %>
-
-        <div id="run-avatar">
-
-          <span id="dog-avatar">
-
-           <% if @dog.photo %>
-           <%= cl_image_tag(@dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
-           <% else %>
-           <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
-           <% end %>
-
-         </span>
-
-         <span id="runner-avatar">
-          <% if @user.photo %>
-          <%= cl_image_tag(@user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px; width: 120px;") %>
-          <% else %>
-
-          <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
-          <% end %>
-        </span>
-      </div>
-      <br>
-
-      <h3><%= @dog.name %> & <%= @user.first_name %></h3>
-      <% end %>
     </div>
-
-
-      <% if @run.status == "pending" || @run.status == "pre_pending" %>
-
-      <div class="content-container">
-        <div class="progress">
-          <div class="progress-bar progress-bar-success progress-bar-striped tab-active" style="width: 25%">pending
-          <br><br>
-          <span id="status-smybol"><%= image_tag "sitting.png" %></span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-future" style="width: 25%">confirmed
-          <span class="sr-only">20% Complete (warning)</span>
-        </div>
-        <div class="progress-bar progress-bar-success progress-bar-striped tab-future" style="width: 25%">started
-          <span class="sr-only">10% Complete (danger)</span><br><br>
-        </div>
-        <div class="progress-bar progress-bar-success tab-future" style="width: 25%">finished
-          <span class="sr-only">35% Complete (success)</span>
-        </div>
-        </div>
-        <div class="col-xs-12 run-status"><span>We're searching for your runner...</span>
-        <svg id="svg-sprite">
-            <symbol id="paw" viewBox="0 0 249 209.32">
-              <ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
-              <ellipse cx="84.75" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"/>
-              <ellipse cx="162" cy="47.749" stroke-width="0" rx="34.75" ry="47.751"/>
-              <ellipse cx="221.083" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
-              <path stroke-width="0" d="M43.98 165.39s9.76-63.072 76.838-64.574c0 0 71.082-6.758 83.096 70.33 0 0 2.586 19.855-12.54 31.855 0 0-15.75 17.75-43.75-6.25 0 0-7.124-8.374-24.624-7.874 0 0-12.75-.125-21.5 6.625 0 0-16.375 18.376-37.75 12.75 0 0-28.29-7.72-19.77-42.86z"/>
-            </symbol>
-          </svg>
-          <div class="ajax-loader">
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-            <div class="paw"><svg class="icon"><use xlink:href="#paw" /></svg></div>
-          </div>
-        </div>
-
-      <!--   <div class="dog-runner-box box-small" style="width: 60%;">
-          <%= link_to "cancel", runs_path, method: :get, class: "btn btn-primary btn-md"%>
-        </div> -->
-      </div>
-
-
-      <% elsif @run.status == "confirmed" || @run.status == "coming" || @run.status == "arrived" %>
-
-          <div class="content-container">
-        <div class="progress">
-          <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">pending
-        </div>
-        <div class="progress-bar progress-bar-success progress-bar-striped tab-active" style="width: 25%">confirmed
-          <span class="sr-only">20% Complete (warning)</span><br><br>
-          <span id="status-smybol"><%= image_tag "standing.png" %>
-        </div>
-        <div class="progress-bar progress-bar-success progress-bar-striped tab-future" style="width: 25%">started
-          <span class="sr-only">10% Complete (danger)</span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-future" style="width: 25%">finished
-          <span class="sr-only">35% Complete (success)</span>
-        </div>
-        </div>
-        <div class="col-xs-12 run-status"><%= @user.first_name %> accepted your run request...</div><br>
-
-        <div class="dog-runner-box box-small text-center" style="width: 60%;">
-          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-show" do %>
-          <i class="fa fa-inbox"></i>
-            message <%= @user.first_name %>
-          <% end %>
-        </div>
-
-
-
-
-      </div>
-
-      <% elsif @run.status == "started"%>
-
-      <div class="content-container">
-       <div class="progress">
-       <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">pending
-          <span class="sr-only">35% Complete (success)</span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">confirmed
-          <span class="sr-only">20% Complete (warning)</span>
-        </div>
-        <div class="progress-bar progress-bar-success progress-bar-striped tab-active" style="width: 25%">started
-          <span class="sr-only">10% Complete (danger)</span><br><br>
-          <span id="status-smybol"><%= image_tag "run.png" %></span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-future" style="width: 25%">finished
-          <span class="sr-only">35% Complete (success)</span>
-        </div>
-         </div>
-      <div class="col-xs-12 run-status text-center">the run just started...</div><br><br>
-
-       <div class="col-xs-12 button-show-box">
-          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-show" do %>
-          <i class="fa fa-inbox"></i>
-            message <%= @user.first_name %>
-          <% end %>
-          <%= link_to run_gps_path(@run), method: :get, class: "btn btn-primary btn-show" do %>
-          <i class="fa fa-map-marker"></i>
-          Map of the run
-          <% end %>
-        </div>
-
-       </div>
-
-
-
-      <% elsif @run.status == "ended"%>
-
-       <div class="content-container">
-       <div class="progress">
-
-         <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">pending
-          <span class="sr-only">35% Complete (success)</span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">confirmed
-          <span class="sr-only">20% Complete (warning)</span>
-        </div>
-        <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">started
-          <span class="sr-only">10% Complete (danger)</span>
-        </div>
-        <div class="progress-bar progress-bar-success progress-bar-striped tab-active" style="width: 25%;">finished
-          <span class="sr-only">35% Complete (success)</span><br><br>
-          <span id="status-smybol"><%= image_tag "home.png" %>
-        </div>
-      </div>
-      <div class="col-xs-12 run-status">the run is finished...</div><br>
-
-       <div class="dog-runner-box box-small" style="width: 60%;">
-          <%= link_to runs_path, method: :get, class: "btn btn-primary btn-md" do %>
-          <i class="fa fa-line-chart"></i>
-          see run stats
-          <% end %>
-        </div>
- </div>
-      <% end %>
-
-    </div>
-
   </div>
 </div>
-</div>
-
-
-
 
 <!-- refresh page every few seconds....(to change running status with admin) -->
 
-
+<% content_for :after_js do %>
+<script>
+  console.log("helo");
+  App['run_<%= @run.id %>'] = App.cable.subscriptions.create(
+    { channel: 'RunStatusChannel', run_id: <%= @run.id %> },
+    {
+      received: (data) => {
+        $("#container-one-run-<%= @run.id %>").html(data.run_first_partial);
+        $("#container-two-run-<%= @run.id %>").html(data.run_second_partial);
+      }
+    }
+    );
+  </script>
+  <% end %>
 
 
 
