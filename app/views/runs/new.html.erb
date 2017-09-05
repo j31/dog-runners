@@ -14,7 +14,8 @@
                 <div class="dog-choices">
                   <% @dogs.each do |dog| %>
                     <input class="hidden" type="radio" value="<%= dog.id %>" name="run[dog_id]" id="run_dog_id_<%= dog.id %>">
-                    <label for="run_dog_id_<%= dog.id %>" class="dog-choice" style="background-image: url('<%= cl_image_path dog.photo.path%>'); height: 150px; background-position: center center; background-repeat: no-repeat;"><%= dog.name %></label>
+                    <label for="run_dog_id_<%= dog.id %>" class="dog-choice" style="background-image: url('<%= cl_image_path dog.photo.path%>'); height: 150px; background-position: center center; background-repeat: no-repeat;"><p><%= dog.name %></p></label>
+
                   <% end %>
                 </div>
               </div>
