@@ -15,18 +15,6 @@
           </p>
         </div>
       </div>
-
-      <br><br><br><br><br>
-      <%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
-      <br>
-      <%= link_to "LOG IN", new_user_session_path, method: :get, class: "btn btn-no-bg" %>
-      <br><br>
-    </div>
-
-    <div class="container text-center" id="banner-scroll">
-      <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
-      HOW IT WORKS <br><i class="fa fa-angle-double-down fa-3x"></i>
-      <% end %>
     </div>
   </div>
 </div>
@@ -34,6 +22,24 @@
 
 <div class="page-wrapper">
   <div class="content-container">
+
+
+      <%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
+        <br><%= link_to "LOG IN", new_user_session_path, method: :get, class: "btn btn-no-bg" %>
+        <br>
+      </div>
+
+      <br><br>
+      <div class="container text-center" id="banner-scroll">
+        <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
+        HOW IT WORKS <br><i class="fa fa-angle-double-down fa-3x"></i>
+        <% end %>
+      </div>
+
+
+
+
+
 
     <a name="HowItWorks"></a>
     <div class="home_box">
@@ -55,7 +61,7 @@
       </div>
 
       <div class="text-center">
-        <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
+        <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
       </div>
 
       <div class="text-center scroll-link">
@@ -78,7 +84,7 @@
         </ul>
       </div>
       <div class="text-center">
-        <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
+        <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
       </div>
 
       <div class="text-center scroll-link">
@@ -102,8 +108,7 @@
           <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
         </ul>
 
-      <div class="text-center">
-        <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
+      <div class="text-center"><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
       </div>
     </div>
 
