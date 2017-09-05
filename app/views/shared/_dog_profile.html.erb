@@ -12,24 +12,44 @@
   </div>
   <% end %>
   <% end %>
-    <%= link_to "+", new_dog_path, method: :get %>
+  <%= link_to "+", new_dog_path, method: :get %>
 </div>
 
 <% current_user.dogs.each_with_index do |dog, index| %>
 
 <% if index == 0 %>
 <div class="dog-profile" id="<%= dog.name %>">
-  <p><%=  dog.description %></p>
-  <p><%= dog.breed %></p>
-  <p><%= dog.weight %></p>
-  <p><%= dog.age %></p>
+ <br>
+ <% if dog.photo %>
+ <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px; width: 120px;") %> <br><br>
+ <% else %>
+ <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px; width: 120px;"}%> <br><br>
+ <% end %>
+ <% Dog::MEDALS.sample(rand(3..5)).each do |path| %>
+ <%= image_tag path, class: "medal" %>
+ <% end %>
+ <h4>"<%=  dog.description %>"</h4>
+ <p><%= dog.breed %></p>
+ <p><%= "#{dog.name} is #{dog.age} years old" %></p>
+ <%= link_to "Take #{dog.name} for a run", new_run_path, class: "btn btn-primary btn-contrast-bg" %>
+ <%= link_to "View #{dog.name}'s old runs", "#", class: "btn btn-primary btn-no-bg" %>
 </div>
 <% else %>
 <div class="dog-profile hidden" id="<%= dog.name %>">
-  <p><%=  dog.description %></p>
+  <br>
+  <% if dog.photo %>
+  <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px; width: 120px;") %> <br><br>
+  <% else %>
+  <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px; width: 120px;"}%> <br><br>
+  <% end %>
+  <% Dog::MEDALS.sample(rand(3..5)).each do |path| %>
+  <%= image_tag path, class: "medal" %>
+  <% end %>
+  <h4>"<%=  dog.description %>"</h4>
   <p><%= dog.breed %></p>
-  <p><%= dog.weight %></p>
-  <p><%= dog.age %></p>
+  <p><%= "#{dog.name} is #{dog.age} years old" %></p>
+  <%= link_to "Take #{dog.name} for a run", new_run_path, class: "btn btn-primary btn-contrast-bg" %>
+ <%= link_to "View #{dog.name}'s old runs", "#", class: "btn btn-primary btn-no-bg" %>
 </div>
 <% end %>
 <% end %>

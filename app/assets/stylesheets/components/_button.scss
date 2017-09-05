@@ -2,11 +2,23 @@
   border: 1px solid $dog-runner-font-color;
   background-color: rgba(0,0,0,0);
   color: $dog-runner-font-color;
+  width: 200px;
+  margin: 10px 0px 5px 0px;
   &:hover {
   background-color: rgba(0,0,0,0);
   }
 }
 
+.btn-contrast-bg {
+  border: 1px solid $dog-runner-font-color;
+  background-color: $dog-runner-font-color;
+  color: white;
+  width: 200px;
+  margin: 10px 0px 5px 0px;
+  &:hover {
+  background-color: $dog-runner-font-color;
+  }
+}
 
 .btn-show {
   width: 140px !important;
@@ -19,5 +31,3 @@
   justify-content: space-around;
 
 }
-
-
