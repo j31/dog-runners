@@ -8,10 +8,10 @@
         <span class="home-subtitle">Fit dogs are</span>
         <div class="animation-text">
           <p>
-          <span class="word wisteria">happy.</span>
-          <span class="word belize">healthy.</span>
-          <span class="word pomegranate">friendly.</span>
-          <span class="word green">wonderful.</span>
+            <span class="word wisteria">happy.</span>
+            <span class="word belize">healthy.</span>
+            <span class="word pomegranate">friendly.</span>
+            <span class="word green">wonderful.</span>
           </p>
         </div>
       </div>
@@ -24,163 +24,159 @@
   <div class="content-container">
 
 
-      <%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
-        <br><%= link_to "LOG IN", new_user_session_path, method: :get, class: "btn btn-no-bg" %>
-        <br>
-      </div>
+    <%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
+    <br><%= link_to "LOG IN", new_user_session_path, method: :get, class: "btn btn-no-bg" %>
+    <br>
+  </div>
 
-      <br><br>
-      <div class="container text-center" id="banner-scroll">
-        <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
-        HOW IT WORKS <br><i class="fa fa-angle-double-down fa-3x"></i>
-        <% end %>
-      </div>
-
-
-
-
-
-
+  <br><br>
+  <div class="container text-center" id="banner-scroll">
     <a name="HowItWorks"></a>
-    <div class="home_box">
-      <h3 class="text-center">HOW IT WORKS</h3>
-      <div class="col-xs-4 text-center">
-        <p class="number text-center">1</p>
-        <i class="fa fa-paw icon" aria-hidden="true"></i>
-        <p class="text">Request a Runner</p>
-      </div>
-      <div class="col-xs-4 text-center">
-        <p class="number">2</p>
-        <i class="fa fa-check icon" aria-hidden="true"></i>
-        <p class="text">Confirm Booking</p>
-      </div>
-      <div class="col-xs-4 text-center">
-        <p class="number">3</p>
-        <i class="fa fa-map-marker icon" aria-hidden="true"></i>
-        <p class="text">Track your Dog</p>
-      </div>
+    <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
+    HOW IT WORKS <br><i class="fa fa-angle-double-down fa-3x"></i>
+    <% end %>
+  </div>
 
-      <div class="text-center">
-        <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
-      </div>
-
-      <div class="text-center scroll-link">
-        <%= link_to "#Benefits", class: "scroll-link" do %>
-          <br>BENEFITS OF RUNNING<br><i class="fa fa-angle-double-down fa-3x"></i>
-        <% end %>
-      </div>
+  <div class="home_box light-gray-bg">
+    <h3 class="text-center">HOW IT WORKS</h3>
+    <div class="col-xs-4 text-center">
+      <p class="number text-center">1</p>
+      <i class="fa fa-paw icon" aria-hidden="true"></i>
+      <p class="text">Request a Runner</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <p class="number">2</p>
+      <i class="fa fa-check icon" aria-hidden="true"></i>
+      <p class="text">Confirm Booking</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <p class="number">3</p>
+      <i class="fa fa-map-marker icon" aria-hidden="true"></i>
+      <p class="text">Track your Dog</p>
     </div>
 
-
-    <a name="Benefits"></a>
-    <div class="home_box">
-      <div class="text-center"><h3>BENEFITS OF RUNNING</h3></div>
-      <div class="benefitsContent">
-        <ul>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
-        </ul>
-      </div>
-      <div class="text-center">
-        <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
-      </div>
-
-      <div class="text-center scroll-link">
-      <%= link_to "#WhyDogRunners", class: "scroll-link" do %>
-      <br>WHY DOG RUNNERS<br><i class="fa fa-angle-double-down fa-3x"></i>
-      <% end %>
-      </div>
-    </div>
-
-
-
-
-
-    <a name="WhyDogRunners"></a>
-    <div class="home_box">
-      <div class="text-center"><h3>WHY DOG RUNNERS</h3></div>
-        <ul>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
-          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
-        </ul>
-
-      <div class="text-center"><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
-      </div>
+    <div class="text-center">
+      <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
     </div>
 
     <div class="text-center scroll-link">
-    <%= link_to "#top", class: "scroll-link" do %>
+      <br>
+      <%= link_to "#Benefits", class: "scroll-link" do %>
+      <br>BENEFITS OF RUNNING<br><i class="fa fa-angle-double-down fa-3x"></i>
+      <% end %>
+      <a name="Benefits"></a>
+    </div>
+  </div>
+
+
+  <div class="home_box">
+    <div class="text-center"><h3>BENEFITS OF RUNNING</h3></div>
+    <div class="benefitsContent">
+      <ul>
+        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
+        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
+        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
+        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
+      </ul>
+    </div>
+    <div class="text-center">
+      <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
+    </div>
+
+    <div class="text-center scroll-link">
+      <%= link_to "#WhyDogRunners", class: "scroll-link" do %>
+      <br>WHY DOG RUNNERS<br><i class="fa fa-angle-double-down fa-3x"></i>
+      <% end %>
+    </div>
+  </div>
+
+
+
+
+
+  <a name="WhyDogRunners"></a>
+  <div class="home_box light-gray-bg">
+    <div class="text-center"><h3>WHY DOG RUNNERS</h3></div>
+    <ul>
+      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
+      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
+      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
+      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
+    </ul>
+
+    <div class="text-center"><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
+    </div>
+    <div class="text-center scroll-link">
+      <%= link_to "#top", class: "scroll-link" do %>
       <br>BACK TO TOP<br><i class="fa fa-angle-double-up fa-3x"></i>
       <% end %>
     </div>
-
   </div>
+
+
+</div>
 </div>
 
 
 <%= content_for :after_js do %>
 <script>
-$(function(){
-  var words = document.getElementsByClassName('word');
-  var wordArray = [];
-  var currentWord = 0;
+  $(function(){
+    var words = document.getElementsByClassName('word');
+    var wordArray = [];
+    var currentWord = 0;
 
-  words[currentWord].style.opacity = 1;
-  for (var i = 0; i < words.length; i++) {
-    splitLetters(words[i]);
-  }
-
-  function changeWord() {
-    var cw = wordArray[currentWord];
-    var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
-    for (var i = 0; i < cw.length; i++) {
-      animateLetterOut(cw, i);
+    words[currentWord].style.opacity = 1;
+    for (var i = 0; i < words.length; i++) {
+      splitLetters(words[i]);
     }
 
-    for (var i = 0; i < nw.length; i++) {
-      nw[i].className = 'letter behind';
-      nw[0].parentElement.style.opacity = 1;
-      animateLetterIn(nw, i);
+    function changeWord() {
+      var cw = wordArray[currentWord];
+      var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+      for (var i = 0; i < cw.length; i++) {
+        animateLetterOut(cw, i);
+      }
+
+      for (var i = 0; i < nw.length; i++) {
+        nw[i].className = 'letter behind';
+        nw[0].parentElement.style.opacity = 1;
+        animateLetterIn(nw, i);
+      }
+
+      currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
     }
 
-    currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
-  }
-
-  function animateLetterOut(cw, i) {
-    setTimeout(function() {
-      cw[i].className = 'letter out';
-    }, i*80);
-  }
-
-  function animateLetterIn(nw, i) {
-    setTimeout(function() {
-      nw[i].className = 'letter in';
-    }, 340+(i*80));
-  }
-
-  function splitLetters(word) {
-    var content = word.innerHTML;
-    word.innerHTML = '';
-    var letters = [];
-    for (var i = 0; i < content.length; i++) {
-      var letter = document.createElement('span');
-      letter.className = 'letter';
-      letter.innerHTML = content.charAt(i);
-      word.appendChild(letter);
-      letters.push(letter);
+    function animateLetterOut(cw, i) {
+      setTimeout(function() {
+        cw[i].className = 'letter out';
+      }, i*80);
     }
 
-    wordArray.push(letters);
-  }
+    function animateLetterIn(nw, i) {
+      setTimeout(function() {
+        nw[i].className = 'letter in';
+      }, 340+(i*80));
+    }
+
+    function splitLetters(word) {
+      var content = word.innerHTML;
+      word.innerHTML = '';
+      var letters = [];
+      for (var i = 0; i < content.length; i++) {
+        var letter = document.createElement('span');
+        letter.className = 'letter';
+        letter.innerHTML = content.charAt(i);
+        word.appendChild(letter);
+        letters.push(letter);
+      }
+
+      wordArray.push(letters);
+    }
 
 
-  changeWord();
-  setInterval(changeWord, 5000);
-});
+    changeWord();
+    setInterval(changeWord, 5000);
+  });
 
 </script>
 <% end %>
