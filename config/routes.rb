@@ -15,6 +15,7 @@
 
   resources :runs do
     get '/gps/', to: 'pages#gps'
+    resources :messages, only: [:create]
   end
 
   resources :pages, only: [:help, :become_runner, :gps]
