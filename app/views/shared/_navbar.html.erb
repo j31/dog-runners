@@ -20,8 +20,7 @@
     <% if current_user %>
     <li><%= link_to new_run_path do %><i class="fa fa-home"></i> Book a run<% end %></li>
     <li><%= link_to root_path do %><i class="fa fa-home"></i> Home<% end %></li>
-    <li><%= link_to runs_path do %><i class="fa fa-list"></i> Run History<% end %></li>
-    <li><%= link_to profile_path(current_user) do %><i class="fa fa-user"></i> Profile<% end %></li>
+
     <li><%= link_to "#" do %><i class="fa fa-question-circle"></i> Help Center<% end %></li>
     <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i> Log Out<% end %></li>
     <% else %>
