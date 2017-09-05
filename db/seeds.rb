@@ -92,7 +92,7 @@ new_dog2 = Dog.new(user: john,
   age: 5,
   breed: "Greyhound + Terrier")
 new_dog2.save!
-new_dog2.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/nala_orig.jpg"
+new_dog2.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/nala2_orig.jpg"
 
 puts "Here are the dogs. Last but not least some runs for Snoopy"
 # 3 runs for snoopy with different runners

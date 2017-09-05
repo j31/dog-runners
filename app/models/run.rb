@@ -9,4 +9,5 @@ class Run < ApplicationRecord
 
   validates :dog_id, presence: true
 
+  DURATIONS = [15, 30, 45, 60]
 end
