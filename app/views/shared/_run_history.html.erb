@@ -24,13 +24,14 @@
 <br>
 <br>
 
-<% @runs.each do |run| %>
+<% @runs.each_with_index do |run, index| %>
 
 <%= link_to run_path(run) do %>
 <div class="run-history-box">
 
   <div id="run-photo">
-    <%= image_tag 'run1.png', height: 80, width: 80 %>
+    <% run_img_path = "run#{index+1}.PNG" %>
+    <%= image_tag run_img_path, height: 80, width: 80 %>
   </div>
 
   <div id="run-desc">
