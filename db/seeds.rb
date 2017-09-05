@@ -46,7 +46,7 @@ puts "Now I'll make some users..."
 
 #the not assigned runner
 # USER ID 1
-not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456")
+not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456", first_name: "NA", last_name: "NA", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
 puts "not_assigned is done."
 
 # RUNNER ID 2
@@ -96,7 +96,7 @@ new_dog2.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/nala2
 
 puts "Here are the dogs. Last but not least some runs for Snoopy"
 # 3 runs for snoopy with different runners
-Run.create!(user: john,
+Run.create!(user: johannes,
   note: "great run",
   dog_id: new_dog1.id,
   park_id: 1,
