@@ -55,11 +55,11 @@
 
           <div class="col-xs-12 run-status"><%= user.first_name %> accepted your run request...</div><br>
 
-          <div class="button-show-box" style="width: 60%;">
-            <%= link_to runs_path, method: :get, class: "btn btn-contrast-bg" do %>
-            <i class="fa fa-inbox"></i>
-            MESSAGE <%= user.first_name.upcase %>
-            <% end %>
+          <div class="button-show-box">
+            <a href="#" class="btn btn-contrast-bg toggleButton">
+              <i class="fa fa-inbox"></i>
+              MESSAGE <%= user.first_name.upcase %>
+            </a>
           </div>
 
 
@@ -91,12 +91,13 @@
           <i class="fa fa-map-marker"></i>
           MAP OF THE RUN
           <% end %>
-          <%= link_to runs_path, method: :get, class: "btn btn-no-bg" do %>
-          <i class="fa fa-inbox"></i>
-          MESSAGE <%= user.first_name.upcase %>
-          <% end %>
+          <div class="button-show-box">
+            <a href="#" class="btn btn-no-bg toggleButton">
+              <i class="fa fa-inbox"></i>
+              MESSAGE <%= user.first_name.upcase %>
+            </a>
+          </div>
         </div>
-
 
 
 
