@@ -7,13 +7,13 @@
   <div id="run-avatar">
     <span id="dog-avatar">
      <% if dog.photo %>
-     <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
+     <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo-show', style:"height: 120px;") %>
      <% else %>
-     <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+     <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo-show", style: "height: 120px;"}%>
      <% end %>
    </span>
    <span id="runner-avatar">
-    <%= image_tag "unassigned.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+    <%= image_tag "unassigned.png", {class: "img-circle white-border", id: "logo-show", style: "height: 120px;"}%>
   </span>
   </div>
   <br>
@@ -26,19 +26,19 @@
   <span id="dog-avatar">
 
    <% if dog.photo %>
-   <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px;") %>
+   <%= cl_image_tag(dog.photo.path, :class => 'img-circle white-border', :id => 'logo-show', style:"height: 120px;") %>
    <% else %>
-   <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+   <%= image_tag "dog_avatar.png", {class: "img-circle white-border", id: "logo-show", style: "height: 120px;"}%>
    <% end %>
 
   </span>
 
   <span id="runner-avatar">
   <% if user.photo %>
-  <%= cl_image_tag(user.photo.path, :class => 'img-circle white-border', :id => 'logo', style:"height: 120px; width: 120px;") %>
+  <%= cl_image_tag(user.photo.path, :class => 'img-circle white-border', :id => 'logo-show', style:"height: 120px; width: 120px;") %>
   <% else %>
 
-  <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo", style: "height: 120px;"}%>
+  <%= image_tag "runner_avatar.png", {class: "img-circle white-border", id: "logo-show", style: "height: 120px;"}%>
   <% end %>
   </span>
   </div>
