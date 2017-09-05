@@ -64,20 +64,24 @@
       <%= link_to "#Benefits", class: "scroll-link" do %>
       <br>BENEFITS OF RUNNING<br><i class="fa fa-angle-double-down fa-3x"></i>
       <% end %>
-      <a name="Benefits"></a>
     </div>
   </div>
 
 
+      <a name="Benefits"></a>
   <div class="home_box">
     <div class="text-center"><h3>BENEFITS OF RUNNING</h3></div>
-    <div class="benefitsContent">
-      <ul>
-        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
-        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
-        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
-        <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
-      </ul>
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-1.png" %>
+      <p class="text">Improved behavior</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-2.png" %>
+      <p class="text">Fewer health problems</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-4.png" %>
+      <p class="text">Better sleep and mood</p>
     </div>
     <div class="text-center">
       <span><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
@@ -97,13 +101,18 @@
   <a name="WhyDogRunners"></a>
   <div class="home_box light-gray-bg">
     <div class="text-center"><h3>WHY DOG RUNNERS</h3></div>
-    <ul>
-      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
-      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
-      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
-      <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
-    </ul>
-
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-5.png" %>
+      <p class="text">We only hire dog lovers</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-6.png" %>
+      <p class="text">We're focused on your dog</p>
+    </div>
+    <div class="col-xs-4 text-center">
+      <%= image_tag "iconhome-8.png" %>
+      <p class="text">Real-time tracking and reports</p>
+    </div>
     <div class="text-center"><%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
     </div>
     <div class="text-center scroll-link">

@@ -57,6 +57,11 @@
   margin: 10px 0px auto;
   padding-top: 130px;
 
+  img {
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
   .number {
     border: 1px solid $dog-runner-color;
     border-radius: 50%;
