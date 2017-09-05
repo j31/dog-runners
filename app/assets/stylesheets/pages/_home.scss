@@ -1,3 +1,8 @@
+.bg-position-home {
+  background-position: 57%;
+  background-size: cover;
+}
+
 
 .home_banner {
   .banner_content {
@@ -40,12 +45,11 @@
 .home_box_wrapper {
   height: 100%;
   background-color: $dog-runner-bg-color;
-
   display: block;
 }
 
 .home_box {
-  background: #f9f9f9;
+  background: $dog-runner-bg-color;
   border-radius: 4px;
   height: 90vh;
   width: 100%;

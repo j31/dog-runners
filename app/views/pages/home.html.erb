@@ -1,5 +1,5 @@
 
-<div class="home_banner styled-bg-container bg-position-center" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
+<div class="home_banner styled-bg-container bg-position-home" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.3) 50%), url('https://static.wixstatic.com/media/83df61_a5191021e26541d7bcde4f08cde5f4bd.jpg');">
   <div class="banner_content">
     <div class="container" id="banner-text">
       <h1><i class="fa fa-heart"></i><br>Dog<br>Runners</i></h1>
@@ -16,14 +16,16 @@
         </div>
       </div>
 
-      <br><br>
-      <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
+      <br><br><br><br><br>
+      <%= link_to "GET STARTED", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
+      <br>
+      <%= link_to "LOG IN", new_user_session_path, method: :get, class: "btn btn-no-bg" %>
       <br><br>
     </div>
 
     <div class="container text-center" id="banner-scroll">
       <%= link_to "#HowItWorks", class: "scroll-link-home" do %>
-      How it works <br><i class="fa fa-angle-double-down fa-3x"></i>
+      HOW IT WORKS <br><i class="fa fa-angle-double-down fa-3x"></i>
       <% end %>
     </div>
   </div>
@@ -33,9 +35,9 @@
 <div class="page-wrapper">
   <div class="content-container">
 
-
+    <a name="HowItWorks"></a>
     <div class="home_box">
-      <h3 class="text-center">How it Works</h3>
+      <h3 class="text-center">HOW IT WORKS</h3>
       <div class="col-xs-4 text-center">
         <p class="number text-center">1</p>
         <i class="fa fa-paw icon" aria-hidden="true"></i>
@@ -53,13 +55,36 @@
       </div>
 
       <div class="text-center">
-        <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %></span>
+        <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
       </div>
 
-       <div class="text-center scroll-link">
+      <div class="text-center scroll-link">
         <%= link_to "#Benefits", class: "scroll-link" do %>
-          <br>Benefits <br><i class="fa fa-angle-double-down fa-3x"></i>
+          <br>BENEFITS OF RUNNING<br><i class="fa fa-angle-double-down fa-3x"></i>
         <% end %>
+      </div>
+    </div>
+
+
+    <a name="Benefits"></a>
+    <div class="home_box">
+      <div class="text-center"><h3>BENEFITS OF RUNNING</h3></div>
+      <div class="benefitsContent">
+        <ul>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
+        </ul>
+      </div>
+      <div class="text-center">
+        <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %></span>
+      </div>
+
+      <div class="text-center scroll-link">
+      <%= link_to "#WhyDogRunners", class: "scroll-link" do %>
+      <br>WHY DOG RUNNERS<br><i class="fa fa-angle-double-down fa-3x"></i>
+      <% end %>
       </div>
     </div>
 
@@ -67,56 +92,29 @@
 
 
 
-      <a name="Benefits"></a>
-      <div class="home_box">
-        <div class="text-center"><h3>Benefits of Running</h3></div>
-        <div class="benefitsContent">
-          <ul>
-            <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Improved behavior and confidence</li>
-            <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Fewer joint and health problems</li>
-            <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Better sleep and mood</li>
-            <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Your dog will love it!</li>
-          </ul>
-        </div>
-        <div class="text-center">
-          <span><%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %></span>
-        </div>
+    <a name="WhyDogRunners"></a>
+    <div class="home_box">
+      <div class="text-center"><h3>WHY DOG RUNNERS</h3></div>
+        <ul>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
+          <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
+        </ul>
 
-        <div class="text-center scroll-link">
-        <%= link_to "#WhyDogRunners", class: "scroll-link" do %>
-        <br>Why Choose Us <br><i class="fa fa-angle-double-down fa-3x"></i>
-        <% end %>
-        </div>
-
+      <div class="text-center">
+        <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-contrast-bg" %>
       </div>
-
-
-
-
-        <div class="box-container">
-          <a name="WhyDogRunners"></a>
-          <div class="home_box">
-            <div class="text-center"><h3>Why Dog Runners?</h3></div>
-          <!--   <div class="benefitsContent"> -->
-              <ul>
-                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We only hire dog lovers</li>
-                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; We're focused on your dog's fitness</li>
-                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Over 50.000km of happy runs</li>
-                <li><i class="fa fa-paw" aria-hidden="true"></i> &nbsp; Real-time tracking and great reports</li>
-              </ul>
-           <!--  </div> -->
-            <div class="text-center">
-              <%= link_to "Get Started", new_user_registration_path, method: :get, class: "btn btn-primary btn-md" %>
-            </div>
-          </div>
-          <div class="text-center scroll-link">
-          <%= link_to "#top", class: "scroll-link" do %>
-            <br>Back to top <br><i class="fa fa-angle-double-up fa-3x"></i>
-            <% end %>
-          </div>
-
     </div>
+
+    <div class="text-center scroll-link">
+    <%= link_to "#top", class: "scroll-link" do %>
+      <br>BACK TO TOP<br><i class="fa fa-angle-double-up fa-3x"></i>
+      <% end %>
+    </div>
+
   </div>
+</div>
 
 
 <%= content_for :after_js do %>
