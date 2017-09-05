@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831124640) do
+ActiveRecord::Schema.define(version: 20170905115820) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20170831124640) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_dogs_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "run_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_id"], name: "index_messages_on_run_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "parks", force: :cascade do |t|
@@ -85,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170831124640) do
     t.string "address"
     t.float "longitude"
     t.float "latidude"
+    t.string "name"
     t.index ["dog_id"], name: "index_runs_on_dog_id"
     t.index ["park_id"], name: "index_runs_on_park_id"
     t.index ["user_id"], name: "index_runs_on_user_id"
@@ -126,6 +137,8 @@ ActiveRecord::Schema.define(version: 20170831124640) do
   end
 
   add_foreign_key "dogs", "users"
+  add_foreign_key "messages", "runs"
+  add_foreign_key "messages", "users"
   add_foreign_key "reviews", "runs"
   add_foreign_key "runs", "dogs"
   add_foreign_key "runs", "parks"
