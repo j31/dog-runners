@@ -83,9 +83,11 @@ respond_to :html, :js
 
     # @runs = Run.where(dog.user_id: current_user.id)
     @runs = []
+    @total = 0
     current_user.dogs.each do |dog|
       dog.runs.each do |run|
         @runs << run
+        @total += run.duration
       end
     end
   end
