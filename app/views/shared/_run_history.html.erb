@@ -1,23 +1,48 @@
-<h1><%= @runs.size %> runs, <%= @total %> min</h1>
+
+<div id="total-km">
+  <br><br>
+  <h2><%= @total_km.round(1) %></h2>
+  <p>Total kilometers</p>
+  <br>
+</div>
+
+<div class="stats">
+  <div class="stat">
+  <h3><%= @runs.size %></h3>
+  <p>Total Runs</p>
+  </div>
+  <div class="stat">
+  <h3><%= @total_run_minutes %></h3>
+  <p>Total Minutes</p>
+  </div>
+  <div class="stat">
+  <h3><%= @avg_pace.round(2) %></h3>
+  <p>Avg. Pace</p>
+  </div>
+</div>
+
+<br>
+<br>
 
   <% @runs.each do |run| %>
 
     <%= link_to run_path(run) do %>
-     <div class="row list-row">
+     <div class="run-history-box">
 
-        <div class="col col-xs-2">
+        <div id="run-photo">
           <%= cl_image_tag run.dog.photo.path, class: "img-circle", height: 40, width: 40 %>
         </div>
 
-        <div class="col col-xs-3">
+        <div id="run-des">
           <p><%= run.dog.name %></p>
-        </div>
-        <div class="col col-xs-3">
           <p><%= run.appointment.strftime("%d-%b") %></p>
-        </div>
-        <div class="col col-xs-3">
           <p><%= run.duration %> min</p>
         </div>
+
+        <div id="run-icon">
+          <p>></p>
+        </div>
+
       </div>
     <% end %>
 

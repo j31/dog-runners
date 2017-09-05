@@ -10,19 +10,16 @@ class PagesController < ApplicationController
       marker.lng current_user.longitude
     end
     @runs = []
+    @total_run_minutes = 0
+    @avg_pace = rand(400..459).to_f/100
     current_user.dogs.each do |dog|
       dog.runs.each do |run|
         @runs << run
+        @total_run_minutes += run.duration
       end
     end
+    @total_km  = @total_run_minutes/@avg_pace
     @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
-    @runs = Run.all
-    @all_my_runs = []
-    @runs.each do |run|
-      if run.dog.user == current_user
-        @all_my_runs << run
-      end
-    end
   end
 
 
