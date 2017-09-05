@@ -2,6 +2,7 @@
 .home_banner {
   .banner_content {
     height: 100vh;
+    padding-top: 10%;
   }
   h1 {
     font-family: $headers-font;
@@ -45,11 +46,11 @@
 
 .home_box {
   background: #f9f9f9;
-  padding: 30px;
   border-radius: 4px;
-  height: 70vh;
-  width: 355px;
-  margin: 85px auto 0 auto;
+  height: 90vh;
+  width: 100%;
+  margin: 10px 0px auto;
+  padding-top: 10px;
 
   .number {
     border: 1px solid $dog-runner-color;
