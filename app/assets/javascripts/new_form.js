@@ -7,11 +7,18 @@ $(document).ready(function(){
   });
 });
 
-
 // Radio Button Action - DOGS
 $(document).ready(function(){
   $(".dog-choice").click(function(){
     $('.dog-choice').removeClass("active");
+    $(this).toggleClass("active");
+  });
+});
+
+// Radio Button Action - INTENSITY
+$(document).ready(function(){
+  $(".intensity-choice").click(function(){
+    $('.intensity-choice').removeClass("active");
     $(this).toggleClass("active");
   });
 });
