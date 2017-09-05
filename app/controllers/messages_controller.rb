@@ -2,8 +2,9 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    @run = Run.find(params(:run_id))
-    @message.run = @run
+    @run = Run.find(params[:run_id])
+    @conversation = @run.conversation
+    @message.conversation = @conversation
     @message.user = current_user
     if @message.save
       respond_to do |format|

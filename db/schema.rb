@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905115820) do
+ActiveRecord::Schema.define(version: 20170905145022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(version: 20170905115820) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.bigint "run_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["run_id"], name: "index_conversations_on_run_id"
+  end
+
   create_table "dogs", force: :cascade do |t|
     t.bigint "user_id"
     t.string "name"
@@ -46,11 +53,11 @@ ActiveRecord::Schema.define(version: 20170905115820) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.bigint "run_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["run_id"], name: "index_messages_on_run_id"
+    t.bigint "conversation_id"
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
@@ -95,7 +102,6 @@ ActiveRecord::Schema.define(version: 20170905115820) do
     t.string "address"
     t.float "longitude"
     t.float "latidude"
-    t.string "name"
     t.index ["dog_id"], name: "index_runs_on_dog_id"
     t.index ["park_id"], name: "index_runs_on_park_id"
     t.index ["user_id"], name: "index_runs_on_user_id"
@@ -136,8 +142,9 @@ ActiveRecord::Schema.define(version: 20170905115820) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "conversations", "runs"
   add_foreign_key "dogs", "users"
-  add_foreign_key "messages", "runs"
+  add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "reviews", "runs"
   add_foreign_key "runs", "dogs"
