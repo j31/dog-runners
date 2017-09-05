@@ -15,7 +15,8 @@
           <span class="sr-only">35% Complete (success)</span>
         </div>
       </div>
-      <div class="col-xs-12 run-status"><span>We're searching for your runner...</span>
+
+      <div class="run-status"><span>We're searching for your runner...</span>
         <svg id="svg-sprite">
           <symbol id="paw" viewBox="0 0 249 209.32">
             <ellipse cx="27.917" cy="106.333" stroke-width="0" rx="27.917" ry="35.833"/>
@@ -51,9 +52,10 @@
               <span class="sr-only">35% Complete (success)</span>
             </div>
           </div>
+
           <div class="col-xs-12 run-status"><%= user.first_name %> accepted your run request...</div><br>
 
-          <div class="col-xs-12 button-show-box" style="width: 60%;">
+          <div class="button-show-box" style="width: 60%;">
             <%= link_to runs_path, method: :get, class: "btn btn-contrast-bg" do %>
             <i class="fa fa-inbox"></i>
             MESSAGE <%= user.first_name.upcase %>
@@ -81,9 +83,10 @@
             <span class="sr-only">35% Complete (success)</span>
           </div>
         </div>
+
         <div class="col-xs-12 run-status text-center">the run just started...</div><br><br>
 
-        <div class="col-xs-12 button-show-box">
+        <div class="button-show-box">
           <%= link_to run_gps_path(run), method: :get, class: "btn btn-contrast-bg" do %>
           <i class="fa fa-map-marker"></i>
           MAP OF THE RUN
@@ -100,7 +103,6 @@
       <% elsif run.status == "ended"%>
 
        <div class="progress">
-
          <div class="progress-bar progress-bar-success tab-passed" style="width: 25%">pending
           <span class="sr-only">35% Complete (success)</span>
         </div>
@@ -113,14 +115,16 @@
         <div class="progress-bar progress-bar-success progress-bar-striped tab-active" style="width: 25%;">finished
           <span class="sr-only">35% Complete (success)</span><br><br>
           <span id="status-smybol"><%= image_tag "home.png" %>
-          </div>
         </div>
+      </div>
+
         <div class="col-xs-12 run-status">the run is finished...</div><br>
 
-        <div class="col-xs-12 button-show-box">
+        <div class="button-show-box">
           <%= link_to runs_path, method: :get, class: "btn btn-contrast-bg" do %>
           <i class="fa fa-line-chart"></i>
           SEE RUN STATS
           <% end %>
         </div>
+
       <% end %>
