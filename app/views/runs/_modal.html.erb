@@ -3,19 +3,20 @@
 <div class="modal fade bd-example-modal-sm" id="confirmation-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+    <!--   <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Please review and confirm your booking</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
+      </div> -->
       <div class="modal-body">
         <div class="dog-runner-box box-small white-border-bottom">
-          <h3><%= @run.dog.name %> is going for a run.</h3>
-          <p>Duration run: <%= @run.duration %></p>
+          <h3><strong><%= @run.dog.name %> is going for a run.</strong></h3>
+          <p>Run duration: <%= @run.duration %></p>
         </div>
         <div class="dog-runner-box box-small white-border-bottom">
-        <h3>When &amp; Where</h3>
+        <!-- <h3>When &amp; Where</h3> -->
+         <%= image_tag "loc_icon.png", {style: "height: 50px"} %>
           <p>Date: <%= @run.appointment.to_date %>
           </p>
           <p>Pick-up window: <%= @run.appointment.to_formatted_s(:time) %> -
@@ -24,22 +25,23 @@
           <p>Location: <%= @run.address %></p>
         </div>
         <div class="dog-runner-box box-small">
-        <h3>Pricing &amp; Terms</h3>
+        <!-- <h3>Pricing &amp; Terms</h3> -->
+        <%= image_tag "euro_icon.png", {style: "height: 50px"} %>
           <p>Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %></p>
           <p>Home pick-up:  <%= number_to_currency(10, :unit=>'€') %></p>
           <p>Total: <%= number_to_currency(@run.price, :unit=>'€') %></p>
-          <p><a href="#">See terms in detail</a></p>
+          <p><a href="#">(See terms in detail.)</a></p>
         </div>
       </div>
-      <div class="modal-footer">
-        <div class="dog-runner-box box-small form-actions">
-          <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
-            <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit btn-sm" %>
-          <% end %>
-          <br>
-          <%= link_to "Make Changes", edit_run_path(@run) %>
-        </div>
+
+      <div class="dog-runner-box box-small form-actions">
+        <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
+          <%= f.button :submit, value: "Confirm Booking", class: "btn btn-primary btn-width-to-fit btn-sm" %>
+        <% end %>
+        <br>
+        <%= link_to "Make Changes", edit_run_path(@run) %>
       </div>
+
     </div>
   </div>
 </div>
