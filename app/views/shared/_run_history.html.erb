@@ -8,42 +8,42 @@
 
 <div class="stats">
   <div class="stat">
-  <h3><%= @runs.size %></h3>
-  <p>Total Runs</p>
+    <h3><%= @runs.size %></h3>
+    <p>Total Runs</p>
   </div>
   <div class="stat">
-  <h3><%= @total_run_minutes %></h3>
-  <p>Total Minutes</p>
+    <h3><%= @total_run_minutes %></h3>
+    <p>Total Minutes</p>
   </div>
   <div class="stat">
-  <h3><%= @avg_pace.round(2) %></h3>
-  <p>Avg. Pace</p>
+    <h3><%= @avg_pace.round(2) %></h3>
+    <p>Avg. Pace</p>
   </div>
 </div>
 
 <br>
 <br>
 
-  <% @runs.each do |run| %>
+<% @runs.each do |run| %>
 
-    <%= link_to run_path(run) do %>
-     <div class="run-history-box">
+<%= link_to run_path(run) do %>
+<div class="run-history-box">
 
-        <div id="run-photo">
-          <%= cl_image_tag run.dog.photo.path, class: "img-circle", height: 40, width: 40 %>
-        </div>
+  <div id="run-photo">
+    <%= image_tag 'run1.png', height: 80, width: 80 %>
+  </div>
 
-        <div id="run-des">
-          <p><%= run.dog.name %></p>
-          <p><%= run.appointment.strftime("%d-%b") %></p>
-          <p><%= run.duration %> min</p>
-        </div>
+  <div id="run-desc">
+    <p><b><%= run.dog.name %></b></p>
+    <p><%= run.appointment.strftime("%d-%B-%y") %></p>
+    <p><%= run.duration %> minutes</p>
+  </div>
 
-        <div id="run-icon">
-          <p>></p>
-        </div>
+  <div id="run-icon">
+    <%= image_tag Dog::MEDALS.sample(), class: "medal img-circle" %>
+  </div>
 
-      </div>
-    <% end %>
+</div>
+<% end %>
 
-  <% end %>
+<% end %>
