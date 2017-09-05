@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #7d8189;
+  background-color: white;
   color: #fff;
   padding: 10px;
   z-index: 1000;
@@ -101,7 +101,7 @@
   position: fixed;
   height: 90vh;
   top: 50px;
-  background-color: #3C3842;
+  background-color: white;
   width: 50%;
   transform: translate(200%, 0);
   // was -100
@@ -116,7 +116,7 @@
 }
 
 .mobile-nav {
-  background-color: #7d8189 !important;
+  background-color: white !important;
   z-index: 1000;
 }
 .mobile-nav li a{
