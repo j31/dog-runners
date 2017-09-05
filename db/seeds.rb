@@ -46,32 +46,37 @@ puts "Now I'll make some users..."
 
 #the not assigned runner
 # USER ID 1
-not_assigned = User.create(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456", first_name: "NA", last_name: "NA", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
+not_assigned = User.create!(email: "not_assigned@wagon.com", role: "runner", password:"123456", password_confirmation: "123456", first_name: "NA", last_name: "NA", description: "Dog enthusiast")
 puts "not_assigned is done."
 
 # RUNNER ID 2
-johannes = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "johannes@dogrunners.com", role: "runner", first_name: "Johannes", last_name: "Vaisfeld", password:"666666", password_confirmation: "123456", description: "Dog enthusiast")
+johannes = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "johannes@dogrunners.com", role: "runner", first_name: "Johannes", last_name: "Vaisfeld", password:"123456", password_confirmation: "123456", description: "Dog enthusiast")
 johannes.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/johannes_orig.jpg"
+johannes.save!
 puts "Johannes's done."
 
 # RUNNER ID 3
 laura = User.create(address: 'Oranienstraße 17, Berlin', street: 'Oranienstraße 17', city: "Berlin", email: "laura@wagon.com", role: "runner", first_name: "Laura", last_name: "Walde", password:"123456", password_confirmation: "123456", description: "Love to run and love dogs")
 laura.photo_url = "https://3.bp.blogspot.com/-gPijdlX8OIU/VznOg-yGhgI/AAAAAAAAISQ/Opo_cshCHAYzm3_mwpsEHX5IieDMIARyQCLcB/s400/IMG_20160513_191456.jpg"
+laura.save!
 puts "Laura's done."
 
 # RUNNER ID 4
 michael = User.create(address: 'Kurfürstendamm 90, Berlin', street: 'Kurfürstendamm 90', city: "Berlin", email: "michael@wagon.com", role: "runner", first_name: "Michael", last_name: "Wiezcorek", password:"123456", password_confirmation: "123456", description: "passionate runner - even more fun with dogs")
 michael.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXSTNW3mJAZ2d1ml-2P9uZ8oilHgix9CkclIpXt3lBHXibrbxhQ"
+michael.save!
 puts "Michael's done."
 
 # RUNNER ID 5
 alice = User.create(address: 'Simon Dach Straße 12, Berlin', street: 'Simon Dach Straße 12', city: "Berlin", email: "alice@wagon.com", role: "runner", first_name: "Alice", last_name: "Ducray", password:"123456", password_confirmation: "123456", description: "a home without a dog is just a house")
 alice.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3cBPW0B5WJ1sp_B976AmON5DMWJjW-o1kIVm_vYTP9dd0kjQg"
+alice.save!
 puts "Alice's done."
 
 # OWNER ID 6
-john = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "john@dr.com", role: "owner", first_name: "John", last_name: "Fish", password:"111111", password_confirmation: "111111", description: "Dog Lover!")
+john = User.create(address: 'Charlottenstraße 2, 10969 Berlin', street: 'Charlottenstraße 2', city: "Berlin", email: "john@gmail.com", role: "owner", first_name: "John", last_name: "Fish", password:"123456", password_confirmation: "123456", description: "Dog Lover!")
 john.photo_url = "https://105315715-167216060926751446.preview.editmysite.com/uploads/1/0/5/3/105315715/john-orig_orig.jpg"
+john.save!
 puts "Johns done."
 puts "Now some dogs for John."
 
@@ -84,6 +89,7 @@ new_dog1 = Dog.new(user: john,
   breed: "Golden Retriever")
 new_dog1.save!
 new_dog1.photo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBDLkh4nnGjtDAckN5AeXteua_mlB2JieNMpYoU0gdpXTmqiZkA"
+new_dog1.save!
 
 new_dog2 = Dog.new(user: john,
   name: "Nala",
@@ -93,15 +99,15 @@ new_dog2 = Dog.new(user: john,
   breed: "Greyhound + Terrier")
 new_dog2.save!
 new_dog2.photo_url = "http://airudite.weebly.com/uploads/1/0/5/3/105315715/nala2_orig.jpg"
+new_dog2.save!
 
-puts "Here are the dogs. Last but not least some runs for Snoopy"
-# 3 runs for snoopy with different runners
+# Runs for DOG 1
 Run.create!(user: johannes,
   note: "great run",
   dog_id: new_dog1.id,
   park_id: 1,
   status: "ended",
-  duration: 20,
+  duration: 30,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 20,
   note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1249113435';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
@@ -111,7 +117,7 @@ Run.create!(user: laura,
   note: "awesome run",
   dog_id: new_dog1.id,
   status: "ended",
-  duration: 10,
+  duration: 30,
   park_id: 2,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 10,
@@ -123,6 +129,52 @@ Run.create!(user: alice,
   dog_id: new_dog1.id,
   status: "ended",
   duration: 30,
+  park_id: 3,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
+  price: 15,
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1258113438';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
+  appointment: Date.new(2017, 8, rand(26..30)))
+
+
+# Run for DOG 2
+Run.create!(user: johannes,
+  note: "great run",
+  dog_id: new_dog2.id,
+  park_id: 1,
+  status: "ended",
+  duration: 30,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
+  price: 20,
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1249113435';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
+  appointment: Date.new(2017, 8, rand(26..30)))
+
+Run.create!(user: johannes,
+  note: "awesome run",
+  dog_id: new_dog2.id,
+  status: "ended",
+  duration: 15,
+  park_id: 2,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
+  price: 10,
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1257113437';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
+  appointment: Date.new(2017, 8, rand(26..30)))
+
+Run.create!(user: laura,
+  note: "best run",
+  dog_id: new_dog2.id,
+  status: "ended",
+  duration: 45,
+  park_id: 1,
+  address: "Rudi-Dutschke-Straße 26, Berlin",
+  price: 15,
+  note: "<div style='background-color:#333;'><a id='ltw_home_url' href='https://locatoweb.com'>LocaToWeb - Real time GPS tracking</a><iframe id='ltw_embed_frame' frameborder='0' style='width:100%;height:600px;border-top:1px solid #000;'></iframe></div><script>var ltwtrackurl='single/1258113438';</script><script src='//locatoweb.azureedge.net/scripts/embed-1.1.3.min.js'></script>",
+  appointment: Date.new(2017, 8, rand(26..30)))
+
+Run.create!(user: alice,
+  note: "best run",
+  dog_id: new_dog2.id,
+  status: "ended",
+  duration: 45,
   park_id: 3,
   address: "Rudi-Dutschke-Straße 26, Berlin",
   price: 15,
