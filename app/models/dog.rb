@@ -4,5 +4,5 @@ class Dog < ApplicationRecord
 
   has_attachment :photo
 
-  MEDALS = ['badge1.png', 'badge2.png', 'badge2.png', 'badge3.png', 'badge4.png', 'badge5.png', 'badge6.png']
+  MEDALS = ['badge1.png', 'badge2.png', 'badge2.png', 'badge3.png', 'badge4.png', 'badge5.png']
 end
