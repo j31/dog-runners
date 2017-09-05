@@ -40,6 +40,24 @@
         </div>
       </div>
 
+
+      <div class="form-group">
+        <div class="intensity-choices">
+          <input type="hidden" name="#" value="">
+
+          <input class="hidden" type="radio" value="15" name="#" id="run_duration_15">
+          <label for="run_duration_15" class="intensity-choice">Easy</label>
+
+           <input class="hidden" type="radio" value="30" name="#" id="run_duration_30">
+          <label for="run_duration_30" class="intensity-choice">Medium</label>
+
+          <input class="hidden" type="radio" value="30" name="#" id="run_duration_30">
+          <label for="run_duration_30" class="intensity-choice">Intense</label>
+
+        </div>
+      </div>
+
+
       <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
 
       <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-contrast-bg" %>
