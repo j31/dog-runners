@@ -1,10 +1,10 @@
 .modal-body, .modal-footer {
   .dog-runner-box {
-    width: 250px;
+    width: 240px;
   }
-    .btn {
-      width: 60% !important;
-    }
+    // .btn {
+    //   width: 60% !important;
+    // }
     h3 {
       font-size: 18px;
     }
@@ -12,4 +12,36 @@
       margin: 0px 0 6px;
       font-size: 13px;
     }
+    h2 {
+      font-size: 20px;
+      color: $dog-runner-color !important;
+    }
+    #under_link {
+      bottom-padding: 10px;
+    }
+}
+
+.btn-modal-bg {
+  border: 1px solid $dog-runner-font-color;
+  background-color: $dog-runner-font-color;
+  color: white;
+  width: 250px;
+  margin: 10px 0px 5px 0px;
+  padding: 10px 0px;
+  letter-spacing: 2px;
+  &:hover {
+    background-color: $dog-runner-font-color;
+    color: white;
+    border: 1px solid $dog-runner-font-color;
+  }
+  &:active {
+    background-color: $dog-runner-font-color;
+    color: white;
+    border: 1px solid $dog-runner-font-color;
+  }
+  &:focus {
+    background-color: $dog-runner-font-color;
+    color: white;
+    border: 1px solid $dog-runner-font-color;
+  }
 }

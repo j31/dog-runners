@@ -1,4 +1,5 @@
 
+
 // Radio Button Action - DURATION
 $(document).ready(function(){
   $(".duration-choice").click(function(){
