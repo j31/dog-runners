@@ -11,22 +11,19 @@
   padding: 20px;
   border-radius: 100%;
   opacity: .4;
-  flex: 0 0 45%;
+  flex: 0 0 120px;
   text-align: center;
   &:hover {
     opacity: 1;
     cursor: pointer;
-    color: white;
   }
   &.active {
   background: $brand-primary;
   border: thin white solid;
-
-  color: white;
   opacity: 1;
   }
   p {
-    margin-top: 135px;
+    margin-top: 110px;
   }
 }
 
@@ -49,13 +46,10 @@
   &:hover {
     opacity: 1;
     cursor: pointer;
-    color: white;
   }
   &.active {
   background: $brand-primary;
   border: thin white solid;
-
-  color: white;
   opacity: 1;
   }
 }
