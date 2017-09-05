@@ -7,7 +7,6 @@ respond_to :html, :js
     @run = Run.find(params[:id])
     @user = User.find(@run.user_id)
     @dog = Dog.find(@run.dog_id)
-    @chat_room = Run.includes(messages: :user).find(params[:id])
   end
 
   def new

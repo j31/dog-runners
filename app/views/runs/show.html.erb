@@ -1,112 +1,29 @@
 
 <div class="page-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="container-one-run-<%= @run.id %>" class="content-container">
-          <%= render "run_status_first", run: @run, user: @user, dog: @dog %>
-        </div>
-        <div  id="container-two-run-<%= @run.id %>" class="content-container">
-          <%= render "run_status_second", run: @run, user: @user  %>
+  <div class="content-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="container-one-run-<%= @run.id %>" class="content-container">
+            <%= render "run_status_first", run: @run, user: @user, dog: @dog %>
+          </div>
+          <div  id="container-two-run-<%= @run.id %>" class="content-container">
+            <%= render "run_status_second", run: @run, user: @user  %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-
-<% content_for :after_js do %>
-<script>
-  console.log("helo");
-  App['run_<%= @run.id %>'] = App.cable.subscriptions.create(
-    { channel: 'RunStatusChannel', run_id: <%= @run.id %> },
-    {
-      received: (data) => {
-        $("#container-one-run-<%= @run.id %>").html(data.run_first_partial);
-        $("#container-two-run-<%= @run.id %>").html(data.run_second_partial);
-      }
-    }
-    );
-  </script>
-  <% end %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="container">
+  <div class="container" id="toggleInbox">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <div class="chat-header"><h4>#<%= @chat_room.name %></h4></div>
+      <div class="col-xs-12">
         <div class="messages">
-          <% @chat_room.messages.each do |massage| %>
-            <%= render 'messages/message', message: message %>
+          <% @run.conversation.messages.each do |message| %>
+            <%= render 'messages/message', message: message, user_is_messages_author: message.user_id == current_user.id %>
           <% end %>
         </div>
         <div id="create-message">
-          <%= simple_form_for [@chat_room, Message.new ], remote: true do |f| %>
+          <%= simple_form_for [@run, Message.new ], remote: true do |f| %>
             <%= f.input :content, label: false %>
           <% end %>
         </div>
@@ -114,5 +31,94 @@
     </div>
   </div>
 
+  <% content_for :after_js do %>
+  <script>
+    App['run_<%= @run.id %>'] = App.cable.subscriptions.create(
+      { channel: 'RunStatusChannel', run_id: <%= @run.id %> },
+      {
+        received: (data) => {
+          $("#container-one-run-<%= @run.id %>").html(data.run_first_partial);
+          $("#container-two-run-<%= @run.id %>").html(data.run_second_partial);
+        }
+      }
+      );
+      scrollLastMessageIntoView();
+      App['conversation_<%= @run.conversation.id %>'] = App.cable.subscriptions.create(
+        { channel: 'ConversationsChannel', conversation_id: <%= @run.conversation.id %> },
+        {
+          received: (data) => {
+            if (data.current_user_id !== <%= current_user.id %>) {
+              const messagesContainer = document.querySelector('.messages');
+              messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+              scrollLastMessageIntoView();
+            }
+          }
+        }
+      );
+    </script>
+    <% end %>
 
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
