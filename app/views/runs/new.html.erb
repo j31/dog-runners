@@ -1,63 +1,55 @@
 <div class="page-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
+  <div class="content-container">
 
 
+    <%= simple_form_for @run, remote: true do |f| %>
 
-        <div class="content-container">
-          <%= simple_form_for @run, remote: true do |f| %>
+      <% if @dogs.size > 1 %>
 
-            <% if @dogs.size > 1 %>
+        <div class="form-group">
+          <div class="dog-choices">
+            <% @dogs.each do |dog| %>
+              <input class="hidden" type="radio" value="<%= dog.id %>" name="run[dog_id]" id="run_dog_id_<%= dog.id %>">
+              <label for="run_dog_id_<%= dog.id %>" class="dog-choice img-circle white-border" style="background-image: url('<%= cl_image_path dog.photo.path%>'); height: 150px; background-position: center center; background-repeat: no-repeat;"><p><%= dog.name %></p></label>
 
-              <div class="form-group">
-                <div class="dog-choices">
-                  <% @dogs.each do |dog| %>
-                    <input class="hidden" type="radio" value="<%= dog.id %>" name="run[dog_id]" id="run_dog_id_<%= dog.id %>">
-                    <label for="run_dog_id_<%= dog.id %>" class="dog-choice" style="background-image: url('<%= cl_image_path dog.photo.path%>'); height: 150px; background-position: center center; background-repeat: no-repeat;"><p><%= dog.name %></p></label>
-
-                  <% end %>
-                </div>
-              </div>
-
-            <% elsif @dogs.size == 1 %>
-              <h2>Booking a run for <%= @dogs.first.name %></h2>
-              <%= f.input :dog_id, as: :hidden %>
-            <% elsif @dogs.size == 0 %>
-              <%= f.input :dog_id, label: false, prompt: "You forgot to upload your dog!", collection: @dogs %>
-              <%= link_to 'upload new dog', new_dog_path %>
-            <% end %>
-
-             <div class="form-group">
-              <div class="duration-choices">
-                <input type="hidden" name="run[duration][]" value="">
-
-                <input class="hidden" type="radio" value="15" name="run[duration]" id="run_duration_15">
-                <label for="run_duration_15" class="duration-choice">15 min</label>
-
-                <input class="hidden" type="radio" value="30" name="run[duration]" id="run_duration_30">
-                <label for="run_duration_30" class="duration-choice">30 min</label>
-
-                <input class="hidden" type="radio" value="45" name="run[duration]" id="run_duration_45">
-                <label for="run_duration_45" class="duration-choice">45 min</label>
-
-              </div>
-            </div>
-
-            <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
-
-            <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
-
-          <% end %>
-
-          <div id="modal-container">
-            <% unless @run.new_record? %>
-              <%= render "modal" %>
             <% end %>
           </div>
         </div>
 
+      <% elsif @dogs.size == 1 %>
+        <h2>Booking a run for <%= @dogs.first.name %></h2>
+        <%= f.input :dog_id, as: :hidden %>
+      <% elsif @dogs.size == 0 %>
+        <%= f.input :dog_id, label: false, prompt: "You forgot to upload your dog!", collection: @dogs %>
+        <%= link_to 'upload new dog', new_dog_path %>
+      <% end %>
+
+       <div class="form-group">
+        <div class="duration-choices">
+          <input type="hidden" name="run[duration][]" value="">
+
+          <input class="hidden" type="radio" value="15" name="run[duration]" id="run_duration_15">
+          <label for="run_duration_15" class="duration-choice">15 min</label>
+
+          <input class="hidden" type="radio" value="30" name="run[duration]" id="run_duration_30">
+          <label for="run_duration_30" class="duration-choice">30 min</label>
+
+          <input class="hidden" type="radio" value="45" name="run[duration]" id="run_duration_45">
+          <label for="run_duration_45" class="duration-choice">45 min</label>
+
+        </div>
       </div>
+
+      <%= f.input :address, label: false, placeholder: "Pick-up Location" %>
+
+      <%= f.button :submit, value: "See Summary", class: "btn btn-primary btn-width-to-fit" %>
+
+    <% end %>
+
+    <div id="modal-container">
+      <% unless @run.new_record? %>
+        <%= render "modal" %>
+      <% end %>
     </div>
   </div>
 </div>
