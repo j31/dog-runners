@@ -4,6 +4,7 @@ class Run < ApplicationRecord
   belongs_to :park, optional: true
 
   has_one :review
+  has_many :messages, dependent: :destroy
 
   enum status: { pre_pending: 0, pending: 1, confirmed: 2, coming: 3, arrived: 4, started: 5, ended: 6, cancelled: 7 }
 

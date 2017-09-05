@@ -11,6 +11,9 @@ class User < ApplicationRecord
   has_many :runs, dependent: :destroy
   has_many :reviews, through: :runs, dependent: :destroy
 
+  # messages
+  has_many :messages, dependent: :destroy
+
   enum role: { owner: 0, runner: 1, admin: 2 }
 
 
