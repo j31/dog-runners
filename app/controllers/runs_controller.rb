@@ -94,7 +94,7 @@ respond_to :html, :js
   end
 
   def send_initial_notification(run)
-    message = " Chuggen suger"
+    message = "someone has requested a run. Please hit the link to confirm: http://www.dogrunners.de/users/sign_in"
     notify(message)
   end
 

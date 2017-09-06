@@ -10,8 +10,7 @@ class MessageSender
     auth_token  = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
     @runners = {
-      "46709501502" => "Fredrik Nordmark",
-      "46768261337" => "Caspar Wikström"
+      "46709501502" => "Fredrik"
     }
   end
 
@@ -20,7 +19,7 @@ class MessageSender
       @client.messages.create(
         from:  46765193211,
         to:    key,
-        body:  message,
+        body:  "Hey #{value}, " + message
       )
     end
   end
