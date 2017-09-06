@@ -2,8 +2,9 @@
   <div class="content-container">
 
 
-    <%= simple_form_for @run, remote: true do |f| %>
+  <h2>Book a Run</h2>
 
+    <%= simple_form_for @run, remote: true do |f| %>
       <% if @dogs.size > 1 %>
 
         <div class="form-group">

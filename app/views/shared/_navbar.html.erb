@@ -18,15 +18,19 @@
 <div class="mobile-nav">
   <ul>
     <% if current_user %>
+
     <li><%= link_to new_run_path do %><i class="fa fa-home"></i> Book a run<% end %></li>
     <li><%= link_to root_path do %><i class="fa fa-home"></i> Home<% end %></li>
 
-    <li><%= link_to "#" do %><i class="fa fa-question-circle"></i> Help Center<% end %></li>
+    <li><%= link_to help_path do %><i class="fa fa-question-circle"></i> Help Center<% end %></li>
     <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i> Log Out<% end %></li>
+
+
     <% else %>
+
     <li><%= link_to new_user_session_path do %><i class="fa fa-user"></i> Log In<% end %></li>
     <li><%= link_to root_path do %><i class="fa fa-home"></i> Home<% end %></li>
-    <li><%= link_to "#" do %><i class="fa fa-question-circle"></i> Help Center<% end %></li>
+
     <% end %>
   </ul>
 </div>

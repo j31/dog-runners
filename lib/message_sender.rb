@@ -9,13 +9,19 @@ class MessageSender
     account_sid = ENV['TWILIO_ACCOUNT_SID']
     auth_token  = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
+    @runners = {
+      "46709501502" => "Fredrik Nordmark",
+      "46768261337" => "Caspar Wikström"
+    }
   end
 
-  def send_message(order_id, to, message)
-    @client.messages.create(
-      from:  46765193211,
-      to:    46709501502,
-      body:  message,
-    )
+  def send_message(run_id, to, message)
+    @runners.each do |key, value|
+      @client.messages.create(
+        from:  46765193211,
+        to:    key,
+        body:  message,
+      )
+    end
   end
 end

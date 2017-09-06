@@ -33,7 +33,7 @@
  <p><%= "#{dog.name} is #{dog.age} years old" %></p>
  <br><br>
  <%= link_to "BOOK A RUN", new_run_path, class: "btn btn-primary btn-contrast-bg" %>
- <%= link_to "Update #{dog.name}'s Profile", "#", class: "btn btn-primary btn-no-bg" %>
+ <%= link_to "Update #{dog.name}'s Profile", edit_dog_path(dog), class: "btn btn-primary btn-no-bg" %>
 </div>
 <% else %>
 <div class="dog-profile hidden" id="<%= dog.name %>">
@@ -51,7 +51,7 @@
   <p><%= "#{dog.name} is #{dog.age} years old" %></p>
   <br><br>
   <%= link_to "BOOK A RUN", new_run_path, class: "btn btn-primary btn-contrast-bg" %>
- <%= link_to "View #{dog.name}'s old runs", "#", class: "btn btn-primary btn-no-bg" %>
+ <%= link_to "Update #{dog.name}'s Profile", edit_dog_path(dog), class: "btn btn-primary btn-no-bg" %>
 </div>
 <% end %>
 <% end %>
