@@ -20,7 +20,7 @@ class MessageSender
       @client.messages.create(
         from:  46765193211,
         to:    key,
-        body:  message,
+        body:  "Hello #{value}," message,
       )
     end
   end
