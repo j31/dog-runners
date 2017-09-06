@@ -94,7 +94,7 @@ respond_to :html, :js
   end
 
   def send_initial_notification(run)
-    message = " Chuggen suger"
+    message = "Hello #{value}, <% @run.dog.user.first_name %> need someone to run <% @run.dog.name %>. Accept if you can do it!"
     notify(message)
   end
 
