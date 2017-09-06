@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $('#toggleInbox').hide();
-  $('.toggleButton').click(function(event){
+  $('.container-two-run').on("click", ".toggleButton", function(event){
     event.preventDefault();
     $('#toggleInbox').toggle();
     $('.toggleButton').toggle();
