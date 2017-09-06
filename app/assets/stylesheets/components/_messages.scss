@@ -8,6 +8,7 @@
   border-bottom-width: 0;
   max-height: calc(70vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
+  text-align: left;
 
 }
 
@@ -63,4 +64,8 @@ input.form-control {
   h4 {
     margin: 0;
   }
+}
+
+.chat-space {
+  height: 100vh;
 }
