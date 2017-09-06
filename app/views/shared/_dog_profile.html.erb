@@ -58,7 +58,8 @@
 <% else %>
 <div>
   <br><br><br><br>
-  <%= image_tag 'pug2.png', id: "pug" %>
-  <%= link_to "Add your first dog!", new_dog_path, method: :get, class: "btn btn-contrast-bg" %>
+  <h2>Welcome to Dog Runners!</h2>
+  <p>Add your first dog to get started</p>
+  <%= link_to "ADD A DOG", new_dog_path, method: :get, class: "btn btn-contrast-bg" %>
 </div>
 <% end %>
