@@ -6,7 +6,7 @@
           <div id="container-one-run-<%= @run.id %>" class="content-container">
             <%= render "run_status_first", run: @run, user: @user, dog: @dog %>
           </div>
-          <div  id="container-two-run-<%= @run.id %>" class="content-container">
+          <div  id="container-two-run-<%= @run.id %>" class="content-container container-two-run">
             <%= render "run_status_second", run: @run, user: @user  %>
           </div>
         </div>
@@ -15,11 +15,7 @@
 
 
 
-
-
-
-
-  <div class="container" id="toggleInbox">
+  <div class="content container" id="toggleInbox">
     <div class="row">
       <div class="col-xs-12">
         <div class="messages">
