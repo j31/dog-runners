@@ -55,7 +55,7 @@
   height: 90vh;
   width: 100%;
   margin: 10px 0px auto;
-  padding-top: 130px;
+  padding-top: 20px;
 
   img {
     height: 50px;
@@ -82,8 +82,8 @@
     font-family: $headers-font;
     font-weight: bold;
     font-size: 20px;
-    border-bottom: 1px solid $dog-runner-color;
-    margin-bottom: 30px;
+
+    margin-bottom: 10px;
     padding-bottom: 12px;
     opacity: 0.8;
   }
@@ -105,7 +105,7 @@
     line-height: 30px;
   }
   a {
-    margin-top: 40px;
+    margin-top: 15px;
   }
   .benefits li {
     z-index: 1;
