@@ -66,9 +66,11 @@
       <p><%= run.duration %> minutes</p>
     </div>
 
-    <div id="run-icon">
-      <%= image_tag Dog::MEDALS.sample(), class: "medal img-circle" %>
-    </div>
+    <% if (rand(0..2) == 1) %>
+      <div id="run-icon">
+        <%= image_tag Dog::MEDALS.sample(), class: "medal img-circle" %>
+      </div>
+    <% end %>
 
   </div>
   <% end %>
