@@ -1,5 +1,5 @@
 #new-dog {
-  height: 825px;
+  padding-bottom: 40px;
 }
 .form-container {
   height: 100%;
@@ -37,7 +37,7 @@
         color: $dog-runner-font-color !important;
         background-color: rgba(0,0,0,0);
         height: 40px;
-        width: 355px;
+        width: 320px;
         margin: 0 auto;
         box-shadow: none;
         text-align: center;
@@ -62,8 +62,8 @@
   }
   .form-actions {
     .btn.btn-default {
-      background-color: $dog-runner-bg-color;
-      color: $dog-runner-font-color;
+      background-color: $dog-runner-font-color;
+      color: $dog-runner-bg-color;
       border: 2px solid $dog-runner-font-color;
       width: 225px;
       padding-bottom: 10px;
