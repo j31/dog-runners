@@ -54,22 +54,23 @@
           $("#container-two-run-<%= @run.id %>").html(data.run_second_partial);
         }
       }
-      );
-      scrollLastMessageIntoView();
-      App['conversation_<%= @run.conversation.id %>'] = App.cable.subscriptions.create(
-        { channel: 'ConversationsChannel', conversation_id: <%= @run.conversation.id %> },
-        {
-          received: (data) => {
-            if (data.current_user_id !== <%= current_user.id %>) {
-              const messagesContainer = document.querySelector('.messages');
-              messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
-              scrollLastMessageIntoView();
-            }
+    );
+
+    App['conversation_<%= @run.conversation.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ConversationsChannel', conversation_id: <%= @run.conversation.id %> },
+      {
+        received: (data) => {
+          if (data.current_user_id !== <%= current_user.id %>) {
+            const messagesContainer = document.querySelector('.messages');
+            messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+            scrollLastMessageIntoView();
           }
         }
-      );
-    </script>
-    <% end %>
+      }
+    );
+    scrollLastMessageIntoView();
+  </script>
+  <% end %>
 
 </div>
 
