@@ -18,19 +18,31 @@
   <div class="content container" id="toggleInbox">
     <div class="row">
       <div class="col-xs-12">
+
+        <h3 class="text-center"><i class="fa fa-comment"></i>You're talking to <%= @run.user.first_name %></h3>
+
+
         <div class="messages">
           <% @run.conversation.messages.each do |message| %>
             <%= render 'messages/message', message: message, user_is_messages_author: message.user_id == current_user.id %>
           <% end %>
         </div>
+
         <div id="create-message">
           <%= simple_form_for [@run, Message.new ], remote: true do |f| %>
-            <%= f.input :content, label: false %>
+
+            <%= f.input :content, label: false, placeholder: "Enter your text here" %>
           <% end %>
         </div>
+
+
       </div>
     </div>
   </div>
+
+
+
+
 
   <% content_for :after_js do %>
   <script>
