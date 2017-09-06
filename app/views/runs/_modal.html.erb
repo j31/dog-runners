@@ -29,14 +29,11 @@
         </div>
       </div>
 
-
         <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
           <%= f.button :submit, value: "CONFIRM BOOKING", class: "btn-modal-bg" %>
         <% end %>
-        <br>
-        <%= link_to "Make Changes", edit_run_path(@run) %>
-        <br>
 
+        <button type="button" class="btn btn-no-bg" data-dismiss="modal">Make Changes</button>
 
     </div>
   </div>
