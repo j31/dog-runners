@@ -1,13 +1,12 @@
 .modal-body, .modal-footer {
+  padding-bottom: 0px;
   .dog-runner-box {
     width: 240px;
   }
     // .btn {
     //   width: 60% !important;
     // }
-    h3 {
-      font-size: 18px;
-    }
+
     p {
       margin: 0px 0 6px;
       font-size: 13px;
@@ -16,8 +15,20 @@
       font-size: 20px;
       color: $dog-runner-color !important;
     }
+    h3 {
+      font-size: 18px;
+      font-weight: bolder;
+    }
+    h4 {
+      font-size: 13px;
+      font-weight: lighter;
+    }
     #under_link {
       bottom-padding: 10px;
+    }
+    i {
+      font-size: 50px;
+      color: $dog-runner-color;
     }
 }
 
