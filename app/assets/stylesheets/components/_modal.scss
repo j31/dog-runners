@@ -21,6 +21,30 @@
     }
 }
 
+.btn-no-bg {
+  border: 1px solid $dog-runner-font-color;
+  background-color: rgba(0,0,0,0);
+  color: $dog-runner-font-color;
+  width: 250px;
+  margin: 10px 0px 5px 0px;
+  padding: 10px 0px;
+  &:hover {
+    background-color: rgba(0,0,0,0);
+    color: $dog-runner-font-color;
+    border: 1px solid $dog-runner-font-color;
+  }
+  &:active {
+    background-color: rgba(0,0,0,0);
+    color: $dog-runner-font-color;
+    border: 1px solid $dog-runner-font-color;
+  }
+  &:focus {
+    background-color: rgba(0,0,0,0);
+    color: $dog-runner-font-color;
+    border: 1px solid $dog-runner-font-color;
+  }
+}
+
 .btn-modal-bg {
   border: 1px solid $dog-runner-font-color;
   background-color: $dog-runner-font-color;
