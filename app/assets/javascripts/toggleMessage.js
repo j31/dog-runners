@@ -5,4 +5,8 @@ $(document).ready(function(){
     $('#toggleInbox').toggle();
     $('.toggleButton').toggle();
   });
+  $('#closechat').click(function(){
+    $('#toggleInbox').toggle();
+    $('.toggleButton').toggle();
+  });
 });
