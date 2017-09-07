@@ -55,11 +55,11 @@
   <div class="run-history-box">
 
     <div id="run-photo">
-      <% if index < 8 %>
-      <% run_img_path = "run#{index+1}.PNG" %>
-      <% else %>
-      <% run_img_path = "run4.PNG" %>
-      <% end %>
+
+      <% run_img_path = "run#{rand(1..8)}.PNG" %>
+
+
+
 
       <%= image_tag run_img_path, height: 80, width: 80 %>
 
