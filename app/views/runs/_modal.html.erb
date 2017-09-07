@@ -17,11 +17,11 @@
 
           <% hr = (@run.appointment + 2 * 3600).strftime("%H").to_i %>
 
-          <% min = 15 %>
-          <% min = 30 if @run.appointment.strftime("%M").to_i > 15 %>
-          <% min = 45 if @run.appointment.strftime("%M").to_i > 30 %>
+          <% min = "15" %>
+          <% min = "30" if @run.appointment.strftime("%M").to_i > 15 %>
+          <% min = "45" if @run.appointment.strftime("%M").to_i > 30 %>
           <% if @run.appointment.strftime("%M").to_i > 45 %>
-            <% min = 0 %>
+            <% min = "00" %>
             <% hr += 1 %>
           <% end %>
 
