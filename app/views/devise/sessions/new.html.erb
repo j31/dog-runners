@@ -12,7 +12,19 @@
           <%= f.input :password, label:false, placeholder: "Password", required: false %>
         </div>
         <br>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <%#= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+        <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+        <div class="container-checkbox">
+          <input value="1" name="user[remember_me]" type="checkbox" id="cbtest" />
+
+          <label for="cbtest" class="check-box"><br></label>
+
+          <label for="cbtest" id="label-checkbox">Remember me</label>
+
+        </div>
+
+
       </div>
 
       <div class="form-actions">
@@ -24,3 +36,9 @@
 
     </div>
 </div>
+
+
+
+
+
+
