@@ -6,9 +6,10 @@
   border: 2px solid #ececec;
   border-top: none;
   border-bottom-width: 0;
-  max-height: calc(70vh - 70px - 45px - 61px - 30px);
+  max-height: calc(85vh - 70px - 45px - 61px - 30px);
   overflow: scroll;
   text-align: left;
+
 
 }
 
@@ -27,8 +28,14 @@
   border-radius: 3px;
   word-wrap: break-word;
   margin: 0 10px;
+  margin-bottom: 0;
   padding: 11px 10px 8px 10px;
 }
+
+.message-image {
+  width: 42px;
+}
+
 .avatar {
   width: 42px;
   height: 42px;
@@ -42,9 +49,7 @@
   margin-bottom: 20px;
   border: 2px solid #ececec;
 }
-.message_content {
-  margin-bottom: 0;
-}
+
 input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
