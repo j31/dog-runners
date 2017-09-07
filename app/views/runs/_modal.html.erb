@@ -14,8 +14,19 @@
 
           <h3>Today</h3>
 
-          <p><strong>between <%= (@run.appointment + 3 * 3600).strftime("%H") %>:00 and
-          <%= (@run.appointment.time + 4 * 3600).strftime("%H") %>:00</strong></p>
+          <% hr = (@run.appointment + 2 * 3600).strftime("%H").to_i %>
+
+          <% min = 15 %>
+          <% min = 30 if @run.appointment.strftime("%M").to_i > 15 %>
+          <% min = 45 if @run.appointment.strftime("%M").to_i > 30 %>
+          <% if @run.appointment.strftime("%M").to_i > 45 %>
+            <% min = 0 %>
+            <% hr += 1 %>
+          <% end %>
+
+
+          <p><strong>between <%= hr %>:<%= min %> and
+          <%= hr + 1 %>:<%= min %></strong></p>
 
           <p><%= @run.address %></p>
 
@@ -32,7 +43,7 @@
       </div>
 
           <%= simple_form_for @run, url: confirm_path(@run), method: :patch do |f| %>
-            <%= f.button :submit, value: "CONFIRM BOOKING", class: "btn-modal-bg" %>
+            <%= f.button :submit, value: "CONFIRM BOOKING", data: { disable_with: "CONFIRM BOOKING" }, class: "btn-modal-bg" %>
           <% end %>
 
 
