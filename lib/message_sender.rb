@@ -10,7 +10,9 @@ class MessageSender
     auth_token  = ENV['TWILIO_AUTH_TOKEN']
     @client = Twilio::REST::Client.new(account_sid, auth_token)
     @runners = {
-      "46709501502" => "Fredrik"
+      "46709501502" => "Fredrik",
+      "46768182202" => "Totof",
+      "46768261337" => "Casper"
     }
   end
 
