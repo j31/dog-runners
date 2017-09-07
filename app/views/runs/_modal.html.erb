@@ -6,7 +6,7 @@
 
         <h3><strong><%= @run.dog.name %> is going for a run.</strong></h3>
         <br>
-        <h4>Run duration: <strong><%= @run.duration %> minutes</strong></h4>
+        <p>Run duration: <strong><%= @run.duration %> minutes</strong></p>
 
         <div class="dog-runner-box box-small white-border-bottom">
 
@@ -36,9 +36,9 @@
 
           <h3>Total: <%= number_to_currency(@run.price, :unit=>'€') %></h3>
 
-          <h4>
+          <p>
           Run:  <%= number_to_currency(@run.duration/2, :unit=>'€') %> + Pick-up:  <%= number_to_currency(5, :unit=>'€') %>
-          </h4>
+          </p>
           <h4><a href="#">(See terms in detail.)</a></h4>
         </div>
       </div>
