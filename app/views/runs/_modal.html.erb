@@ -14,8 +14,8 @@
 
           <h3>Today</h3>
 
-          <p><strong>between <%= @run.appointment.strftime("%H") %>:00 and
-          <%= (@run.appointment.time + 3600).strftime("%H") %>:00</strong></p>
+          <p><strong>between <%= (@run.appointment + 3 * 3600).strftime("%H") %>:00 and
+          <%= (@run.appointment.time + 4 * 3600).strftime("%H") %>:00</strong></p>
 
           <p><%= @run.address %></p>
 

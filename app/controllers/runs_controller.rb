@@ -38,7 +38,7 @@ respond_to :html, :js
     @run.user_id = 1
     @run.appointment = Time.now
 
-    @run.price = @run.duration/2 + 10
+    @run.price = @run.duration/2 + 5
     if @run.save
       respond_to do |format|
         format.js
