@@ -1,23 +1,18 @@
 <% if current_user.dogs %>
 <div class="run-history-menu">
   <% current_user.dogs.each_with_index do |dog, index| %>
-  <% if index == 0 %>
-  <% dog_active = " active-runs" %>
-  <% else %>
-  <% dog_active = "" %>
-  <% end %>
-  <div class="run-history-menu-item<%= dog_active %>" data-target="#<%= dog[:name] %>-stats">
+  <div class="run-history-menu-item" data-target="#<%= dog[:name] %>-stats">
     <p><%= dog.name %></p>
   </div>
   <% end %>
-  <div class="run-history-menu-item" data-target="#All-stats">
+  <div class="run-history-menu-item active-runs" data-target="#All-stats">
     <p>All</p>
   </div>
 </div>
 <% end %>
 
 <% @dog_runs.each_with_index do |dog, i| %>
-<% if i == 0 %>
+<% if i == @dog_runs.size - 1 %>
 <% status = "" %>
 <% else %>
 <% status = " hidden" %>
@@ -49,7 +44,7 @@
   <br>
   <br>
 
-  <% dog[:runs].each_with_index do |run, index| %>
+  <% dog[:runs].sort_by { |k| k[:appointment] }.reverse.each_with_index do |run, index| %>
 
   <%= link_to run_path(run) do %>
   <div class="run-history-box">
