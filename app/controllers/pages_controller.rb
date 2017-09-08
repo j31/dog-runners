@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     end
 
     @dog_runs << all_stats
-    @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
+    @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green-dog-darker.png"), width:50, height:50 })
   end
 
 
