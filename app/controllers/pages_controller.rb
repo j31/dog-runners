@@ -14,7 +14,7 @@ class PagesController < ApplicationController
     all_stats = {name: "All", total_km: 0, total_runs: 0, total_mins: 0, avg_pace: 0, runs: [] }
     unless current_user.dogs.blank?
       current_user.dogs.each do |dog|
-        dog_stats = {name: dog.name, total_km: 0, total_runs: dog.runs.size, total_mins: 0, avg_pace: rand(400..459).to_f/100, runs: [] }
+        dog_stats = {name: dog.name, total_km: 0, total_runs: dog.runs.size, total_mins: 0, avg_pace: rand(440..459).to_f/100, runs: [] }
         avg_pace_counter += dog_stats[:avg_pace] unless dog.runs.size == 0
         dog.runs.each do |run|
           dog_stats[:total_mins] += run.duration
@@ -25,10 +25,12 @@ class PagesController < ApplicationController
           dog_stats[:runs] << run
           all_stats[:runs] << run
         end
+
         @dog_runs << dog_stats
       end
       all_stats[:avg_pace] += (avg_pace_counter/current_user.dogs.size)
     end
+
     @dog_runs << all_stats
     @hash.first.merge!(picture: {url: ActionController::Base.helpers.asset_path("green_dog_sm.png"), width:50, height:50 })
   end
